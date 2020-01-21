@@ -1,0 +1,23 @@
+.ba-section-settlement-conditions{
+	img {
+		display: block;
+		width: 100%;
+		height: auto;
+	 }
+}
+
+.ba-column-description{
+	margin-bottom: 20px;
+	p{
+		padding: 0 20px;
+		@include breakpoint(large){
+			padding: 0 15px;
+			margin-bottom: 0;
+		}
+	}
+	p + p{
+		margin-top: 46px;
+	}
+}
+
+

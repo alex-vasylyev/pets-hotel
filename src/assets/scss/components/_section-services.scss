@@ -1,0 +1,35 @@
+.ba-section-services {
+  img {
+    display: block;
+    width: 100%;
+  }
+}
+
+.services-list {
+  padding-left: 28px;
+  padding-right: 80px;
+  .ba-services-list-item {
+    padding-bottom: 7px;
+    padding-top: 11px;
+    border-bottom: 1px solid $medium-gray;
+    &__price {
+      display: flex;
+      .ba-service-price-title {
+			color: $black;
+			font-weight: 500;
+        flex-grow: 1;
+		}
+		
+    }
+  }
+}
+.ba-prices-description {
+	padding-left: 28px;
+	padding-top: 10px;
+ }
+ .ba-services-order-row{
+	 padding-top: 119px;
+	 padding-bottom: 132px;
+	 background: url('../../img/paws.jpg') 50% no-repeat;
+	 background-size: cover;
+ }
