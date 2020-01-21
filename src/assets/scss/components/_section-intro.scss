@@ -1,0 +1,57 @@
+.ba-section-intro{
+	//background: url('../../img/main-bg.jpg') 50% no-repeat;
+	background-size: cover;
+	color: $white;
+	padding-bottom: 227px;
+
+   &__title{
+		padding-top: 43px;
+		margin-bottom: 163px;
+	}
+
+	&__col-1, &__col-2{
+		background: $primary-color;
+		margin: 0 auto;
+		@media screen and (min-width:1024px){
+			margin: 0;
+		}
+		@include show-for(medium)
+		
+	}
+
+	&__col-1{
+		padding: 44px 33px 44px 36px;
+		margin-bottom: 20px;
+		justify-content: center;
+		@media screen and (min-width:1024px){
+			margin-bottom: 0;
+		}
+	}
+
+	&__col-2{
+		padding: 69px 33px 134px 38px;
+	}
+
+	p{
+		line-height: 1.4;
+		text-align: left;
+		font-weight: 300;
+	}
+
+	&__socials{
+		position: absolute;
+		right: 50px;
+		bottom: 40px;
+	}
+}
+.ba-socials-row{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	li + li{
+		margin-left: 25px;
+	}
+}
+
+
