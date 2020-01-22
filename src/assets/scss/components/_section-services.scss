@@ -36,7 +36,12 @@
   //  background: url('../../img/paws.jpg') 50% no-repeat;
   //  background-size: cover;
 }
-
+  
+.ba-link-to-gallery-container{
+	@include breakpoint(medium){
+		margin-top: 68px;
+	}	
+}
 .ba-link-description {
   margin-bottom: 24px;
   @include breakpoint(medium) {
