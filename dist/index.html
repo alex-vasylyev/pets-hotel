@@ -58,8 +58,11 @@
       	</div>
       </header>      
       <main>
-        <section class="ba-section-intro text-center" style="background: url(assets/img/main-bg.jpg)50%no-repeat;background-size: cover;">
-        	<h1 class="ba-section-intro__title">Ми потурбуємося про ваших улюбленців</h1>
+        <section class="ba-section-intro" style="background: url(assets/img/main-bg.jpg)50%no-repeat;background-size: cover;">
+        	<div class="ba-main-title-container">
+        		<h1 class="ba-section-intro__title">Ми потурбуємося про ваших улюбленців</h1>
+        	</div>
+        	<!-- /.ba-main-title -->
         	<div class="row align-justify">
         		<div class="column medium-7 large-4 ba-section-intro__col-1 show-for-medium">
         			<p>Знаючи не з чуток про проблеми, що виникають коли всім членам Вашої родини потрібно відлучитися на деякий
@@ -68,11 +71,27 @@
         		</div>
         		<!-- /.ba-section-intro__col-1 -->
         		<div class="column medium-7 large-4 ba-section-intro__col-2 show-for-medium">
-        			<p>Оберіть Ваше місто та перегляньте список доступних послуг у Вашому регіоні:</p>
+        			<p class="ba-col-2-description">Оберіть Ваше місто та перегляньте список доступних послуг у Вашому регіоні:</p>
+        			<select class="ba-select-cities">
+        				<option selected disabled>Оберіть Ваше місто</option>
+        				<option value="Полтава">Полтава, вул. Кірова, 10</option>
+        				<option value="Киев">Киев, вул. Бандери, 120</option>
+        				<option value="Харьков">Харьков, вул. Шухевича, 12</option>
+        			 </select>
         		</div>
         		<!-- /.ba-section-intro__col-2 -->
         	</div>
-        	<div class="ba-section-intro__socials">
+        
+        	 <div class="ba-select-mobile show-for-small-only">
+        		 <select class="ba-select-mobile___cities">
+        	 		<option selected disabled>Оберіть Ваше місто</option>
+        	 		<option value="Полтава">Полтава, вул. Кірова, 10</option>
+        	 		<option value="Киев">Киев, вул. Бандери, 120</option>
+        	 		<option value="Харьков">Харьков, вул. Шухевича, 12</option>
+        	 	 </select>
+        	 </div>
+        	 <!-- /.select-mobile -->
+        	<div class="ba-section-intro__socials show-for-medium">
         		<ul class="menu ba-socials-row">
         			<li>
         				<a href="https://twitter.com/?lang=ru" target="_blank".>
@@ -183,10 +202,10 @@
         		</div>
         	</div>
         </section>
-        <!-- /.ba-section-advantages --><div class="ba-section-services ba-section">
+        <!-- /.ba-section-advantages --><div class="ba-section--services ba-section">
         	<div class="row">
         		<div class="row ba-section-services__content">
-        			<div class="column small-12 large-5">
+        			<div class="column small-12 large-5 show-for-medium">
         				<img src="assets/img/grey-cat.jpg" alt="Grey Cat">
         			</div>
         			<div class="column small-12 large-7">
@@ -236,22 +255,19 @@
         				<p class="ba-prices-description">*ціна залежить від розміру вашого вихованця</p>
         			</div>
         		</div>
+        	</div>
+        	<div class="row small-12 ba-services-order-row"
+        		style="background:url('assets/img/') 50% no-repeat; background-size: cover;">
+        		<a class="button button--service" href="../pages/gallery.html">перейти до замовлення</a>
+        	</div>
         
-        		<div class="row align-center ba-services-order-row">
-        			<div class="column small-12">
-        				<a class="button" href="#">перейти до замовлення</a>
-        			</div>
+        	<div class="row">
+        		<div class="column small-12 medium-8 ba-link-description">
+        			<p>Ви можете переглянути фото з умовами, в яких будуть на перетримці ваші вихованці за цією ссилкою</p>
         		</div>
-        
-        		<!-- <div class="row">
-        			<div class="column">
-        				<p>Ви можете переглянути фото з умовами, в яких будуть на перетримці ваші вихованці за цією ссилкою</p>
-        			</div>
-        		    <div class="column">
-        				 <a href="#">Наші фото</a>
-        			 </div>
-        		</div> -->
-        
+        		<div class="column small-12 medium-3 ba-link-to-gallery">
+        			<a href="../pages/gallery.html">Наші фото</a>
+        		</div>
         	</div>
         </div>
         <!-- /.ba-section-services -->

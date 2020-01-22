@@ -1,57 +1,85 @@
-.ba-section-intro{
-	//background: url('../../img/main-bg.jpg') 50% no-repeat;
-	background-size: cover;
-	color: $white;
-	padding-bottom: 227px;
+.ba-section-intro {
+  //background: url('../../img/main-bg.jpg') 50% no-repeat;
+  position: relative;
+  background-size: cover;
+  color: $white;
+  padding-bottom: 227px;
 
-   &__title{
-		padding-top: 43px;
-		margin-bottom: 163px;
-	}
+  .ba-main-title-container {
+    @media screen and (max-width: 640px) {
+      background: rgba($primary-color, 0.3);
+      margin-bottom: 80px;
+    }
+  }
+  &__title {
+    padding: 0 29px;
+    font-size: 31px;
+    @include breakpoint(medium) {
+      font-size: 34px;
+      padding-top: 43px;
+      margin-bottom: 163px;
+      text-align: center;
+    }
+  }
 
-	&__col-1, &__col-2{
-		background: $primary-color;
-		margin: 0 auto;
-		@media screen and (min-width:1024px){
-			margin: 0;
-		}
-		//@include show-for(medium)
-		
-	}
+  &__col-1,
+  &__col-2 {
+    background: $primary-color;
+    margin: 0 auto;
+    max-width: 359px;
+    max-height: 264px;
+    @media screen and (min-width: 1024px) {
+      margin: 0;
+    }
+    //@include show-for(medium)
+  }
 
-	&__col-1{
-		padding: 44px 33px 44px 36px;
-		margin-bottom: 20px;
-		justify-content: center;
-		@media screen and (min-width:1024px){
-			margin-bottom: 0;
-		}
-	}
+  &__col-1 {
+    padding: 44px 33px 44px 36px;
+    margin-bottom: 20px;
+    justify-content: center;
+    @media screen and (min-width: 1024px) {
+      margin-bottom: 0;
+    }
+  }
 
-	&__col-2{
-		padding: 69px 33px 134px 38px;
-	}
+  &__col-2 {
+    padding: 69px 33px 134px 38px;
+    .ba-col-2-description {
+      margin-bottom: 46px;
+    }
+  }
 
-	p{
-		line-height: 1.4;
-		text-align: left;
-		font-weight: 300;
-	}
+  .ba-select-cities {
+    max-height: 35px;
+    padding-left: 9px;
+    border: none;
+  }
+  .ba-select-mobile {
+    position: absolute;
+	 bottom: 20px;
+	 left: 22%;
+    max-width: 304px;
+  }
 
-	&__socials{
-		position: absolute;
-		right: 50px;
-		bottom: 40px;
-	}
+  p {
+    line-height: 1.4;
+    text-align: left;
+    font-weight: 300;
+  }
+
+  &__socials {
+    position: absolute;
+    right: 50px;
+    bottom: 40px;
+  }
 }
-.ba-socials-row{
-	display: flex;
-	justify-content: center;
-	align-items: center;
+.ba-socials-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-	li + li{
-		margin-left: 25px;
-	}
+  li + li {
+    margin-left: 25px;
+  }
 }
-
-
