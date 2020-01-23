@@ -4,13 +4,59 @@
 			<div class="column small-12 large-5 show-for-medium">
 				<img src="{{root}}assets/img/grey-cat.jpg" alt="Grey Cat">
 			</div>
+
+
+			<script type="text-template" data-services-tmpl>
+				<li class="ba-services-list-item">
+					<div class="ba-services-list-item__price">
+						<h4 class="ba-service-price-title">Перетримка (котики)</h4>
+						<span>{{overExposureCats}}</span> грн
+					</div>
+					<!-- /.ba-price -->
+					<p class="ba-service-item-description">бокс з відділеннями для сну і гігієни</p>
+				</li>
+				<li class="ba-services-list-item">
+					<div class="ba-services-list-item__price">
+						<h4 class="ba-service-price-title">Перетримка (собаки)</h4>
+						<span>{{overExposureDogs}}</span> грн
+					</div>
+					<!-- /.ba-price -->
+					<p>бокс/вольєр в окремій кімнаті</p>
+				</li>
+				<li class="ba-services-list-item">
+					<div class="ba-services-list-item__price">
+						<h4 class="ba-service-price-title">Грумінг</h4>
+						<span>{{GroomingW}}*</span> грн
+					</div>
+					<!-- /.ba-price -->
+					<p>Миття</p>
+				</li>
+				<li class="ba-services-list-item">
+					<div class="ba-services-list-item__price">
+						<h4 class="ba-service-price-title">Грумінг</h4>
+						<span>{{GroomingWC}}*</span> грн
+					</div>
+					<!-- /.ba-price -->
+					<p>Миття та стрижка</p>
+				</li>
+				<li class="ba-services-list-item">
+					<div class="ba-services-list-item__price">
+						<h4 class="ba-service-price-title">Огляд ветеринара</h4>
+						<span>{{Inspection}}</span>грн
+					</div>
+					<!-- /.ba-price -->
+					<p>Загальний</p>
+				</li>
+			</script>
+			<!-- text-template-script -->
+
 			<div class="column small-12 large-7">
 				<h2 class="ba-section-title ba-section-title--services">Перелік послуг</h2>
-				<ul class="vertical menu services-list">
+				<ul class="vertical menu ba-services-list">
 					<li class="ba-services-list-item">
 						<div class="ba-services-list-item__price">
 							<h4 class="ba-service-price-title">Перетримка (котики)</h4>
-							<span>300 грн</span>
+							<span> грн</span>
 						</div>
 						<!-- /.ba-price -->
 						<p class="ba-service-item-description">бокс з відділеннями для сну і гігієни</p>
@@ -18,7 +64,7 @@
 					<li class="ba-services-list-item">
 						<div class="ba-services-list-item__price">
 							<h4 class="ba-service-price-title">Перетримка (собаки)</h4>
-							<span>350 грн</span>
+							<span> грн</span>
 						</div>
 						<!-- /.ba-price -->
 						<p>бокс/вольєр в окремій кімнаті</p>
@@ -26,7 +72,7 @@
 					<li class="ba-services-list-item">
 						<div class="ba-services-list-item__price">
 							<h4 class="ba-service-price-title">Грумінг</h4>
-							<span>200* грн</span>
+							<span>* грн</span>
 						</div>
 						<!-- /.ba-price -->
 						<p>Миття</p>
@@ -34,7 +80,7 @@
 					<li class="ba-services-list-item">
 						<div class="ba-services-list-item__price">
 							<h4 class="ba-service-price-title">Грумінг</h4>
-							<span>400* грн</span>
+							<span>* грн</span>
 						</div>
 						<!-- /.ba-price -->
 						<p>Миття та стрижка</p>
@@ -42,7 +88,7 @@
 					<li class="ba-services-list-item">
 						<div class="ba-services-list-item__price">
 							<h4 class="ba-service-price-title">Огляд ветеринара</h4>
-							<span>200 грн</span>
+							<span> грн</span>
 						</div>
 						<!-- /.ba-price -->
 						<p>Загальний</p>
@@ -52,9 +98,8 @@
 			</div>
 		</div>
 	</div>
-	<div class="row small-12 ba-services-order-row"
-		>
-		<a href="order-service.html" class="button button--service" >перейти до замовлення</a>
+	<div class="row small-12 ba-services-order-row">
+		<a href="order-service.html" class="button button--service">перейти до замовлення</a>
 	</div>
 
 	<div class="row ba-link-to-gallery-container">

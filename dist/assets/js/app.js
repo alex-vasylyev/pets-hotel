@@ -12416,6 +12416,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _lib_foundation_explicit_pieces__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./lib/foundation-explicit-pieces */ "./src/assets/js/lib/foundation-explicit-pieces.js");
 /* harmony import */ var _lib_slick_min_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./lib/slick.min.js */ "./src/assets/js/lib/slick.min.js");
 /* harmony import */ var _lib_slick_min_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_lib_slick_min_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _services_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./services.js */ "./src/assets/js/services.js");
+/* harmony import */ var _services_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_services_js__WEBPACK_IMPORTED_MODULE_4__);
 
  // Foundation JS relies on a global varaible. In ES6, all imports are hoisted
 // to the top of the file so if we used`import` to import Foundation,
@@ -12430,6 +12432,7 @@ window.jQuery = jquery__WEBPACK_IMPORTED_MODULE_0___default.a; // require('found
 
 
 jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).foundation();
+
 
 /***/ }),
 
@@ -13357,6 +13360,42 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     return o;
   };
 });
+
+/***/ }),
+
+/***/ "./src/assets/js/services.js":
+/*!***********************************!*\
+  !*** ./src/assets/js/services.js ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var url = 'src/data/services.json';
+
+function sendRequest(event) {
+  event.preventDefault();
+  fetch(url).then(function (response) {
+    return response.json();
+  }).then(showServices); // .then(response => response.text())
+  // .then(text => console.log(text));
+}
+
+document.addEventListener('change', sendRequest);
+var servicesList = document.querySelector('.ba-services-list');
+var servicesListTmpl = document.querySelector('[data-services-tmpl]').innerHTML;
+
+function showServices(data) {
+  var arr = data;
+  var servicesHTML = '';
+  var city = document.querySelector('.ba-select-cities').value;
+  arr.forEach(function (element) {
+    element.cityName == city ? servicesHTML += servicesListTmpl.replace(/{{overExposureCats}}/gi, element.overExposureCats).replace(/{{overExposureDogs}}/gi, element.overExposureDogs).replace(/{{GroomingW}}/gi, element.GroomingW).replace(/{{GroomingWC}}/gi, element.GroomingWC).replace(/{{Inspection}}/gi, element.Inspection) : '';
+  });
+  servicesList.innerHTML = servicesHTML;
+}
 
 /***/ }),
 
