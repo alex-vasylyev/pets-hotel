@@ -1,18 +1,25 @@
 <header class="ba-header-wrap">
 	<div class="ba-header-header">
-		<div class="row align-middle ">
-			<div class="column">
-				<a href="/">
-					<img src="{{root}}assets/img/logo.png" alt="Logo">
+		<div class="row expanded align-middle ">
+			<div class="column shrink small-12 medium-7 flex-container align-middle">
+				<a class="ba-logo" href="/">
+					<img src="{{root}}assets/img/logo.svg" alt="Logo">
 				</a>
 			</div>
-			<!-- /.column -->
-			<div class="column shrink">
-				<button class="menu-icon dark hide-for-medium" type="button" data-open="offCanvas" aria-label="Show menu">
-				</button>
-				<ul class="menu ba-main-menu show-for-medium">
-					<li {{#ifpage 'index'}} class="active" {{/ifpage}}><a href="index.html">Home</a></li>
+			<div class="column small-12 medium-7 flex-container align-middle">
+				<ul class="menu simple align-middle ba-main-menu show-for-medium ">
+					<li><a href="#">Головна</a></li>
+					<li><a href="#">Замовити послугу</a></li>
+					<li><a href="#">Відгуки</a></li>
+					<li><a href="#">Наші фото</a></li>
 				</ul>
+
+				<button class="menu-icon white hide-for-medium" type="button" data-open="offCanvas" aria-label="Show menu">
+				</button>
+				<a class="ba-logo--user" href="#">
+					<img src="{{root}}assets/img/user.svg" alt="User">
+				</a>
+
 			</div>
 			<!-- /.column -->
 		</div>

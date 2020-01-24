@@ -1,15 +1,42 @@
-.ba-main-menu{
-    a{
-        color: $black;
-        &:hover{
-            color: lighten($primary-color, 20%);
-        }
+header {
+  position: relative;
+  background-color: #018786;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 15px 0;
+
+  .ba-logo {
+	 padding-left: 113px;
+	 
+	 &--user{
+		 padding-left: 22px;
+	 }
+  }
+
+  .ba-main-menu {
+    padding-left: 254px;
+	 display: flex;
+
+    li {
+      padding-right: 21px;
     }
-}
-.off-canvas{
-    .menu{
-        a{
-            padding: 10px;
-        }
+
+    a {
+      color: $white;
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: 300;
+      font-size: 20px;
+      line-height: 23px;
+		letter-spacing: 0.15px;
+		
+      &:hover {
+			margin-top: 13px;
+			padding-bottom: 10px;
+			border-bottom: 3px solid #fff;
+		}
+		
+		
     }
+  }
 }
