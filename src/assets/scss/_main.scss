@@ -24,10 +24,6 @@ button {
   svg {
     fill: currentColor;
   }
-  &:hover,
-  &:active {
-    color: darken($color: $primary-color, $amount: 10);
-  }
 }
 button,
 .button {

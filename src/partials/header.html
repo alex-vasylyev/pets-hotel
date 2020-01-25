@@ -1,28 +1,31 @@
-<header class="ba-header-wrap">
-	<div class="ba-header-header">
-		<div class="row expanded align-middle ">
-			<div class="column shrink small-12 medium-7 flex-container align-middle">
-				<a class="ba-logo" href="/">
+<header class="ba-header">
+	<div class="row align-justify align-middle">
+		<div class="column ba-logo small-7 large-3">	
+			<button class="menu-icon ba-menu-toggle white hide-for-large" type="button" data-open="offCanvas" aria-label="Show menu">
+			</button>			
+				<a href="index.html">
 					<img src="{{root}}assets/img/logo.svg" alt="Logo">
 				</a>
-			</div>
-			<div class="column small-12 medium-7 flex-container align-middle">
-				<ul class="menu simple align-middle ba-main-menu show-for-medium ">
-					<li><a href="#">Головна</a></li>
-					<li><a href="#">Замовити послугу</a></li>
-					<li><a href="#">Відгуки</a></li>
-					<li><a href="#">Наші фото</a></li>
-				</ul>
-
-				<button class="menu-icon white hide-for-medium" type="button" data-open="offCanvas" aria-label="Show menu">
-				</button>
-				<a class="ba-logo--user" href="#">
-					<img src="{{root}}assets/img/user.svg" alt="User">
-				</a>
-
-			</div>
-			<!-- /.column -->
 		</div>
-		<!-- /.row -->
+		<div class="column small-2 large-6">
+			<div class="row">
+				<nav class="ba-nav">
+					<ul class="menu simple show-for-large">
+						<li class="ba-menu-item"><a href="index.html">Головна</a></li>
+						<li class="ba-menu-item"><a href="order-service.html">Замовити послугу</a></li>
+						<li class="ba-menu-item"><a href="reviews.html">Відгуки</a></li>
+						<li class="ba-menu-item"><a href="gallery.html">Наші фото</a></li>
+					</ul>
+				</nav>
+				<!-- /.ba-nav -->
+				<div class="ba-my-profile">
+					<a href="my-profile.html">
+						<img src="{{root}}assets/img/user.svg" alt="User">
+					</a>
+				</div>
+			</div>
+		</div>
+		<!-- /.column -->
 	</div>
+	<!-- /.row -->
 </header>

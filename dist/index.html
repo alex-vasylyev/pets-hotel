@@ -45,33 +45,36 @@
 			  </ul>
 			</nav>		</div>
 		<div class="off-canvas-content" data-off-canvas-content>
-			<header class="ba-header-wrap">
-				<div class="ba-header-header">
-					<div class="row expanded align-middle ">
-						<div class="column shrink small-12 medium-7 flex-container align-middle">
-							<a class="ba-logo" href="/">
+			<header class="ba-header">
+				<div class="row align-justify align-middle">
+					<div class="column ba-logo small-7 large-3">	
+						<button class="menu-icon ba-menu-toggle white hide-for-large" type="button" data-open="offCanvas" aria-label="Show menu">
+						</button>			
+							<a href="index.html">
 								<img src="assets/img/logo.svg" alt="Logo">
 							</a>
-						</div>
-						<div class="column small-12 medium-7 flex-container align-middle">
-							<ul class="menu simple align-middle ba-main-menu show-for-medium ">
-								<li><a href="#">Головна</a></li>
-								<li><a href="#">Замовити послугу</a></li>
-								<li><a href="#">Відгуки</a></li>
-								<li><a href="#">Наші фото</a></li>
-							</ul>
-			
-							<button class="menu-icon white hide-for-medium" type="button" data-open="offCanvas" aria-label="Show menu">
-							</button>
-							<a class="ba-logo--user" href="#">
-								<img src="assets/img/user.svg" alt="User">
-							</a>
-			
-						</div>
-						<!-- /.column -->
 					</div>
-					<!-- /.row -->
+					<div class="column small-2 large-6">
+						<div class="row">
+							<nav class="ba-nav">
+								<ul class="menu simple show-for-large">
+									<li class="ba-menu-item"><a href="index.html">Головна</a></li>
+									<li class="ba-menu-item"><a href="order-service.html">Замовити послугу</a></li>
+									<li class="ba-menu-item"><a href="reviews.html">Відгуки</a></li>
+									<li class="ba-menu-item"><a href="gallery.html">Наші фото</a></li>
+								</ul>
+							</nav>
+							<!-- /.ba-nav -->
+							<div class="ba-my-profile">
+								<a href="my-profile.html">
+									<img src="assets/img/user.svg" alt="User">
+								</a>
+							</div>
+						</div>
+					</div>
+					<!-- /.column -->
 				</div>
+				<!-- /.row -->
 			</header>
 			<main>
 				<section id="intro" class="ba-section-intro" >
@@ -110,21 +113,21 @@
 					<div class="ba-section-intro__socials show-for-medium">
 						<ul class="menu ba-socials-row">
 							<li>
-								<a href="https://twitter.com/?lang=ru" target="_blank".>
+								<a href="https://twitter.com/?lang=ru" target="_blank">
 									<svg width="24" height="20">
 										<use xlink:href="#icon-twitter" />
 									</svg>
 								</a>
 							</li>
 							<li>
-								<a href="https://linkedin.com/" target="_blank".>
+								<a href="https://linkedin.com/" target="_blank">
 									<svg width="20" height="20">
 										<use xlink:href="#icon-linkedin" />
 									</svg>
 								</a>
 							</li>
 							<li>
-								<a href="https://google.com" target="_blank".>
+								<a href="https://google.com" target="_blank">
 									<svg width="20" height="20">
 										<use xlink:href="#icon-google" />
 									</svg>
@@ -226,7 +229,7 @@
 							</div>
 				
 				
-							<script type="text-template" data-services-tmpl>
+						<script type="text-template" data-services-tmpl>
 								<li class="ba-services-list-item">
 									<div class="ba-services-list-item__price">
 										<h4 class="ba-service-price-title">Перетримка (котики)</h4>
@@ -268,6 +271,8 @@
 									<p>Загальний</p>
 								</li>
 							</script>
+				
+				
 							<!-- text-template-script -->
 				
 							<div class="column small-12 large-7">
@@ -376,55 +381,55 @@
 		</div>
 	</div>
 
-	<s height="0" width="0" style="position: absolute;">
+	<svg height="0" width="0" style="position: absolute;">
 		<defs>
-			<symbol id="user-icon" width="29" height="29" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<symbol id="user-icon" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<path fill-rule="evenodd" clip-rule="evenodd"
 					d="M15.5 0.916626C7.44996 0.916626 0.916626 7.44996 0.916626 15.5C0.916626 23.55 7.44996 30.0833 15.5 30.0833C23.55 30.0833 30.0833 23.55 30.0833 15.5C30.0833 7.44996 23.55 0.916626 15.5 0.916626ZM15.5 5.29163C17.9208 5.29163 19.875 7.24579 19.875 9.66663C19.875 12.0875 17.9208 14.0416 15.5 14.0416C13.0791 14.0416 11.125 12.0875 11.125 9.66663C11.125 7.24579 13.0791 5.29163 15.5 5.29163ZM6.74996 21.3041C8.63121 24.1332 11.8541 25.9999 15.5 25.9999C19.1458 25.9999 22.3687 24.1332 24.25 21.3041C24.2062 18.402 18.402 16.8124 15.5 16.8124C12.5833 16.8124 6.79371 18.402 6.74996 21.3041Z"
 					fill="white" />
 			</symbol>
 	
-			<symbol id="icon-heart" width="20" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<symbol id="icon-heart" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<path
 					d="M11.72 21.35L10.3038 20.03C5.27398 15.36 1.95331 12.28 1.95331 8.5C1.95331 5.42 4.31684 3 7.32498 3C9.02438 3 10.6554 3.81 11.72 5.09C12.7845 3.81 14.4156 3 16.115 3C19.1231 3 21.4866 5.42 21.4866 8.5C21.4866 12.28 18.166 15.36 13.1361 20.04L11.72 21.35Z"
 					fill="#01A39D" />
 			</symbol>
 	
-			<symbol id="icon-twitter" width="16" height="14" viewBox="0 0 16 14" fill="none"
+			<symbol id="icon-twitter" viewBox="0 0 16 14" fill="none"
 				xmlns="http://www.w3.org/2000/svg">
 				<path fill-rule="evenodd" clip-rule="evenodd"
 					d="M5.032 14C11.0696 14 14.372 8.6132 14.372 3.94228C14.372 3.78894 14.372 3.63646 14.3624 3.48484C15.0048 2.98518 15.5592 2.36492 16 1.65506C15.4016 1.94107 14.7656 2.12887 14.1152 2.21158C14.8 1.76964 15.3128 1.07529 15.5584 0.256027C14.9136 0.667812 14.2088 0.958129 13.4736 1.11406C12.2304 -0.309101 10.1512 -0.378019 8.8288 0.960714C7.9768 1.82391 7.6144 3.11096 7.8792 4.33856C5.24 4.19555 2.7808 2.85337 1.1136 0.645414C0.2424 2.26068 0.688 4.3265 2.1304 5.36371C1.608 5.34734 1.0968 5.19572 0.64 4.92178V4.96657C0.6408 6.64903 1.7424 8.09803 3.2736 8.43143C2.7904 8.57357 2.2832 8.59424 1.792 8.49173C2.2216 9.93212 3.4544 10.9185 4.8584 10.9469C3.696 11.9307 2.26 12.4649 0.7816 12.4631C0.5208 12.4623 0.26 12.4459 0 12.4123C1.5016 13.4495 3.248 14 5.032 13.9974"
 					fill="#F4F4F4" />
 			</symbol>
 	
-			<symbol id="icon-linkedin" width="16" height="16" viewBox="0 0 16 16" fill="none"
+			<symbol id="icon-linkedin" viewBox="0 0 16 16" fill="none"
 				xmlns="http://www.w3.org/2000/svg">
 				<path fill-rule="evenodd" clip-rule="evenodd"
 					d="M16 16H12.9231V10.3967C12.9231 8.85961 12.2715 8.00218 11.1031 8.00218C9.83154 8.00218 9.07692 8.89563 9.07692 10.3967V16H6V5.59243H9.07692V6.76288C9.07692 6.76288 10.0423 5 12.2177 5C14.3938 5 16 6.3818 16 9.24148C16 12.1004 16 16 16 16ZM1.50031 3C0.671513 3 0 2.32819 0 1.4997C0 0.671815 0.671513 0 1.50031 0C2.32849 0 3 0.671815 3 1.4997C3.00061 2.32819 2.32849 3 1.50031 3ZM0 16H3V6H0V16Z"
 					fill="#F4F4F4" />
 			</symbol>
 	
-			<symbol id="icon-google" width="14" height="14" viewBox="0 0 14 14" fill="none"
+			<symbol id="icon-google" viewBox="0 0 14 14" fill="none"
 				xmlns="http://www.w3.org/2000/svg">
 				<path fill-rule="evenodd" clip-rule="evenodd"
 					d="M13.8751 5.60271H7.14791C7.14791 6.30231 7.14791 7.70152 7.14362 8.40113H11.0418C10.8925 9.10074 10.3628 10.0802 9.61449 10.5734C9.61377 10.5727 9.61306 10.5776 9.61163 10.5769C8.61671 11.2338 7.30372 11.3829 6.32881 11.187C4.80069 10.8833 3.59134 9.77516 3.10032 8.36755C3.10317 8.36545 3.10532 8.34586 3.10746 8.34446C2.80012 7.47135 2.80012 6.30231 3.10746 5.60271H3.10675C3.50272 4.31683 4.74851 3.14359 6.27878 2.82247C7.50957 2.56152 8.89832 2.84416 9.91968 3.79982C10.0555 3.6669 11.7995 1.96405 11.9303 1.82553C8.44088 -1.33459 2.85373 -0.222915 0.763104 3.85789H0.762389C0.762389 3.85789 0.763104 3.85789 0.758816 3.86558C-0.275418 5.86996 -0.232534 8.23183 0.765963 10.1404C0.763104 10.1425 0.76096 10.1438 0.758816 10.1459C1.66368 11.902 3.31045 13.2487 5.29458 13.7615C7.40236 14.3142 10.0848 13.9364 11.8817 12.3112C11.8824 12.3119 11.8831 12.3126 11.8838 12.3133C13.4062 10.9421 14.354 8.60612 13.8751 5.60271Z"
 					fill="#F4F4F4" />
 			</symbol>
 	
-			<symbol id="icon-visibility" width="24" height="24" viewBox="0 0 24 24" fill="none"
+			<symbol id="icon-visibility" viewBox="0 0 24 24" fill="none"
 				xmlns="http://www.w3.org/2000/svg">
 				<path fill-rule="evenodd" clip-rule="evenodd"
 					d="M12 5C7 5 2.73 8.11 1 12.5C2.73 16.89 7 20 12 20C17 20 21.27 16.89 23 12.5C21.27 8.11 17 5 12 5ZM12 17.5C9.24 17.5 7 15.26 7 12.5C7 9.74 9.24 7.5 12 7.5C14.76 7.5 17 9.74 17 12.5C17 15.26 14.76 17.5 12 17.5ZM9 12.5C9 10.84 10.34 9.5 12 9.5C13.66 9.5 15 10.84 15 12.5C15 14.16 13.66 15.5 12 15.5C10.34 15.5 9 14.16 9 12.5Z"
 					fill="black" fill-opacity="0.54" />
 			</symbol>
 	
-			<symbol id="icon-paw" width="21" height="19" viewBox="0 0 21 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<symbol id="icon-paw" viewBox="0 0 21 19" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<path
 					d="M6.39092 0.0150431C7.57092 -0.154957 8.82092 1.13504 9.18092 2.91504C9.54092 4.68504 8.89092 6.26504 7.71092 6.44504C6.54092 6.62504 5.28092 5.33504 4.91092 3.55504C4.54092 1.78504 5.21092 0.205043 6.39092 0.0150431ZM13.5409 0.0150431C14.7309 0.205043 15.3909 1.78504 15.0409 3.55504C14.6609 5.33504 13.4109 6.62504 12.2309 6.44504C11.0409 6.26504 10.3909 4.68504 10.7609 2.91504C11.1209 1.13504 12.3709 -0.154957 13.5409 0.0150431ZM1.04092 4.61504C2.18092 4.12504 3.73092 5.01504 4.54092 6.56504C5.30092 8.14504 5.04092 9.80504 3.91092 10.295C2.78092 10.785 1.24092 9.90504 0.450922 8.33504C-0.339078 6.76504 -0.059078 5.09504 1.04092 4.61504ZM19.0409 4.61504C20.1409 5.09504 20.4209 6.76504 19.6309 8.33504C18.8409 9.90504 17.3009 10.785 16.1709 10.295C15.0409 9.80504 14.7809 8.14504 15.5409 6.56504C16.3509 5.01504 17.9009 4.12504 19.0409 4.61504ZM17.3709 15.395C17.4109 16.335 16.6909 17.375 15.8309 17.765C14.0409 18.585 11.9209 16.885 9.93092 16.885C7.94092 16.885 5.80092 18.655 4.04092 17.765C3.04092 17.275 2.35092 15.975 2.48092 14.895C2.66092 13.405 4.45092 12.605 5.51092 11.515C6.92092 10.105 7.92092 7.45504 9.93092 7.45504C11.9309 7.45504 12.9909 10.065 14.3409 11.515C15.4509 12.735 17.3009 13.765 17.3709 15.395Z"
 					fill="#018786" />
 			</symbol>
 	
-			<symbol id="icon-calendar" width="24" height="24" viewBox="0 0 24 24" fill="none"
+			<symbol id="icon-calendar" viewBox="0 0 24 24" fill="none"
 				xmlns="http://www.w3.org/2000/svg">
 				<path fill-rule="evenodd" clip-rule="evenodd"
 					d="M16 2V4H8V2H6V4H5C3.89 4 3.01 4.9 3.01 6L3 20C3 21.1 3.89 22 5 22H19C20.1 22 21 21.1 21 20V6C21 4.9 20.1 4 19 4H18V2H16ZM17 13H12V18H17V13ZM5 20H19V9H5V20Z"
