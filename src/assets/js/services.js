@@ -1,4 +1,22 @@
 'use strict';
+let menuBtn = document.querySelector('.ba-menu-toggle');
+let menuWrap = document.querySelector('.ba-toggle-nav');
+
+let closeBtn = document.querySelector('.ba-close-button');
+
+menuBtn.addEventListener('click', () => {
+	menuWrap.classList.toggle('active');
+});
+
+closeBtn.addEventListener('click', () => {
+	menuWrap.classList.remove('active');
+});
+
+
+
+
+
+
 //Example 1
 //Err: Uncaught (in promise) SyntaxError: Unexpected token < in JSON at position 0
 let url = 'src/data/services.json';

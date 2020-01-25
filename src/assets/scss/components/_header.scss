@@ -21,7 +21,7 @@
       border-bottom: 2px solid transparent;
       &:hover {
         border-bottom: 2px solid $white;
-      }
+		}
     }
 
     li + li {
@@ -38,11 +38,40 @@
 }
 
 .ba-menu-toggle {
-  position: relative;
   top: 12px;
   margin-right: 12px;
   margin-left: 8px;
-  &:hover{
-  cursor: pointer;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.ba-toggle-nav {
+  display: none;
+}
+.ba-toggle-nav.active {
+  display: block;
+  position: absolute;
+  max-width: 147px;
+  max-height: 141px;
+  top: 10%;
+  left: 2%;
+  background: $body-background;
+  z-index: 13;
+  padding: 30px 8px 20px 4px;
+  a:hover {
+    color: lighten($black, $amount: 70);
+  }
+  .ba-close-button {
+    font-size: 16px;
+    position: absolute;
+    right: 10px;
+    top: -5px;
+    padding: 0;
+    margin: 0;
+    &:hover {
+      background-color: transparent;
+      color: lighten($black, $amount: 70);
+    }
   }
 }

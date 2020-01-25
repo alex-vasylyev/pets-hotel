@@ -28,11 +28,7 @@
 <body>
 
 	{{!-- Pages you create in the src/pages/ folder are inserted here when the flattened page is created. --}}
-	<div class="off-canvas-wrapper">
-		<div class="off-canvas position-left" id="offCanvas" data-off-canvas >
-			{{> offcanvas}}
-		</div>
-		<div class="off-canvas-content" data-off-canvas-content>
+	
 			{{> header}}
 
 			<main>
@@ -40,9 +36,6 @@
 			</main>
 
 			{{> footer}}
-
-		</div>
-	</div>
 
 	{{> svg-sprite}}
 
@@ -53,9 +46,7 @@
 		integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
 		crossorigin="anonymous"></script>
 
-	
 	<script src="{{root}}assets/js/app.js"></script>
-
 </body>
 
 </html>

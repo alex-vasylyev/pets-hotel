@@ -28,7 +28,7 @@
 // @include foundation-breadcrumbs;
 // @include foundation-callout;
 // @include foundation-card;
-// @include foundation-dropdown;
+@include foundation-dropdown;
 // @include foundation-pagination;
 // @include foundation-tooltip;
 
@@ -42,9 +42,9 @@
 // Menu-based containers
 @include foundation-menu;
 @include foundation-menu-icon;
-// @include foundation-accordion-menu;
+//@include foundation-accordion-menu;
 // @include foundation-drilldown-menu;
-// @include foundation-dropdown-menu;
+@include foundation-dropdown-menu;
 
 // Layout components
 @include foundation-off-canvas;
