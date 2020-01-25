@@ -27,23 +27,22 @@
 <body>
 
 	<div class="off-canvas-wrapper">
-		<div class="off-canvas position-right" id="offCanvas" data-off-canvas data-content-scroll=false>
-			<nav>
-			    <ul class="menu vertical">
-			        <li class="active">
-			            <a href="index.html">Home</a>
-			        </li>
-			    </ul>
-			</nav>
+		<div class="off-canvas position-left" id="offCanvas" data-off-canvas >
 			
-			<nav>
+			<!-- Close button -->
+			<button class="close-button" aria-label="Close menu" type="button" data-close>
+				<span aria-hidden="true">&times;</span>
+			 </button>
+			
+			<nav class="ba-toggle-nav">
 				<ul class="menu vertical">
-					<li><a href="#">Головна</a></li>
-					<li><a href="#">Замовити послугу</a></li>
-					<li><a href="#">Відгуки</a></li>
-					<li><a href="#">Наші фото</a></li>
+					<li><a href="index.html">Головна</a></li>
+					<li><a href="order-service.html">Замовити послугу</a></li>
+					<li><a href="reviews.html">Відгуки</a></li>
+					<li><a href="gallery.html">Наші фото</a></li>
 			  </ul>
-			</nav>		</div>
+			</nav>
+		</div>
 		<div class="off-canvas-content" data-off-canvas-content>
 			<header class="ba-header">
 				<div class="row align-justify align-middle">

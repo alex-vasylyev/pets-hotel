@@ -1,0 +1,10 @@
+.ba-toggle-nav {
+  li + li {
+    margin-top: 12px;
+  }
+}
+
+.ba-toggle-nav li a {
+  color: $black;
+  margin-left: 10px;
+}

@@ -3,13 +3,13 @@
   position: relative;
 
   .ba-logo {
-	display: flex;
-	align-items: center;
-	@include breakpoint(large){
-		display: block;
-	}
+    display: flex;
+    align-items: center;
+    @include breakpoint(large) {
+      display: block;
+    }
     padding-top: 12px;
-	 padding-bottom: 19px;
+    padding-bottom: 19px;
   }
   .ba-nav {
     font-size: 20px;
@@ -37,9 +37,12 @@
   }
 }
 
-.ba-menu-toggle{
-	position: relative;
-	top: 12px;
-	margin-right: 12px;
-	margin-left: 8px;
+.ba-menu-toggle {
+  position: relative;
+  top: 12px;
+  margin-right: 12px;
+  margin-left: 8px;
+  &:hover{
+  cursor: pointer;
+  }
 }
