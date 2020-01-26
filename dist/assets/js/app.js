@@ -13371,7 +13371,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-
+ //Burger menu
 
 var menuBtn = document.querySelector('.ba-menu-toggle');
 var menuWrap = document.querySelector('.ba-toggle-nav');
