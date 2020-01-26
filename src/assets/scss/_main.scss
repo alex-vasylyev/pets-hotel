@@ -36,7 +36,7 @@ button,
 
   &:hover,
   &:active {
-    background-color: darken($color: $primary-color, $amount: 10);
+   color: lighten($color: $primary-color, $amount: 50);
   }
 }
 
@@ -80,5 +80,9 @@ img {
     @include breakpoint(medium) {
       padding-bottom: 70px;
     }
+  }
+  &--my-profile {
+    padding-top: 83px;
+    padding-bottom: 48px;
   }
 }
