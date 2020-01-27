@@ -36,7 +36,7 @@ button,
 
   &:hover,
   &:active {
-   color: lighten($color: $primary-color, $amount: 50);
+    color: lighten($color: $primary-color, $amount: 50);
   }
 }
 
@@ -82,7 +82,10 @@ img {
     }
   }
   &--my-profile {
-    padding-top: 83px;
-    padding-bottom: 48px;
+	  padding: 17px 0;
+    @include breakpoint(large) {
+      padding-top: 83px;
+      padding-bottom: 48px;
+    }
   }
 }
