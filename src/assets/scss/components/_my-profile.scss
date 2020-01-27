@@ -1,0 +1,148 @@
+.ba-my-profile-section {
+  color: $black;
+  img {
+    display: block;
+    width: 100%;
+  }
+  a,
+  button {
+    color: $primary-color;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    &:hover,
+    &:active {
+      color: lighten($color: $primary-color, $amount: 10);
+    }
+  }
+  a {
+    font-size: 12px;
+  }
+}
+
+.ba-my-profile-info-container {
+  margin-bottom: 10px;
+  @include breakpoint(medium) {
+    margin-bottom: 44px;
+  }
+
+  background-color: $white;
+  &__info {
+    padding: 0 16px;
+    margin-bottom: 25px;
+    .ba-info-container-title {
+      font-size: 20px;
+      padding-top: 35px;
+      margin-bottom: 20px;
+    }
+    .ba-info-container-desc {
+      margin-top: 9px;
+      font-size: 14px;
+      font-weight: 300;
+    }
+  }
+
+  &__settings {
+    padding-left: 10px;
+    padding-bottom: 27px;
+    @include breakpoint(1062px) {
+      button + button {
+        margin-left: 20px;
+      }
+    }
+  }
+}
+
+.ba-my-profile-services-info {
+  display: flex;
+  padding: 0 10px;
+  margin-bottom: 0;
+
+  p {
+    font-size: 16px;
+    font-weight: 500;
+  }
+}
+.ba-my-profile-services-info--small {
+  display: flex;
+  margin-top: 22px;
+  padding-bottom: 26px;
+  border-bottom: 1px solid $medium-gray;
+}
+
+.ba-buttons-my-profile-small{
+	display: flex;
+	justify-content: space-between;
+	padding-top: 17px;
+}
+
+.ba-pet-card {
+  max-height: 148px;
+  flex-direction: row;
+  @include breakpoint(medium) {
+    max-height: 238px;
+  }
+
+  .ba-card-section-left {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    flex-grow: 1;
+    @include breakpoint(medium) {
+      // margin-bottom: 110px;
+    }
+    .ba-pet-name {
+      font-size: 24px;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+  }
+
+  &__settings {
+    button {
+      padding: 0;
+    }
+
+    button + button {
+      margin-left: 16px;
+    }
+  }
+  .ba-card-section-right {
+    @media screen and (max-width: 640px) {
+      width: 100px;
+      height: 100px;
+    }
+
+    @include breakpoint(medium) {
+      padding: 0;
+    }
+  }
+}
+
+.ba-pet-card + .ba-pet-card {
+  @include breakpoint(medium) {
+    margin-top: 40px;
+  }
+}
+.add-pet-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include breakpoint(medium) {
+    justify-content: flex-start;
+  }
+
+  span {
+    margin-right: 9px;
+    &:hover {
+      cursor: pointer;
+      color: lighten($color: $primary-color, $amount: 10);
+    }
+    font-weight: 300;
+    font-size: 20px;
+    color: $primary-color;
+  }
+}

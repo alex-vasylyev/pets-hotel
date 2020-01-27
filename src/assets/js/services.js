@@ -1,4 +1,6 @@
 'use strict';
+
+//Burger menu
 let menuBtn = document.querySelector('.ba-menu-toggle');
 let menuWrap = document.querySelector('.ba-toggle-nav');
 
