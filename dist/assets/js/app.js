@@ -13384,7 +13384,7 @@ closeBtn.addEventListener('click', function () {
 }); //Example 1
 //Err: Uncaught (in promise) SyntaxError: Unexpected token < in JSON at position 0
 
-var url = 'src/data/services.json';
+var url = 'src/json/services.json';
 
 function sendRequest(event) {
   event.preventDefault();
