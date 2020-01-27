@@ -21,7 +21,7 @@ closeBtn.addEventListener('click', () => {
 
 //Example 1
 //Err: Uncaught (in promise) SyntaxError: Unexpected token < in JSON at position 0
-let url = 'src/data/services.json';
+let url = 'src/json/services.json';
 
 function sendRequest(event) {
 	event.preventDefault();
