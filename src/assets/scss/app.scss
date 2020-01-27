@@ -27,7 +27,7 @@
 // @include foundation-badge;
 // @include foundation-breadcrumbs;
 // @include foundation-callout;
-// @include foundation-card;
+@include foundation-card;
 @include foundation-dropdown;
 // @include foundation-pagination;
 // @include foundation-tooltip;
@@ -73,4 +73,5 @@
 @import "components/section-advantages";
 @import "components/section-settlement-conditions";
 @import "components/section-services";
+@import "components/section-reviews";
 @import "components/offcanvas";

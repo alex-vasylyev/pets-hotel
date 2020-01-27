@@ -1,0 +1,99 @@
+.ba-section-reviews {
+  padding-top: 122px;
+  padding-bottom: 70px;
+
+  .row {
+    padding-bottom: 70px;
+  }
+
+  img {
+    max-height: 168px;
+    max-width: 262px;
+  }
+  .cell + .cell {
+    padding-left: 30px;
+  }
+}
+
+.ba-reviews {
+
+	.ba-review-block1{
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.ba-review-block2{
+		display: flex;
+		padding-top: 2px;
+
+	}
+
+  &--username {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 16px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+
+  &--date {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: right;
+    letter-spacing: 0.4px;
+  }
+
+  &--petname {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+	 letter-spacing: 0.15px;
+	 
+	 &::after{
+		 content: ",";
+	 }
+  }
+
+  &--petold {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+	 letter-spacing: 0.15px;
+	 
+	 padding-bottom: 13px;
+  }
+
+  &--order {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.25px;
+  }
+}
+
+.ba-reviews-bnt{
+	color: #018786;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 16px;
+	text-align: center;
+	letter-spacing: 0.75px;
+	text-transform: uppercase;
+
+	display: flex;
+	justify-content: center;
+
+}
