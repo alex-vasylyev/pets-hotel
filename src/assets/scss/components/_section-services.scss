@@ -1,7 +1,11 @@
 .ba-section--services {
   img {
     display: block;
-    width: 100%;
+	 width: 100%;
+	 @include breakpoint(large){
+		margin-left: -15px;
+	 }
+	 
   }
 }
 
