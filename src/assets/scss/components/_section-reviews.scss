@@ -81,6 +81,10 @@
 .ba-review-read-more-btn {
   color: $primary-color;
   padding-left: 40px;
+  &:hover,
+    &:active {
+      color: lighten($color: $primary-color, $amount: 10);
+    }
 }
 
 .ba-reviews-bnt {
@@ -91,6 +95,11 @@
   text-align: center;
   letter-spacing: 0.75px;
   text-transform: uppercase;
+
+  &:hover,
+    &:active {
+      color: lighten($color: $primary-color, $amount: 10);
+    }
 
   display: flex;
   justify-content: center;
