@@ -54,10 +54,6 @@ button,
     padding-bottom: 30px;
 	 padding-top: 30px;
 	 
-	 &:hover, &:active{
-		 color: $white;
-		 background-color: darken($primary-color, $amount: 50);
-	 }
     @include breakpoint(medium) {
       font-size: 93px;
       padding-bottom: 80px;
