@@ -13371,17 +13371,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
- //Burger menu
-
-var menuBtn = document.querySelector('.ba-menu-toggle');
-var menuWrap = document.querySelector('.ba-toggle-nav');
-var closeBtn = document.querySelector('.ba-close-button');
-menuBtn.addEventListener('click', function () {
-  menuWrap.classList.toggle('active');
-});
-closeBtn.addEventListener('click', function () {
-  menuWrap.classList.remove('active');
-}); //Example 1
+ //Example 1
 //Err: Uncaught (in promise) SyntaxError: Unexpected token < in JSON at position 0
 
 var url = 'src/json/services.json';
