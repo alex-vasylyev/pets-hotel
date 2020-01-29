@@ -26,127 +26,114 @@
 
 <body>
 
-	
-			<header class="ba-header">
-				<script>
-					//Burger menu
-			let menuBtn = document.querySelector('.ba-menu-toggle');
-			let menuWrap = document.querySelector('.ba-toggle-nav');
-			
-			let closeBtn = document.querySelector('.ba-close-button');
-			
-			menuBtn.addEventListener('click', () => {
-				menuWrap.classList.toggle('active');
-			});
-			
-			closeBtn.addEventListener('click', () => {
-				menuWrap.classList.remove('active');
-			});</script>
-				<div class="row ba-header-row align-justify align-middle">
-					<div class="column small-6 large-3 ba-logo">
-			
-						<button class="menu-icon ba-menu-toggle white hide-for-large" type="button" ></button>			
-							<nav class="ba-toggle-nav">
-								<button class="ba-close-button" type="button" data-close>							
-									<span aria-hidden="true">&times;</span>
-								</button>			
-								 <ul class="menu vertical">
-									<li><a href="index.html">Головна</a></li>
-									<li><a href="order-service.html">Замовити послугу</a></li>
-									<li><a href="reviews.html">Відгуки</a></li>
-									<li><a href="gallery.html">Наші фото</a></li>
-							  </ul>
-							</nav>
-			
-						<a href="index.html">
-							<img src="assets/img/logo.svg" alt="logo">
-						</a>
-					</div>
-					<div class="small-2 column large-9 align-middle">
-						<div class="row align-right">
-							<nav class="ba-nav">
-								<ul class="menu ba-nav-menu simple show-for-large">
-									<li class="ba-menu-item"><a href="index.html">Головна</a></li>
-									<li class="ba-menu-item"><a href="order-service.html">Замовити послугу</a></li>
-									<li class="ba-menu-item"><a href="reviews.html">Відгуки</a></li>
-									<li class="ba-menu-item"><a href="gallery.html">Наші фото</a></li>
-								</ul>
-							</nav>
-							<!-- /.ba-nav -->
-							<div class="ba-my-profile">
-								<a href="my-profile.html">
-									<img src="assets/img/user.svg" alt="User">
-								</a>
-							</div>
-						</div>
-					</div>
-					<!-- /.column -->
-				</div>
-				<!-- /.row -->
-			</header>
-			<main>
-				<div class="ba-section-gallery">
-					<div class="row">
-						<div class="column">
-							<div class="ba-gallery">
-								<div class="row">
-									<div class="small-12 medium-6 large-6"><img src="assets/img/gallery/image1.jpg" alt="img"></div>
-									<div class="small-12 medium-6 large-3"><img src="assets/img/gallery/image2.jpg" alt="img"></div>
-									<div class="small-12 medium-6 large-3"><img src="assets/img/gallery/image3.jpg" alt="img"></div>
-									<div class="small-12 medium-6 large-6"><img src="assets/img/gallery/image4.jpg" alt="img"></div>
-									<div class="small-12 medium-6 large-6"><img src="assets/img/gallery/image5.jpg" alt="img"></div>
-									<div class="small-12 medium-6 large-8"><img src="assets/img/gallery/image6.jpg" alt="img"></div>
-									<div class="small-12 large-4"><img src="assets/img/gallery/image7.jpg" alt="img"></div>
-								</div>
-				
-							</div>
-						</div>
-					</div>
-				
-					<a href="#" class="ba-gallery-bnt">Ще відгуки</a>
-				</div>
-				
-			</main>
 
-			<footer class="ba-footer">
-			    <div class="row">
-					<div class="column small-6 medium-6 large-3 ba-footer__col-1">
-						<a href="https://mail.google.com/">petshostel@gmail.com</a>
-						<a href="https://mail.google.com/">hotel@gmail.com</a>
-					</div>
-					<!-- /.column -->
-					<div class="column small-6 medium-4 large-6 ba-footer__col-2">
-						<a href="index.html">
-							<img class="ba-footer-logotext" src="assets/img/logo.svg" alt="logo">
+	<header class="ba-header">
+	
+		<div class="row ba-header-row align-justify align-middle">
+			<div class="column small-6 large-3 ba-logo">
+	
+				<button class="menu-icon ba-menu-toggle white hide-for-large" type="button" ></button>			
+					<nav class="ba-toggle-nav">
+						<button class="ba-close-button" type="button" data-close>							
+							<span aria-hidden="true">&times;</span>
+						</button>			
+						 <ul class="menu vertical">
+							<li><a href="index.html">Головна</a></li>
+							<li><a href="order-service.html">Замовити послугу</a></li>
+							<li><a href="reviews.html">Відгуки</a></li>
+							<li><a href="gallery.html">Наші фото</a></li>
+					  </ul>
+					</nav>
+	
+				<a href="index.html">
+					<img src="assets/img/logo.svg" alt="logo">
+				</a>
+			</div>
+			<div class="small-2 column large-9 align-middle">
+				<div class="row align-right">
+					<nav class="ba-nav">
+						<ul class="menu ba-nav-menu simple show-for-large">
+							<li class="ba-menu-item"><a href="index.html">Головна</a></li>
+							<li class="ba-menu-item"><a href="order-service.html">Замовити послугу</a></li>
+							<li class="ba-menu-item"><a href="reviews.html">Відгуки</a></li>
+							<li class="ba-menu-item"><a href="gallery.html">Наші фото</a></li>
+						</ul>
+					</nav>
+					<!-- /.ba-nav -->
+					<div class="ba-my-profile">
+						<a href="my-profile.html">
+							<img src="assets/img/user.svg" alt="User">
 						</a>
 					</div>
-					<!-- /.column -->
-					<div class="column small-6 medium-6 large-3 ba-footer__col-3">
-						<a href="tel:+380953332216">+38 (095) 333 22 16</a>
-						<div class="ba-footer-socials">
-							<a href="https://twitter.com/" target="_blank">
-								<svg width="16" height="14"> 
-									<use xlink:href="#icon-twitter"/>
-								</svg>
-							</a>
-							<a href="https://www.linkedin.com/" target="_blank">
-								<svg width="16" height="16"> 
-									<use xlink:href="#icon-linkedin"/>
-								</svg>
-							</a>
-							<a href="https://www.google.com/" target="_blank">
-								<svg width="14" height="14"> 
-									<use xlink:href="#icon-google"/>
-								</svg>
-							</a>
+				</div>
+			</div>
+			<!-- /.column -->
+		</div>
+		<!-- /.row -->
+	</header>
+	<main>
+		<div class="ba-section-gallery">
+			<div class="row">
+				<div class="column">
+					<div class="ba-gallery">
+						<div class="row">
+							<div class="small-12 medium-6 large-6"><img src="assets/img/gallery/image1.jpg" alt="img"></div>
+							<div class="small-12 medium-6 large-3"><img src="assets/img/gallery/image2.jpg" alt="img"></div>
+							<div class="small-12 medium-6 large-3"><img src="assets/img/gallery/image3.jpg" alt="img"></div>
+							<div class="small-12 medium-6 large-6"><img src="assets/img/gallery/image4.jpg" alt="img"></div>
+							<div class="small-12 medium-6 large-6"><img src="assets/img/gallery/image5.jpg" alt="img"></div>
+							<div class="small-12 medium-6 large-8"><img src="assets/img/gallery/image6.jpg" alt="img"></div>
+							<div class="small-12 large-4"><img src="assets/img/gallery/image7.jpg" alt="img"></div>
 						</div>
-						<!-- /.ba-social -->
+		
 					</div>
-					<!-- /.column -->
-			    </div>
-			    <!-- /.row -->
-			</footer>
-			<!-- /.ba-footer -->
+				</div>
+			</div>
+		
+			<a href="#" class="ba-gallery-bnt">Ще відгуки</a>
+		</div>
+		
+	</main>
+
+	<footer class="ba-footer">
+	    <div class="row">
+			<div class="column small-6 medium-6 large-3 ba-footer__col-1">
+				<a href="https://mail.google.com/">petshostel@gmail.com</a>
+				<a href="https://mail.google.com/">hotel@gmail.com</a>
+			</div>
+			<!-- /.column -->
+			<div class="column small-6 medium-4 large-6 ba-footer__col-2">
+				<a href="index.html">
+					<img class="ba-footer-logotext" src="assets/img/logo.svg" alt="logo">
+				</a>
+			</div>
+			<!-- /.column -->
+			<div class="column small-6 medium-6 large-3 ba-footer__col-3">
+				<a href="tel:+380953332216">+38 (095) 333 22 16</a>
+				<div class="ba-footer-socials">
+					<a href="https://twitter.com/" target="_blank">
+						<svg width="16" height="14"> 
+							<use xlink:href="#icon-twitter"/>
+						</svg>
+					</a>
+					<a href="https://www.linkedin.com/" target="_blank">
+						<svg width="16" height="16"> 
+							<use xlink:href="#icon-linkedin"/>
+						</svg>
+					</a>
+					<a href="https://www.google.com/" target="_blank">
+						<svg width="14" height="14"> 
+							<use xlink:href="#icon-google"/>
+						</svg>
+					</a>
+				</div>
+				<!-- /.ba-social -->
+			</div>
+			<!-- /.column -->
+	    </div>
+	    <!-- /.row -->
+	</footer>
+	<!-- /.ba-footer -->
 	<svg height="0" width="0" style="position: absolute;">
 		<defs>
 			<symbol id="user-icon" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -217,6 +204,20 @@
 		crossorigin="anonymous"></script>
 
 	<script src="assets/js/app.js"></script>
+	<script>
+		//Burger menu
+		let menuBtn = document.querySelector('.ba-menu-toggle');
+		let menuWrap = document.querySelector('.ba-toggle-nav');
+
+		let closeBtn = document.querySelector('.ba-close-button');
+
+		menuBtn.addEventListener('click', () => {
+			menuWrap.classList.toggle('active');
+		});
+
+		closeBtn.addEventListener('click', () => {
+			menuWrap.classList.remove('active');
+		});</script>
 </body>
 
 </html>
