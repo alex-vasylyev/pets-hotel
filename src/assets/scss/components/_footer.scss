@@ -27,15 +27,15 @@
     padding-left: 6.5%;
     margin-top: -12px;
 
-    img {
-      margin-left: 15px;
-    }
-    @include show-for(large);
-  }
-  &__col-3 {
-    text-align: right;
-    padding-right: 32px;
-  }
+		img {
+			margin-left: 15px;
+		}
+		@include show-for(large);
+  	}
+	&__col-3 {
+		text-align: right;
+		padding-right: 32px;
+	}
 }
 
 .ba-footer-logotext {
