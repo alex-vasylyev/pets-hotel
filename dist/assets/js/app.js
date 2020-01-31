@@ -1566,6 +1566,777 @@ OffCanvas.defaults = {
 
 /***/ }),
 
+/***/ "./node_modules/foundation-sites/js/foundation.reveal.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/foundation-sites/js/foundation.reveal.js ***!
+  \***************************************************************/
+/*! exports provided: Reveal */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Reveal", function() { return Reveal; });
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _foundation_core_plugin__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./foundation.core.plugin */ "./node_modules/foundation-sites/js/foundation.core.plugin.js");
+/* harmony import */ var _foundation_core_utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./foundation.core.utils */ "./node_modules/foundation-sites/js/foundation.core.utils.js");
+/* harmony import */ var _foundation_util_keyboard__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./foundation.util.keyboard */ "./node_modules/foundation-sites/js/foundation.util.keyboard.js");
+/* harmony import */ var _foundation_util_mediaQuery__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./foundation.util.mediaQuery */ "./node_modules/foundation-sites/js/foundation.util.mediaQuery.js");
+/* harmony import */ var _foundation_util_motion__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./foundation.util.motion */ "./node_modules/foundation-sites/js/foundation.util.motion.js");
+/* harmony import */ var _foundation_util_triggers__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./foundation.util.triggers */ "./node_modules/foundation-sites/js/foundation.util.triggers.js");
+/* harmony import */ var _foundation_util_touch__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./foundation.util.touch */ "./node_modules/foundation-sites/js/foundation.util.touch.js");
+
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+
+
+
+
+
+/**
+ * Reveal module.
+ * @module foundation.reveal
+ * @requires foundation.util.keyboard
+ * @requires foundation.util.touch
+ * @requires foundation.util.triggers
+ * @requires foundation.util.mediaQuery
+ * @requires foundation.util.motion if using animations
+ */
+
+var Reveal =
+/*#__PURE__*/
+function (_Plugin) {
+  _inherits(Reveal, _Plugin);
+
+  function Reveal() {
+    _classCallCheck(this, Reveal);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(Reveal).apply(this, arguments));
+  }
+
+  _createClass(Reveal, [{
+    key: "_setup",
+
+    /**
+     * Creates a new instance of Reveal.
+     * @class
+     * @name Reveal
+     * @param {jQuery} element - jQuery object to use for the modal.
+     * @param {Object} options - optional parameters.
+     */
+    value: function _setup(element, options) {
+      this.$element = element;
+      this.options = jquery__WEBPACK_IMPORTED_MODULE_0___default.a.extend({}, Reveal.defaults, this.$element.data(), options);
+      this.className = 'Reveal'; // ie9 back compat
+
+      this._init(); // Touch and Triggers init are idempotent, just need to make sure they are initialized
+
+
+      _foundation_util_touch__WEBPACK_IMPORTED_MODULE_7__["Touch"].init(jquery__WEBPACK_IMPORTED_MODULE_0___default.a);
+      _foundation_util_triggers__WEBPACK_IMPORTED_MODULE_6__["Triggers"].init(jquery__WEBPACK_IMPORTED_MODULE_0___default.a);
+      _foundation_util_keyboard__WEBPACK_IMPORTED_MODULE_3__["Keyboard"].register('Reveal', {
+        'ESCAPE': 'close'
+      });
+    }
+    /**
+     * Initializes the modal by adding the overlay and close buttons, (if selected).
+     * @private
+     */
+
+  }, {
+    key: "_init",
+    value: function _init() {
+      var _this2 = this;
+
+      _foundation_util_mediaQuery__WEBPACK_IMPORTED_MODULE_4__["MediaQuery"]._init();
+
+      this.id = this.$element.attr('id');
+      this.isActive = false;
+      this.cached = {
+        mq: _foundation_util_mediaQuery__WEBPACK_IMPORTED_MODULE_4__["MediaQuery"].current
+      };
+      this.$anchor = jquery__WEBPACK_IMPORTED_MODULE_0___default()("[data-open=\"".concat(this.id, "\"]")).length ? jquery__WEBPACK_IMPORTED_MODULE_0___default()("[data-open=\"".concat(this.id, "\"]")) : jquery__WEBPACK_IMPORTED_MODULE_0___default()("[data-toggle=\"".concat(this.id, "\"]"));
+      this.$anchor.attr({
+        'aria-controls': this.id,
+        'aria-haspopup': true,
+        'tabindex': 0
+      });
+
+      if (this.options.fullScreen || this.$element.hasClass('full')) {
+        this.options.fullScreen = true;
+        this.options.overlay = false;
+      }
+
+      if (this.options.overlay && !this.$overlay) {
+        this.$overlay = this._makeOverlay(this.id);
+      }
+
+      this.$element.attr({
+        'role': 'dialog',
+        'aria-hidden': true,
+        'data-yeti-box': this.id,
+        'data-resize': this.id
+      });
+
+      if (this.$overlay) {
+        this.$element.detach().appendTo(this.$overlay);
+      } else {
+        this.$element.detach().appendTo(jquery__WEBPACK_IMPORTED_MODULE_0___default()(this.options.appendTo));
+        this.$element.addClass('without-overlay');
+      }
+
+      this._events();
+
+      if (this.options.deepLink && window.location.hash === "#".concat(this.id)) {
+        this.onLoadListener = Object(_foundation_core_utils__WEBPACK_IMPORTED_MODULE_2__["onLoad"])(jquery__WEBPACK_IMPORTED_MODULE_0___default()(window), function () {
+          return _this2.open();
+        });
+      }
+    }
+    /**
+     * Creates an overlay div to display behind the modal.
+     * @private
+     */
+
+  }, {
+    key: "_makeOverlay",
+    value: function _makeOverlay() {
+      var additionalOverlayClasses = '';
+
+      if (this.options.additionalOverlayClasses) {
+        additionalOverlayClasses = ' ' + this.options.additionalOverlayClasses;
+      }
+
+      return jquery__WEBPACK_IMPORTED_MODULE_0___default()('<div></div>').addClass('reveal-overlay' + additionalOverlayClasses).appendTo(this.options.appendTo);
+    }
+    /**
+     * Updates position of modal
+     * TODO:  Figure out if we actually need to cache these values or if it doesn't matter
+     * @private
+     */
+
+  }, {
+    key: "_updatePosition",
+    value: function _updatePosition() {
+      var width = this.$element.outerWidth();
+      var outerWidth = jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).width();
+      var height = this.$element.outerHeight();
+      var outerHeight = jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).height();
+      var left,
+          top = null;
+
+      if (this.options.hOffset === 'auto') {
+        left = parseInt((outerWidth - width) / 2, 10);
+      } else {
+        left = parseInt(this.options.hOffset, 10);
+      }
+
+      if (this.options.vOffset === 'auto') {
+        if (height > outerHeight) {
+          top = parseInt(Math.min(100, outerHeight / 10), 10);
+        } else {
+          top = parseInt((outerHeight - height) / 4, 10);
+        }
+      } else if (this.options.vOffset !== null) {
+        top = parseInt(this.options.vOffset, 10);
+      }
+
+      if (top !== null) {
+        this.$element.css({
+          top: top + 'px'
+        });
+      } // only worry about left if we don't have an overlay or we have a horizontal offset,
+      // otherwise we're perfectly in the middle
+
+
+      if (!this.$overlay || this.options.hOffset !== 'auto') {
+        this.$element.css({
+          left: left + 'px'
+        });
+        this.$element.css({
+          margin: '0px'
+        });
+      }
+    }
+    /**
+     * Adds event handlers for the modal.
+     * @private
+     */
+
+  }, {
+    key: "_events",
+    value: function _events() {
+      var _this3 = this;
+
+      var _this = this;
+
+      this.$element.on({
+        'open.zf.trigger': this.open.bind(this),
+        'close.zf.trigger': function closeZfTrigger(event, $element) {
+          if (event.target === _this.$element[0] || jquery__WEBPACK_IMPORTED_MODULE_0___default()(event.target).parents('[data-closable]')[0] === $element) {
+            // only close reveal when it's explicitly called
+            return _this3.close.apply(_this3);
+          }
+        },
+        'toggle.zf.trigger': this.toggle.bind(this),
+        'resizeme.zf.trigger': function resizemeZfTrigger() {
+          _this._updatePosition();
+        }
+      });
+
+      if (this.options.closeOnClick && this.options.overlay) {
+        this.$overlay.off('.zf.reveal').on('click.zf.dropdown tap.zf.dropdown', function (e) {
+          if (e.target === _this.$element[0] || jquery__WEBPACK_IMPORTED_MODULE_0___default.a.contains(_this.$element[0], e.target) || !jquery__WEBPACK_IMPORTED_MODULE_0___default.a.contains(document, e.target)) {
+            return;
+          }
+
+          _this.close();
+        });
+      }
+
+      if (this.options.deepLink) {
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).on("hashchange.zf.reveal:".concat(this.id), this._handleState.bind(this));
+      }
+    }
+    /**
+     * Handles modal methods on back/forward button clicks or any other event that triggers hashchange.
+     * @private
+     */
+
+  }, {
+    key: "_handleState",
+    value: function _handleState(e) {
+      if (window.location.hash === '#' + this.id && !this.isActive) {
+        this.open();
+      } else {
+        this.close();
+      }
+    }
+    /**
+    * Disables the scroll when Reveal is shown to prevent the background from shifting
+    * @param {number} scrollTop - Scroll to visually apply, window current scroll by default
+    */
+
+  }, {
+    key: "_disableScroll",
+    value: function _disableScroll(scrollTop) {
+      scrollTop = scrollTop || jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).scrollTop();
+
+      if (jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).height() > jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).height()) {
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()("html").css("top", -scrollTop);
+      }
+    }
+    /**
+    * Reenables the scroll when Reveal closes
+    * @param {number} scrollTop - Scroll to restore, html "top" property by default (as set by `_disableScroll`)
+    */
+
+  }, {
+    key: "_enableScroll",
+    value: function _enableScroll(scrollTop) {
+      scrollTop = scrollTop || parseInt(jquery__WEBPACK_IMPORTED_MODULE_0___default()("html").css("top"));
+
+      if (jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).height() > jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).height()) {
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()("html").css("top", "");
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).scrollTop(-scrollTop);
+      }
+    }
+    /**
+     * Opens the modal controlled by `this.$anchor`, and closes all others by default.
+     * @function
+     * @fires Reveal#closeme
+     * @fires Reveal#open
+     */
+
+  }, {
+    key: "open",
+    value: function open() {
+      var _this4 = this;
+
+      // either update or replace browser history
+      var hash = "#".concat(this.id);
+
+      if (this.options.deepLink && window.location.hash !== hash) {
+        if (window.history.pushState) {
+          if (this.options.updateHistory) {
+            window.history.pushState({}, '', hash);
+          } else {
+            window.history.replaceState({}, '', hash);
+          }
+        } else {
+          window.location.hash = hash;
+        }
+      } // Remember anchor that opened it to set focus back later, have general anchors as fallback
+
+
+      this.$activeAnchor = jquery__WEBPACK_IMPORTED_MODULE_0___default()(document.activeElement).is(this.$anchor) ? jquery__WEBPACK_IMPORTED_MODULE_0___default()(document.activeElement) : this.$anchor;
+      this.isActive = true; // Make elements invisible, but remove display: none so we can get size and positioning
+
+      this.$element.css({
+        'visibility': 'hidden'
+      }).show().scrollTop(0);
+
+      if (this.options.overlay) {
+        this.$overlay.css({
+          'visibility': 'hidden'
+        }).show();
+      }
+
+      this._updatePosition();
+
+      this.$element.hide().css({
+        'visibility': ''
+      });
+
+      if (this.$overlay) {
+        this.$overlay.css({
+          'visibility': ''
+        }).hide();
+
+        if (this.$element.hasClass('fast')) {
+          this.$overlay.addClass('fast');
+        } else if (this.$element.hasClass('slow')) {
+          this.$overlay.addClass('slow');
+        }
+      }
+
+      if (!this.options.multipleOpened) {
+        /**
+         * Fires immediately before the modal opens.
+         * Closes any other modals that are currently open
+         * @event Reveal#closeme
+         */
+        this.$element.trigger('closeme.zf.reveal', this.id);
+      }
+
+      if (jquery__WEBPACK_IMPORTED_MODULE_0___default()('.reveal:visible').length === 0) {
+        this._disableScroll();
+      }
+
+      var _this = this; // Motion UI method of reveal
+
+
+      if (this.options.animationIn) {
+        var afterAnimation = function afterAnimation() {
+          _this.$element.attr({
+            'aria-hidden': false,
+            'tabindex': -1
+          }).focus();
+
+          _this._addGlobalClasses();
+
+          _foundation_util_keyboard__WEBPACK_IMPORTED_MODULE_3__["Keyboard"].trapFocus(_this.$element);
+        };
+
+        if (this.options.overlay) {
+          _foundation_util_motion__WEBPACK_IMPORTED_MODULE_5__["Motion"].animateIn(this.$overlay, 'fade-in');
+        }
+
+        _foundation_util_motion__WEBPACK_IMPORTED_MODULE_5__["Motion"].animateIn(this.$element, this.options.animationIn, function () {
+          if (_this4.$element) {
+            // protect against object having been removed
+            _this4.focusableElements = _foundation_util_keyboard__WEBPACK_IMPORTED_MODULE_3__["Keyboard"].findFocusable(_this4.$element);
+            afterAnimation();
+          }
+        });
+      } // jQuery method of reveal
+      else {
+          if (this.options.overlay) {
+            this.$overlay.show(0);
+          }
+
+          this.$element.show(this.options.showDelay);
+        } // handle accessibility
+
+
+      this.$element.attr({
+        'aria-hidden': false,
+        'tabindex': -1
+      }).focus();
+      _foundation_util_keyboard__WEBPACK_IMPORTED_MODULE_3__["Keyboard"].trapFocus(this.$element);
+
+      this._addGlobalClasses();
+
+      this._addGlobalListeners();
+      /**
+       * Fires when the modal has successfully opened.
+       * @event Reveal#open
+       */
+
+
+      this.$element.trigger('open.zf.reveal');
+    }
+    /**
+     * Adds classes and listeners on document required by open modals.
+     *
+     * The following classes are added and updated:
+     * - `.is-reveal-open` - Prevents the scroll on document
+     * - `.zf-has-scroll`  - Displays a disabled scrollbar on document if required like if the
+     *                       scroll was not disabled. This prevent a "shift" of the page content due
+     *                       the scrollbar disappearing when the modal opens.
+     *
+     * @private
+     */
+
+  }, {
+    key: "_addGlobalClasses",
+    value: function _addGlobalClasses() {
+      var updateScrollbarClass = function updateScrollbarClass() {
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()('html').toggleClass('zf-has-scroll', !!(jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).height() > jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).height()));
+      };
+
+      this.$element.on('resizeme.zf.trigger.revealScrollbarListener', function () {
+        return updateScrollbarClass();
+      });
+      updateScrollbarClass();
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('html').addClass('is-reveal-open');
+    }
+    /**
+     * Removes classes and listeners on document that were required by open modals.
+     * @private
+     */
+
+  }, {
+    key: "_removeGlobalClasses",
+    value: function _removeGlobalClasses() {
+      this.$element.off('resizeme.zf.trigger.revealScrollbarListener');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('html').removeClass('is-reveal-open');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('html').removeClass('zf-has-scroll');
+    }
+    /**
+     * Adds extra event handlers for the body and window if necessary.
+     * @private
+     */
+
+  }, {
+    key: "_addGlobalListeners",
+    value: function _addGlobalListeners() {
+      var _this = this;
+
+      if (!this.$element) {
+        return;
+      } // If we're in the middle of cleanup, don't freak out
+
+
+      this.focusableElements = _foundation_util_keyboard__WEBPACK_IMPORTED_MODULE_3__["Keyboard"].findFocusable(this.$element);
+
+      if (!this.options.overlay && this.options.closeOnClick && !this.options.fullScreen) {
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()('body').on('click.zf.dropdown tap.zf.dropdown', function (e) {
+          if (e.target === _this.$element[0] || jquery__WEBPACK_IMPORTED_MODULE_0___default.a.contains(_this.$element[0], e.target) || !jquery__WEBPACK_IMPORTED_MODULE_0___default.a.contains(document, e.target)) {
+            return;
+          }
+
+          _this.close();
+        });
+      }
+
+      if (this.options.closeOnEsc) {
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).on('keydown.zf.reveal', function (e) {
+          _foundation_util_keyboard__WEBPACK_IMPORTED_MODULE_3__["Keyboard"].handleKey(e, 'Reveal', {
+            close: function close() {
+              if (_this.options.closeOnEsc) {
+                _this.close();
+              }
+            }
+          });
+        });
+      }
+    }
+    /**
+     * Closes the modal.
+     * @function
+     * @fires Reveal#closed
+     */
+
+  }, {
+    key: "close",
+    value: function close() {
+      if (!this.isActive || !this.$element.is(':visible')) {
+        return false;
+      }
+
+      var _this = this; // Motion UI method of hiding
+
+
+      if (this.options.animationOut) {
+        if (this.options.overlay) {
+          _foundation_util_motion__WEBPACK_IMPORTED_MODULE_5__["Motion"].animateOut(this.$overlay, 'fade-out');
+        }
+
+        _foundation_util_motion__WEBPACK_IMPORTED_MODULE_5__["Motion"].animateOut(this.$element, this.options.animationOut, finishUp);
+      } // jQuery method of hiding
+      else {
+          this.$element.hide(this.options.hideDelay);
+
+          if (this.options.overlay) {
+            this.$overlay.hide(0, finishUp);
+          } else {
+            finishUp();
+          }
+        } // Conditionals to remove extra event listeners added on open
+
+
+      if (this.options.closeOnEsc) {
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).off('keydown.zf.reveal');
+      }
+
+      if (!this.options.overlay && this.options.closeOnClick) {
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()('body').off('click.zf.dropdown tap.zf.dropdown');
+      }
+
+      this.$element.off('keydown.zf.reveal');
+
+      function finishUp() {
+        // Get the current top before the modal is closed and restore the scroll after.
+        // TODO: use component properties instead of HTML properties
+        // See https://github.com/zurb/foundation-sites/pull/10786
+        var scrollTop = parseInt(jquery__WEBPACK_IMPORTED_MODULE_0___default()("html").css("top"));
+
+        if (jquery__WEBPACK_IMPORTED_MODULE_0___default()('.reveal:visible').length === 0) {
+          _this._removeGlobalClasses(); // also remove .is-reveal-open from the html element when there is no opened reveal
+
+        }
+
+        _foundation_util_keyboard__WEBPACK_IMPORTED_MODULE_3__["Keyboard"].releaseFocus(_this.$element);
+
+        _this.$element.attr('aria-hidden', true);
+
+        if (jquery__WEBPACK_IMPORTED_MODULE_0___default()('.reveal:visible').length === 0) {
+          _this._enableScroll(scrollTop);
+        }
+        /**
+        * Fires when the modal is done closing.
+        * @event Reveal#closed
+        */
+
+
+        _this.$element.trigger('closed.zf.reveal');
+      }
+      /**
+      * Resets the modal content
+      * This prevents a running video to keep going in the background
+      */
+
+
+      if (this.options.resetOnClose) {
+        this.$element.html(this.$element.html());
+      }
+
+      this.isActive = false; // If deepLink and we did not switched to an other modal...
+
+      if (_this.options.deepLink && window.location.hash === "#".concat(this.id)) {
+        // Remove the history hash
+        if (window.history.replaceState) {
+          var urlWithoutHash = window.location.pathname + window.location.search;
+
+          if (this.options.updateHistory) {
+            window.history.pushState({}, '', urlWithoutHash); // remove the hash
+          } else {
+            window.history.replaceState('', document.title, urlWithoutHash);
+          }
+        } else {
+          window.location.hash = '';
+        }
+      }
+
+      this.$activeAnchor.focus();
+    }
+    /**
+     * Toggles the open/closed state of a modal.
+     * @function
+     */
+
+  }, {
+    key: "toggle",
+    value: function toggle() {
+      if (this.isActive) {
+        this.close();
+      } else {
+        this.open();
+      }
+    }
+  }, {
+    key: "_destroy",
+
+    /**
+     * Destroys an instance of a modal.
+     * @function
+     */
+    value: function _destroy() {
+      if (this.options.overlay) {
+        this.$element.appendTo(jquery__WEBPACK_IMPORTED_MODULE_0___default()(this.options.appendTo)); // move $element outside of $overlay to prevent error unregisterPlugin()
+
+        this.$overlay.hide().off().remove();
+      }
+
+      this.$element.hide().off();
+      this.$anchor.off('.zf');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).off(".zf.reveal:".concat(this.id));
+      if (this.onLoadListener) jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).off(this.onLoadListener);
+
+      if (jquery__WEBPACK_IMPORTED_MODULE_0___default()('.reveal:visible').length === 0) {
+        this._removeGlobalClasses(); // also remove .is-reveal-open from the html element when there is no opened reveal
+
+      }
+    }
+  }]);
+
+  return Reveal;
+}(_foundation_core_plugin__WEBPACK_IMPORTED_MODULE_1__["Plugin"]);
+
+Reveal.defaults = {
+  /**
+   * Motion-UI class to use for animated elements. If none used, defaults to simple show/hide.
+   * @option
+   * @type {string}
+   * @default ''
+   */
+  animationIn: '',
+
+  /**
+   * Motion-UI class to use for animated elements. If none used, defaults to simple show/hide.
+   * @option
+   * @type {string}
+   * @default ''
+   */
+  animationOut: '',
+
+  /**
+   * Time, in ms, to delay the opening of a modal after a click if no animation used.
+   * @option
+   * @type {number}
+   * @default 0
+   */
+  showDelay: 0,
+
+  /**
+   * Time, in ms, to delay the closing of a modal after a click if no animation used.
+   * @option
+   * @type {number}
+   * @default 0
+   */
+  hideDelay: 0,
+
+  /**
+   * Allows a click on the body/overlay to close the modal.
+   * @option
+   * @type {boolean}
+   * @default true
+   */
+  closeOnClick: true,
+
+  /**
+   * Allows the modal to close if the user presses the `ESCAPE` key.
+   * @option
+   * @type {boolean}
+   * @default true
+   */
+  closeOnEsc: true,
+
+  /**
+   * If true, allows multiple modals to be displayed at once.
+   * @option
+   * @type {boolean}
+   * @default false
+   */
+  multipleOpened: false,
+
+  /**
+   * Distance, in pixels, the modal should push down from the top of the screen.
+   * @option
+   * @type {number|string}
+   * @default auto
+   */
+  vOffset: 'auto',
+
+  /**
+   * Distance, in pixels, the modal should push in from the side of the screen.
+   * @option
+   * @type {number|string}
+   * @default auto
+   */
+  hOffset: 'auto',
+
+  /**
+   * Allows the modal to be fullscreen, completely blocking out the rest of the view. JS checks for this as well.
+   * @option
+   * @type {boolean}
+   * @default false
+   */
+  fullScreen: false,
+
+  /**
+   * Allows the modal to generate an overlay div, which will cover the view when modal opens.
+   * @option
+   * @type {boolean}
+   * @default true
+   */
+  overlay: true,
+
+  /**
+   * Allows the modal to remove and reinject markup on close. Should be true if using video elements w/o using provider's api, otherwise, videos will continue to play in the background.
+   * @option
+   * @type {boolean}
+   * @default false
+   */
+  resetOnClose: false,
+
+  /**
+   * Link the location hash to the modal.
+   * Set the location hash when the modal is opened/closed, and open/close the modal when the location changes.
+   * @option
+   * @type {boolean}
+   * @default false
+   */
+  deepLink: false,
+
+  /**
+   * If `deepLink` is enabled, update the browser history with the open modal
+   * @option
+   * @default false
+   */
+  updateHistory: false,
+
+  /**
+  * Allows the modal to append to custom div.
+  * @option
+  * @type {string}
+  * @default "body"
+  */
+  appendTo: "body",
+
+  /**
+   * Allows adding additional class names to the reveal overlay.
+   * @option
+   * @type {string}
+   * @default ''
+   */
+  additionalOverlayClasses: ''
+};
+
+
+/***/ }),
+
 /***/ "./node_modules/foundation-sites/js/foundation.util.keyboard.js":
 /*!**********************************************************************!*\
   !*** ./node_modules/foundation-sites/js/foundation.util.keyboard.js ***!
@@ -2199,6 +2970,209 @@ function animate(isIn, element, animation, cb) {
     element.removeClass("".concat(initClass, " ").concat(activeClass, " ").concat(animation));
   }
 }
+
+
+
+/***/ }),
+
+/***/ "./node_modules/foundation-sites/js/foundation.util.touch.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/foundation-sites/js/foundation.util.touch.js ***!
+  \*******************************************************************/
+/*! exports provided: Touch */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Touch", function() { return Touch; });
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+//**************************************************
+//**Work inspired by multiple jquery swipe plugins**
+//**Done by Yohai Ararat ***************************
+//**************************************************
+
+var Touch = {};
+var startPosX,
+    startPosY,
+    startTime,
+    elapsedTime,
+    startEvent,
+    isMoving = false,
+    didMoved = false;
+
+function onTouchEnd(e) {
+  this.removeEventListener('touchmove', onTouchMove);
+  this.removeEventListener('touchend', onTouchEnd); // If the touch did not move, consider it as a "tap"
+
+  if (!didMoved) {
+    var tapEvent = jquery__WEBPACK_IMPORTED_MODULE_0___default.a.Event('tap', startEvent || e);
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).trigger(tapEvent);
+  }
+
+  startEvent = null;
+  isMoving = false;
+  didMoved = false;
+}
+
+function onTouchMove(e) {
+  if (jquery__WEBPACK_IMPORTED_MODULE_0___default.a.spotSwipe.preventDefault) {
+    e.preventDefault();
+  }
+
+  if (isMoving) {
+    var x = e.touches[0].pageX;
+    var y = e.touches[0].pageY;
+    var dx = startPosX - x;
+    var dy = startPosY - y;
+    var dir;
+    didMoved = true;
+    elapsedTime = new Date().getTime() - startTime;
+
+    if (Math.abs(dx) >= jquery__WEBPACK_IMPORTED_MODULE_0___default.a.spotSwipe.moveThreshold && elapsedTime <= jquery__WEBPACK_IMPORTED_MODULE_0___default.a.spotSwipe.timeThreshold) {
+      dir = dx > 0 ? 'left' : 'right';
+    } // else if(Math.abs(dy) >= $.spotSwipe.moveThreshold && elapsedTime <= $.spotSwipe.timeThreshold) {
+    //   dir = dy > 0 ? 'down' : 'up';
+    // }
+
+
+    if (dir) {
+      e.preventDefault();
+      onTouchEnd.apply(this, arguments);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).trigger(jquery__WEBPACK_IMPORTED_MODULE_0___default.a.Event('swipe', Object.assign({}, e)), dir).trigger(jquery__WEBPACK_IMPORTED_MODULE_0___default.a.Event("swipe".concat(dir), Object.assign({}, e)));
+    }
+  }
+}
+
+function onTouchStart(e) {
+  if (e.touches.length == 1) {
+    startPosX = e.touches[0].pageX;
+    startPosY = e.touches[0].pageY;
+    startEvent = e;
+    isMoving = true;
+    didMoved = false;
+    startTime = new Date().getTime();
+    this.addEventListener('touchmove', onTouchMove, false);
+    this.addEventListener('touchend', onTouchEnd, false);
+  }
+}
+
+function init() {
+  this.addEventListener && this.addEventListener('touchstart', onTouchStart, false);
+}
+
+function teardown() {
+  this.removeEventListener('touchstart', onTouchStart);
+}
+
+var SpotSwipe =
+/*#__PURE__*/
+function () {
+  function SpotSwipe($) {
+    _classCallCheck(this, SpotSwipe);
+
+    this.version = '1.0.0';
+    this.enabled = 'ontouchstart' in document.documentElement;
+    this.preventDefault = false;
+    this.moveThreshold = 75;
+    this.timeThreshold = 200;
+    this.$ = $;
+
+    this._init();
+  }
+
+  _createClass(SpotSwipe, [{
+    key: "_init",
+    value: function _init() {
+      var $ = this.$;
+      $.event.special.swipe = {
+        setup: init
+      };
+      $.event.special.tap = {
+        setup: init
+      };
+      $.each(['left', 'up', 'down', 'right'], function () {
+        $.event.special["swipe".concat(this)] = {
+          setup: function setup() {
+            $(this).on('swipe', $.noop);
+          }
+        };
+      });
+    }
+  }]);
+
+  return SpotSwipe;
+}();
+/****************************************************
+ * As far as I can tell, both setupSpotSwipe and    *
+ * setupTouchHandler should be idempotent,          *
+ * because they directly replace functions &        *
+ * values, and do not add event handlers directly.  *
+ ****************************************************/
+
+
+Touch.setupSpotSwipe = function ($) {
+  $.spotSwipe = new SpotSwipe($);
+};
+/****************************************************
+ * Method for adding pseudo drag events to elements *
+ ***************************************************/
+
+
+Touch.setupTouchHandler = function ($) {
+  $.fn.addTouch = function () {
+    this.each(function (i, el) {
+      $(el).bind('touchstart touchmove touchend touchcancel', function (event) {
+        //we pass the original event object because the jQuery event
+        //object is normalized to w3c specs and does not provide the TouchList
+        handleTouch(event);
+      });
+    });
+
+    var handleTouch = function handleTouch(event) {
+      var touches = event.changedTouches,
+          first = touches[0],
+          eventTypes = {
+        touchstart: 'mousedown',
+        touchmove: 'mousemove',
+        touchend: 'mouseup'
+      },
+          type = eventTypes[event.type],
+          simulatedEvent;
+
+      if ('MouseEvent' in window && typeof window.MouseEvent === 'function') {
+        simulatedEvent = new window.MouseEvent(type, {
+          'bubbles': true,
+          'cancelable': true,
+          'screenX': first.screenX,
+          'screenY': first.screenY,
+          'clientX': first.clientX,
+          'clientY': first.clientY
+        });
+      } else {
+        simulatedEvent = document.createEvent('MouseEvent');
+        simulatedEvent.initMouseEvent(type, true, true, window, 1, first.screenX, first.screenY, first.clientX, first.clientY, false, false, false, false, 0
+        /*left*/
+        , null);
+      }
+
+      first.target.dispatchEvent(simulatedEvent);
+    };
+  };
+};
+
+Touch.init = function ($) {
+  if (typeof $.spotSwipe === 'undefined') {
+    Touch.setupSpotSwipe($);
+    Touch.setupTouchHandler($);
+  }
+};
 
 
 
@@ -12453,18 +13427,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var foundation_sites_js_foundation_core_utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! foundation-sites/js/foundation.core.utils */ "./node_modules/foundation-sites/js/foundation.core.utils.js");
 /* harmony import */ var foundation_sites_js_foundation_util_keyboard__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! foundation-sites/js/foundation.util.keyboard */ "./node_modules/foundation-sites/js/foundation.util.keyboard.js");
 /* harmony import */ var foundation_sites_js_foundation_util_mediaQuery__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! foundation-sites/js/foundation.util.mediaQuery */ "./node_modules/foundation-sites/js/foundation.util.mediaQuery.js");
-/* harmony import */ var foundation_sites_js_foundation_util_triggers__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! foundation-sites/js/foundation.util.triggers */ "./node_modules/foundation-sites/js/foundation.util.triggers.js");
-/* harmony import */ var foundation_sites_js_foundation_offcanvas__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! foundation-sites/js/foundation.offcanvas */ "./node_modules/foundation-sites/js/foundation.offcanvas.js");
+/* harmony import */ var foundation_sites_js_foundation_util_motion__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! foundation-sites/js/foundation.util.motion */ "./node_modules/foundation-sites/js/foundation.util.motion.js");
+/* harmony import */ var foundation_sites_js_foundation_util_touch__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! foundation-sites/js/foundation.util.touch */ "./node_modules/foundation-sites/js/foundation.util.touch.js");
+/* harmony import */ var foundation_sites_js_foundation_util_triggers__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! foundation-sites/js/foundation.util.triggers */ "./node_modules/foundation-sites/js/foundation.util.triggers.js");
+/* harmony import */ var foundation_sites_js_foundation_offcanvas__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! foundation-sites/js/foundation.offcanvas */ "./node_modules/foundation-sites/js/foundation.offcanvas.js");
+/* harmony import */ var foundation_sites_js_foundation_reveal__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! foundation-sites/js/foundation.reveal */ "./node_modules/foundation-sites/js/foundation.reveal.js");
 
 
  // import { Box } from 'foundation-sites/js/foundation.util.box'
 // import { onImagesLoaded } from 'foundation-sites/js/foundation.util.imageLoader';
 
 
- // import { Motion, Move } from 'foundation-sites/js/foundation.util.motion';
-// import { Nest } from 'foundation-sites/js/foundation.util.nest';
+
+ // import { Nest } from 'foundation-sites/js/foundation.util.nest';
 // import { Timer } from 'foundation-sites/js/foundation.util.timer';
-// import { Touch } from 'foundation-sites/js/foundation.util.touch';
+
 
  // import { Abide } from 'foundation-sites/js/foundation.abide';
 // import { Accordion } from 'foundation-sites/js/foundation.accordion';
@@ -12479,8 +13456,8 @@ __webpack_require__.r(__webpack_exports__);
  // import { Orbit } from 'foundation-sites/js/foundation.orbit';
 // import { ResponsiveMenu } from 'foundation-sites/js/foundation.responsiveMenu';
 // import { ResponsiveToggle } from 'foundation-sites/js/foundation.responsiveToggle';
-// import { Reveal } from 'foundation-sites/js/foundation.reveal';
-// import { Slider } from 'foundation-sites/js/foundation.slider';
+
+ // import { Slider } from 'foundation-sites/js/foundation.slider';
 // import { SmoothScroll } from 'foundation-sites/js/foundation.smoothScroll';
 // import { Sticky } from 'foundation-sites/js/foundation.sticky';
 // import { Tabs } from 'foundation-sites/js/foundation.tabs';
@@ -12507,7 +13484,7 @@ foundation_sites_js_foundation_core__WEBPACK_IMPORTED_MODULE_1__["Foundation"].M
 // // so no need to add it to Foundation, just init them.
 // Touch.init($);
 
-foundation_sites_js_foundation_util_triggers__WEBPACK_IMPORTED_MODULE_5__["Triggers"].init(jquery__WEBPACK_IMPORTED_MODULE_0___default.a, foundation_sites_js_foundation_core__WEBPACK_IMPORTED_MODULE_1__["Foundation"]);
+foundation_sites_js_foundation_util_triggers__WEBPACK_IMPORTED_MODULE_7__["Triggers"].init(jquery__WEBPACK_IMPORTED_MODULE_0___default.a, foundation_sites_js_foundation_core__WEBPACK_IMPORTED_MODULE_1__["Foundation"]);
 
 foundation_sites_js_foundation_util_mediaQuery__WEBPACK_IMPORTED_MODULE_4__["MediaQuery"]._init(); // Foundation.plugin(Abide, 'Abide');
 // Foundation.plugin(Accordion, 'Accordion');
@@ -12520,11 +13497,11 @@ foundation_sites_js_foundation_util_mediaQuery__WEBPACK_IMPORTED_MODULE_4__["Med
 // Foundation.plugin(Magellan, 'Magellan');
 
 
-foundation_sites_js_foundation_core__WEBPACK_IMPORTED_MODULE_1__["Foundation"].plugin(foundation_sites_js_foundation_offcanvas__WEBPACK_IMPORTED_MODULE_6__["OffCanvas"], 'OffCanvas'); // Foundation.plugin(Orbit, 'Orbit');
+foundation_sites_js_foundation_core__WEBPACK_IMPORTED_MODULE_1__["Foundation"].plugin(foundation_sites_js_foundation_offcanvas__WEBPACK_IMPORTED_MODULE_8__["OffCanvas"], 'OffCanvas'); // Foundation.plugin(Orbit, 'Orbit');
 // Foundation.plugin(ResponsiveMenu, 'ResponsiveMenu');
 // Foundation.plugin(ResponsiveToggle, 'ResponsiveToggle');
-// Foundation.plugin(Reveal, 'Reveal');
-// Foundation.plugin(Slider, 'Slider');
+
+foundation_sites_js_foundation_core__WEBPACK_IMPORTED_MODULE_1__["Foundation"].plugin(foundation_sites_js_foundation_reveal__WEBPACK_IMPORTED_MODULE_9__["Reveal"], 'Reveal'); // Foundation.plugin(Slider, 'Slider');
 // Foundation.plugin(SmoothScroll, 'SmoothScroll');
 // Foundation.plugin(Sticky, 'Sticky');
 // Foundation.plugin(Tabs, 'Tabs');
