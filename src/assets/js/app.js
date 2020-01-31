@@ -15,6 +15,8 @@ import './lib/foundation-explicit-pieces';
 
 import './lib/slick.min.js';
 
+import './lib/vue.js';
+
 $(document).foundation();
 
 import './services.js';
