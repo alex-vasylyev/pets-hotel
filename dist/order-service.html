@@ -72,10 +72,10 @@
 		<!-- /.row -->
 	</header>
 	<main>
-		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-		  <link rel="stylesheet" href="/resources/demos/style.css">
-		  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-		  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 		
 		<section id="order" class="ba-section-order ba-section">
 			<div class="row column">
@@ -103,17 +103,23 @@
 										<path fill-rule="evenodd" clip-rule="evenodd" d="M13 0V2H5V0H3V2H2C0.89 2 0.01 2.9 0.01 4L0 18C0 19.1 0.89 20 2 20H16C17.1 20 18 19.1 18 18V4C18 2.9 17.1 2 16 2H15V0H13ZM14 11H9V16H14V11ZM2 18H16V7H2V18Z" fill="#018786"/>
 										</svg>
 										
-									<input class="ba-float-label__input datepicker-here" type="text" id="datepicker" name="date" placeholder="Date"   data-range="true"
+									<input class="ba-float-label__input datepicker-here" type="text" id="datepicker" name="dates" format="YYYY-MM-DD" placeholder="Date"   data-range="true"
 									data-multiple-dates-separator=" - " data-language="en">
 									<label class="ba-float-label__placeholder" for="first_name">Дата*</label>
 								</div>
 								
 								<!-- /.ba-float-label -->
-								<script>
+								<!-- <script>
 									$( function() {
 									  $( "#datepicker" ).datepicker();
 									} );
+									</script> -->
+									<script>
+									$('input[name="dates"]').daterangepicker();
+		
+		
 									</script>
+		
 									<span>1050 грн</span>
 								<div class="ba-float-label ba-float-label-2">
 									

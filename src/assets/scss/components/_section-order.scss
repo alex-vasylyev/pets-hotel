@@ -379,11 +379,23 @@ select{
   position: absolute;
   top: 12px;
   right: 10px;
+  @media (max-width: 1020px){
+	  right: 0;
+  }
+  @media (max-width: 600px){
+	  right: 10px;
+  }
 }
 .label-calendar {
   position: absolute;
   top: 3px;
   right: 10px;
+  @media (max-width: 1020px){
+	  display: none;
+  }
+  @media (max-width: 600px){
+	  display: block;
+  }
 }
 
 .ba-float-label-go {
