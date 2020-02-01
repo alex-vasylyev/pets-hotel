@@ -24,8 +24,7 @@
 	<meta name="theme-color" content="#ff5912">
 </head>
 
-<body>
-
+<body id="pets-hotel-app">
 
 	<header class="ba-header">
 	
@@ -53,10 +52,10 @@
 				<div class="row align-right">
 					<nav class="ba-nav">
 						<ul class="menu ba-nav-menu simple show-for-large">
-							<li class="ba-menu-item"><a href="index.html">Головна</a></li>
-							<li class="ba-menu-item"><a href="order-service.html">Замовити послугу</a></li>
-							<li class="ba-menu-item"><a href="reviews.html">Відгуки</a></li>
-							<li class="ba-menu-item"><a href="gallery.html">Наші фото</a></li>
+							<li class="ba-menu-item page-active"><a href="index.html">Головна</a></li>
+							<li class="ba-menu-item "><a href="order-service.html">Замовити послугу</a></li>
+							<li class="ba-menu-item "><a href="reviews.html">Відгуки</a></li>
+							<li class="ba-menu-item "><a href="gallery.html">Наші фото</a></li>
 						</ul>
 					</nav>
 					<!-- /.ba-nav -->
@@ -217,7 +216,7 @@
 			</div>
 		</section>
 		<!-- /.ba-section-advantages --><section id="services" class="ba-section--services ba-section">
-			
+		
 			<div class="row">	
 					<div class="column small-12 large-5 align-justify show-for-medium">
 						<a href="order-service.html"><img src="assets/img/grey-cat.jpg" alt="Grey Cat"></a>
@@ -267,7 +266,7 @@
 					</script>
 					<!-- text-template-script -->
 					<div class="column small-12 large-7">
-						<h2 class="ba-section-title ba-section-title--services">Перелік послуг</h2>
+						<h2 class="ba-section-title ba-section-title--services"></h2>
 						<ul class="vertical menu ba-services-list">
 							<li class="ba-services-list-item">
 								<div class="ba-services-list-item__price">
@@ -437,8 +436,28 @@
 	<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
 		integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
 		crossorigin="anonymous"></script>
-
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
 	<script src="assets/js/app.js"></script>
+	<script>
+		let app = new Vue({
+	 el: '.column',
+	 data:{
+		 services:[],
+		 name: 'ALexs'
+	 },
+	 methods:{
+		 getServices(){
+			let url = `https://itunes.apple.com/search?term=${this.query}&limit=20`;
+			fetch(url)
+				.then(response => response.json())
+				.then(iList => {
+					this.services = iList.results;
+					console.log(iList);				
+			})
+		 }
+	 }
+});
+</script>
 	<script>
 		//Burger menu
 		let menuBtn = document.querySelector('.ba-menu-toggle');
@@ -453,7 +472,7 @@
 		closeBtn.addEventListener('click', () => {
 			menuWrap.classList.remove('active');
 		});
-		</script>
+	</script>
 </body>
 
 </html>

@@ -1,26 +1,26 @@
 [
-	{
-	 "cityName": "Poltava",
-	 "overExposureCats": 300,
-	 "overExposureDogs": 350,
-	 "GroomingW": 200,
-	 "GroomingWC": 400,
+  {
+    "cityName": "Poltava",
+    "overExposureCats": 300,
+    "overExposureDogs": 350,
+    "GroomingW": 200,
+    "GroomingWC": 400,
     "Inspection": 200
-	},
-	{
-		"cityName": "Kyiv",
-		"overExposureCats": 400,
-		"overExposureDogs": 450,
-		"GroomingW": 300,
-		"GroomingWC": 500,
-		"Inspection": 300
-	  },
-	  {
-		  "cityName": "Kharkiv",
-		  "overExposureCats": 350,
-		  "overExposureDogs": 400,
-		  "GroomingW": 250,
-		  "GroomingWC": 450,
-		  "Inspection": 200
-		 }
- ]
+  },
+  {
+    "cityName": "Kyiv",
+    "overExposureCats": 400,
+    "overExposureDogs": 450,
+    "GroomingW": 300,
+    "GroomingWC": 500,
+    "Inspection": 300
+  },
+  {
+    "cityName": "Kharkiv",
+    "overExposureCats": 350,
+    "overExposureDogs": 400,
+    "GroomingW": 250,
+    "GroomingWC": 450,
+    "Inspection": 200
+  }
+]

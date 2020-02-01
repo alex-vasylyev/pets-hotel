@@ -25,8 +25,7 @@
 	<meta name="theme-color" content="#ff5912">
 </head>
 
-<body>
-
+<body id="pets-hotel-app">
 	{{!-- Pages you create in the src/pages/ folder are inserted here when the flattened page is created. --}}
 
 	{{> header}}
@@ -45,8 +44,28 @@
 	<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
 		integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
 		crossorigin="anonymous"></script>
-
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
 	<script src="{{root}}assets/js/app.js"></script>
+	<script>
+		let app = new Vue({
+	 el: '.column',
+	 data:{
+		 services:[],
+		 name: 'ALexs'
+	 },
+	 methods:{
+		 getServices(){
+			let url = `https://itunes.apple.com/search?term=${this.query}&limit=20`;
+			fetch(url)
+				.then(response => response.json())
+				.then(iList => {
+					this.services = iList.results;
+					console.log(iList);				
+			})
+		 }
+	 }
+});
+</script>
 	<script>
 		//Burger menu
 		let menuBtn = document.querySelector('.ba-menu-toggle');
@@ -61,7 +80,7 @@
 		closeBtn.addEventListener('click', () => {
 			menuWrap.classList.remove('active');
 		});
-		</script>
+	</script>
 </body>
 
 </html>

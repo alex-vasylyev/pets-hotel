@@ -19,8 +19,10 @@ $(document).foundation();
 
 import './services.js';
 
+import './lib/vue';
 
 
 
+ 
 
 

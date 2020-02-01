@@ -1,27 +1,27 @@
 .ba-header {
   background: $primary-color;
   position: relative;
-.ba-header-row{
- padding: 15px 0;
-}
-.ba-logo {
-	display: flex;
-	align-items: center;
+  .ba-header-row {
+    padding: 15px 0;
+  }
+  .ba-logo {
+    display: flex;
+    align-items: center;
 
-	@include breakpoint(large) {
-	  display: block;
-	}
- }
+    @include breakpoint(large) {
+      display: block;
+    }
+  }
   .ba-nav {
     font-size: 20px;
-	 font-weight: 200;
-	 
+    font-weight: 200;
+
     .ba-menu-item {
-		padding-bottom: 8px;
-		padding-top: 8px;
-      border-bottom: 2px solid transparent;
+      padding-bottom: 8px;
+      padding-top: 8px;
+      border-bottom: 3px solid transparent;
       &:hover {
-        border-bottom: 2px solid $white;
+        border-bottom: 3px solid $white;
 		}
     }
 
@@ -31,13 +31,12 @@
   }
 
   .ba-my-profile {
-	  padding-right: 10px;
+    padding-right: 10px;
     @include breakpoint(medium) {
       margin-left: 20px;
     }
   }
 }
-
 
 .ba-menu-toggle {
   top: 12px;
@@ -76,4 +75,8 @@
       color: lighten($black, $amount: 70);
     }
   }
+}
+
+.ba-nav .ba-menu-item.page-active {
+  border-bottom: 3px solid $white;
 }

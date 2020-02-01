@@ -24,10 +24,10 @@
 			<div class="row align-right">
 				<nav class="ba-nav">
 					<ul class="menu ba-nav-menu simple show-for-large">
-						<li class="ba-menu-item"><a href="index.html">Головна</a></li>
-						<li class="ba-menu-item"><a href="order-service.html">Замовити послугу</a></li>
-						<li class="ba-menu-item"><a href="reviews.html">Відгуки</a></li>
-						<li class="ba-menu-item"><a href="gallery.html">Наші фото</a></li>
+						<li class="ba-menu-item {{#ifpage 'index'}}page-active{{/ifpage}}"><a href="index.html">Головна</a></li>
+						<li class="ba-menu-item {{#ifpage 'order-service'}}page-active{{/ifpage}}"><a href="order-service.html">Замовити послугу</a></li>
+						<li class="ba-menu-item {{#ifpage 'reviews'}}page-active{{/ifpage}}"><a href="reviews.html">Відгуки</a></li>
+						<li class="ba-menu-item {{#ifpage 'gallery'}}page-active{{/ifpage}}"><a href="gallery.html">Наші фото</a></li>
 					</ul>
 				</nav>
 				<!-- /.ba-nav -->
