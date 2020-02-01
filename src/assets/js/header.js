@@ -1,5 +1,5 @@
 
 $('.activemenu').on('click', 'li', function () {
-	$('.activemenu li.activepage').removeClass('activepage');s
+	$('.activemenu li.activepage').removeClass('activepage');
 	$(this).addClass('activepage');
 });

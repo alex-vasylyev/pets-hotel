@@ -12336,7 +12336,7 @@ exports.clearImmediate = typeof self !== "undefined" && self.clearImmediate || t
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 var g; // This works in non-strict mode
 
@@ -12947,13 +12947,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _lib_slick_min_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_lib_slick_min_js__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _services_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./services.js */ "./src/assets/js/services.js");
 /* harmony import */ var _services_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_services_js__WEBPACK_IMPORTED_MODULE_4__);
-<<<<<<< HEAD
 /* harmony import */ var _header_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./header.js */ "./src/assets/js/header.js");
 /* harmony import */ var _header_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_header_js__WEBPACK_IMPORTED_MODULE_5__);
-=======
-/* harmony import */ var _lib_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./lib/vue */ "./src/assets/js/lib/vue.js");
-/* harmony import */ var _lib_vue__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_lib_vue__WEBPACK_IMPORTED_MODULE_5__);
->>>>>>> 48d87ad39716e295251408632ada598272536e28
+/* harmony import */ var _lib_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./lib/vue */ "./src/assets/js/lib/vue.js");
+/* harmony import */ var _lib_vue__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_lib_vue__WEBPACK_IMPORTED_MODULE_6__);
 
  // Foundation JS relies on a global varaible. In ES6, all imports are hoisted
 // to the top of the file so if we used`import` to import Foundation,
@@ -12971,7 +12968,7 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).foundation();
 
 
 
-<<<<<<< HEAD
+
 /***/ }),
 
 /***/ "./src/assets/js/header.js":
@@ -12983,12 +12980,9 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).foundation();
 
 $('.activemenu').on('click', 'li', function () {
   $('.activemenu li.activepage').removeClass('activepage');
-  s;
   $(this).addClass('activepage');
 });
 
-=======
->>>>>>> 48d87ad39716e295251408632ada598272536e28
 /***/ }),
 
 /***/ "./src/assets/js/lib/foundation-explicit-pieces.js":
@@ -13925,7 +13919,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(global, setImmediate) {var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+/* WEBPACK VAR INJECTION */(function(global, setImmediate) {var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 /*!
  * Vue.js v2.6.11

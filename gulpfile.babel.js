@@ -104,23 +104,32 @@ function sass() {
 }
 
 let webpackConfig = {
-  mode: (PRODUCTION ? 'production' : 'development'),
-  module: {
-    rules: [
-      {
-        test: /\.js$/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: [ "@babel/preset-env" ],
-            compact: false
-          }
-        }
-      }
-    ]
-  },
-  devtool: !PRODUCTION && 'source-map'
-}
+	mode: (PRODUCTION ? 'production' : 'development'),
+	module: {
+	  rules: [
+		 {
+			test: /\.js$/,
+			use: {
+			  loader: 'babel-loader',
+			  options: {
+				 presets: [ "@babel/preset-env" ],
+				 compact: false
+			  }
+			}
+			},
+			{
+				 test: /\.vue$/,
+				 loader: 'vue-loader'
+			}
+	  ]
+	},
+	plugins: [
+	  // убедитесь что подключили плагин!
+			new VueLoaderPlugin()
+	],
+	devtool: !PRODUCTION && 'source-map'
+ }
+ 
 
 // Combine JavaScript into one file
 // In production, the file is minified
