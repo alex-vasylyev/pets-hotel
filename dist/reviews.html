@@ -24,8 +24,7 @@
 	<meta name="theme-color" content="#ff5912">
 </head>
 
-<body>
-
+<body id="pets-hotel-app">
 
 	<header class="ba-header">
 	
@@ -52,11 +51,19 @@
 			<div class="small-2 column large-9 align-middle">
 				<div class="row align-right">
 					<nav class="ba-nav">
+<<<<<<< HEAD
 						<ul class="activemenu menu ba-nav-menu simple show-for-large">
 							<li class="ba-menu-item activepage"><a href="index.html">Головна</a></li>
 							<li class="ba-menu-item"><a href="order-service.html">Замовити послугу</a></li>
 							<li class="ba-menu-item"><a href="reviews.html">Відгуки</a></li>
 							<li class="ba-menu-item"><a href="gallery.html">Наші фото</a></li>
+=======
+						<ul class="menu ba-nav-menu simple show-for-large">
+							<li class="ba-menu-item "><a href="index.html">Головна</a></li>
+							<li class="ba-menu-item "><a href="order-service.html">Замовити послугу</a></li>
+							<li class="ba-menu-item page-active"><a href="reviews.html">Відгуки</a></li>
+							<li class="ba-menu-item "><a href="gallery.html">Наші фото</a></li>
+>>>>>>> 48d87ad39716e295251408632ada598272536e28
 						</ul>
 					</nav>
 					<!-- /.ba-nav -->
@@ -389,8 +396,28 @@
 	<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
 		integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
 		crossorigin="anonymous"></script>
-
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
 	<script src="assets/js/app.js"></script>
+	<script>
+		let app = new Vue({
+	 el: '.column',
+	 data:{
+		 services:[],
+		 name: 'ALexs'
+	 },
+	 methods:{
+		 getServices(){
+			let url = `https://itunes.apple.com/search?term=${this.query}&limit=20`;
+			fetch(url)
+				.then(response => response.json())
+				.then(iList => {
+					this.services = iList.results;
+					console.log(iList);				
+			})
+		 }
+	 }
+});
+</script>
 	<script>
 		//Burger menu
 		let menuBtn = document.querySelector('.ba-menu-toggle');
@@ -405,7 +432,7 @@
 		closeBtn.addEventListener('click', () => {
 			menuWrap.classList.remove('active');
 		});
-		</script>
+	</script>
 </body>
 
 </html>

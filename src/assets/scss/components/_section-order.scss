@@ -1,7 +1,7 @@
 .ba-section-order {
   position: relative;
   padding-top: 86px;
-  padding-bottom: 338px;
+  padding-bottom: 0;
 }
 .ba-order-title {
   display: block;
@@ -26,7 +26,7 @@
   min-height: 700px;
   padding: 10px 10px 100px;
   margin-bottom: 10px;
-  @media (max-width: 640px) {
+   @media (max-width: 640px) {
     border: none;
     min-height: 200px;
     padding-bottom: 40px;
@@ -69,6 +69,7 @@ select {
   padding: 14px 0;
 
   margin-bottom: 5px;
+  background: #e5f2f1;
 }
 
 ::placeholder {
@@ -86,6 +87,7 @@ textarea:focus,
 select:focus {
   box-shadow: 0 0 0 0 #555;
   outline: none;
+  background-color: #e5f2f1;
 }
 
 select:not(:placeholder-shown):valid {
@@ -111,6 +113,7 @@ textarea {
   color: rgba(0, 0, 0, 0.87);
   cursor: pointer;
   position: absolute;
+  
 
   left: 0;
   bottom: 13px;
@@ -143,6 +146,12 @@ textarea {
     text-align: right;
     color: rgba(0, 0, 0, 0.87);
   }
+}
+
+.label-cbb{
+	span{
+	text-align: left;
+	}
 }
 
 .ba-column-order-2,
@@ -206,6 +215,9 @@ textarea {
     display: block;
   }
 }
+select{
+	background: #e5f2f1;
+}
 
 .ba-button-order {
   padding-top: 70px;
@@ -216,7 +228,11 @@ textarea {
 }
 
 .ba-button-form {
-  margin: 0 auto;
+	position: absolute;
+	bottom: 300px;
+	left: 50%;
+	margin-left: -80px;
+	z-index: 2;
   font-weight: 500;
   font-size: 14px;
   line-height: 16px;
@@ -229,8 +245,15 @@ textarea {
   padding: 0 40px;
   &:hover {
     color: $primary-color;
-    background: #555;
+	 background: #ffffff;
+	 border: 2px solid $primary-color;
   }
+  @media (max-width: 600px){
+	  bottom: 250px;
+  }
+  @media (max-width: 400px){
+	bottom: 150px;
+}
 }
 
 .label-cbx,
@@ -249,20 +272,22 @@ textarea {
 
       svg {
         path {
-          fill: #018786;
+			 fill: #018786;
+			 stroke: #018786;
         }
-        //   polyline{
-        // 	 stroke-dashoffset: 0;
-        // 	}
+          polyline{
+        	 stroke-dashoffset: 0;
+        	}
       }
     }
   }
   &:hover {
     .ba-checkbox {
+		// border-color: #018786;
       svg {
-        //   path{
-        // 	 stroke-dashoffset: 0;
-        //   }
+          path{
+        	 stroke-dashoffset: 0;
+          }
       }
     }
   }
@@ -287,17 +312,17 @@ textarea {
         stroke-linecap: round;
         stroke-linejoin: round;
         stroke-dasharray: 71px;
-        //   stroke-dashoffset: 71px;
+        stroke-dashoffset: 71px;
         transition: all 0.6s ease;
       }
       polyline {
         fill: none;
-        stroke: #fff;
+        stroke: #e5f2f1;;
         stroke-width: 2;
         stroke-linecap: round;
         stroke-linejoin: round;
         stroke-dasharray: 18px;
-        //   stroke-dashoffset: 18px;
+        stroke-dashoffset: 18px;
         transition: all 0.3s ease;
       }
     }
@@ -354,11 +379,23 @@ textarea {
   position: absolute;
   top: 12px;
   right: 10px;
+  @media (max-width: 1020px){
+	  right: 0;
+  }
+  @media (max-width: 600px){
+	  right: 10px;
+  }
 }
 .label-calendar {
   position: absolute;
   top: 3px;
   right: 10px;
+  @media (max-width: 1020px){
+	  display: none;
+  }
+  @media (max-width: 600px){
+	  display: block;
+  }
 }
 
 .ba-float-label-go {
@@ -390,9 +427,10 @@ textarea {
   padding-top: 40px;
 }
 
-.ba-dog-face-bg {
-	z-index: -1;
-  position: absolute;
-  bottom: 0;
-  left: 25.5%;
-}
+// .ba-dog-face-bg {
+// 	z-index: -1;
+//   position: absolute;
+//   bottom: 0;
+//   left: 50%;
+//   margin-left: -300px;
+// }

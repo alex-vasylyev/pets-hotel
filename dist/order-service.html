@@ -24,8 +24,7 @@
 	<meta name="theme-color" content="#ff5912">
 </head>
 
-<body>
-
+<body id="pets-hotel-app">
 
 	<header class="ba-header">
 	
@@ -52,11 +51,19 @@
 			<div class="small-2 column large-9 align-middle">
 				<div class="row align-right">
 					<nav class="ba-nav">
+<<<<<<< HEAD
 						<ul class="activemenu menu ba-nav-menu simple show-for-large">
 							<li class="ba-menu-item activepage"><a href="index.html">Головна</a></li>
 							<li class="ba-menu-item"><a href="order-service.html">Замовити послугу</a></li>
 							<li class="ba-menu-item"><a href="reviews.html">Відгуки</a></li>
 							<li class="ba-menu-item"><a href="gallery.html">Наші фото</a></li>
+=======
+						<ul class="menu ba-nav-menu simple show-for-large">
+							<li class="ba-menu-item "><a href="index.html">Головна</a></li>
+							<li class="ba-menu-item page-active"><a href="order-service.html">Замовити послугу</a></li>
+							<li class="ba-menu-item "><a href="reviews.html">Відгуки</a></li>
+							<li class="ba-menu-item "><a href="gallery.html">Наші фото</a></li>
+>>>>>>> 48d87ad39716e295251408632ada598272536e28
 						</ul>
 					</nav>
 					<!-- /.ba-nav -->
@@ -73,10 +80,10 @@
 	</header>
 
 	<main>
-		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-		  <link rel="stylesheet" href="/resources/demos/style.css">
-		  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-		  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 		
 		<section id="order" class="ba-section-order ba-section">
 			<div class="row column">
@@ -104,17 +111,23 @@
 										<path fill-rule="evenodd" clip-rule="evenodd" d="M13 0V2H5V0H3V2H2C0.89 2 0.01 2.9 0.01 4L0 18C0 19.1 0.89 20 2 20H16C17.1 20 18 19.1 18 18V4C18 2.9 17.1 2 16 2H15V0H13ZM14 11H9V16H14V11ZM2 18H16V7H2V18Z" fill="#018786"/>
 										</svg>
 										
-									<input class="ba-float-label__input datepicker-here" type="text" id="datepicker" name="date" placeholder="Date"   data-range="true"
+									<input class="ba-float-label__input datepicker-here" type="text" id="datepicker" name="dates" format="YYYY-MM-DD" placeholder="Date"   data-range="true"
 									data-multiple-dates-separator=" - " data-language="en">
 									<label class="ba-float-label__placeholder" for="first_name">Дата*</label>
 								</div>
 								
 								<!-- /.ba-float-label -->
-								<script>
+								<!-- <script>
 									$( function() {
 									  $( "#datepicker" ).datepicker();
 									} );
+									</script> -->
+									<script>
+									$('input[name="dates"]').daterangepicker();
+		
+		
 									</script>
+		
 									<span>1050 грн</span>
 								<div class="ba-float-label ba-float-label-2">
 									
@@ -197,7 +210,7 @@
 												<polyline points="4 11 8 15 16 6"></polyline>
 											 </svg>
 										  </span>
-										  <span>Сплатити онлайн</span>
+										  <span class="result">Сплатити онлайн</span>
 										</label>
 									 </div>
 								
@@ -237,7 +250,7 @@
 								<div class="ba-float-label-3">							
 									<select class="ba-float-label__select" name="list1">
 										<option>Вказати вік*</option>
-										<option>0,5 року - 1рік</option>
+										<option>0,5 - 1рік</option>
 										<option>1 - 2 роки</option>
 										<option>2 - 4 роки</option>
 										<option>4 - 6 років</option>
@@ -310,7 +323,7 @@
 						
 					</div>
 				
-					<div class="ba-button-order row">
+					<div class="ba-button-order row column">
 								<button type="submit" class="button-primary ba-button ba-button-form">
 									Замовити
 								</button>
@@ -429,8 +442,28 @@
 	<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
 		integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
 		crossorigin="anonymous"></script>
-
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
 	<script src="assets/js/app.js"></script>
+	<script>
+		let app = new Vue({
+	 el: '.column',
+	 data:{
+		 services:[],
+		 name: 'ALexs'
+	 },
+	 methods:{
+		 getServices(){
+			let url = `https://itunes.apple.com/search?term=${this.query}&limit=20`;
+			fetch(url)
+				.then(response => response.json())
+				.then(iList => {
+					this.services = iList.results;
+					console.log(iList);				
+			})
+		 }
+	 }
+});
+</script>
 	<script>
 		//Burger menu
 		let menuBtn = document.querySelector('.ba-menu-toggle');
@@ -445,7 +478,7 @@
 		closeBtn.addEventListener('click', () => {
 			menuWrap.classList.remove('active');
 		});
-		</script>
+	</script>
 </body>
 
 </html>

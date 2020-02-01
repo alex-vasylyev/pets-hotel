@@ -20,8 +20,10 @@ $(document).foundation();
 import './services.js';
 import './header.js';
 
+import './lib/vue';
 
 
 
+ 
 
 
