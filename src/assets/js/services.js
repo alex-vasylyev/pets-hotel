@@ -1,12 +1,6 @@
 'use strict';
 
 
-
-
-
-
-
-
 //Example 1
 //Err: Uncaught (in promise) SyntaxError: Unexpected token < in JSON at position 0
 let url = 'src/json/services.json';

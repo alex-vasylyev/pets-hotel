@@ -17,7 +17,7 @@ import './lib/slick.min.js';
 
 $(document).foundation();
 
-import './services.js';
+// import './services.js';
 
 
 
