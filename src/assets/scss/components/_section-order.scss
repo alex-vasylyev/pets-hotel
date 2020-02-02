@@ -427,12 +427,48 @@ select{
   padding-top: 40px;
 }
 
-// .ba-dog-face-bg {
-// 	z-index: -1;
-//   position: absolute;
-//   bottom: 0;
-//   left: 50%;
-//   margin-left: -300px;
-// }
-
-
+.ba-modal-content{
+	width: 280px;
+	background: #ffffff;
+	margin: 91px auto 54px;
+	padding: 21px 24px 12px;
+	h3{
+		font-weight: 300;
+		font-size: 20px;
+		letter-spacing: 0.15px;
+		color: rgba(0, 0, 0, 0.87);
+		mix-blend-mode: normal;
+		padding-bottom: 20px;
+	}
+	p{
+		font-size: 14px;
+		line-height: 20px;
+		letter-spacing: 0.25px;
+		color: rgba(0, 0, 0, 0.87);
+		mix-blend-mode: normal;
+		padding-bottom: 60px;
+	}
+	button{
+		text-align: center;
+		display: block;
+		margin: 0 auto;
+		&:hover{
+			color: #000;
+			fill: #000000;
+		}
+		span{
+			font-weight: 500;
+			font-size: 14px;			
+			// text-align: center;
+			letter-spacing: 0.75px;
+			text-transform: uppercase;
+			color: #018786;
+			svg{
+				margin-left: 7px;
+			}
+		}
+	}
+}
+.cat-reveal{
+	padding-bottom: 10px;
+}
