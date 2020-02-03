@@ -55,12 +55,14 @@
     padding-left: 9px;
 	 border: none;
 	 cursor: pointer;
+	 color: $black;
   }
-  .ba-select-mobile {
+  .ba-select-cities-mobile {
     position: absolute;
 	 bottom: 20px;
 	 left: 22%;
-    max-width: 304px;
+	 max-width: 304px;
+	 color: $black;
   }
 
   p {

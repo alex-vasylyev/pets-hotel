@@ -48,105 +48,6 @@
   }
 }
 
-input[type="text"],
-// input[type="checkbox"],
-input[type="date"],
-input[type="number"],
-input[type="tel"],
-input[type="url"],
-textarea,
-select {
-  transition: color 0.3s ease-in, border-color 0.3s ease-in,
-    background-color 0.3s ease-in, opacity 0.3s ease-in, box-shadow 0.2s ease-in;
-  display: block;
-  width: 100%;
-  border: none;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-  border-radius: 0;
-  font-size: 14px;
-  color: rgba(0, 0, 0, 0.6);
-  line-height: 1.2;
-  padding: 14px 0;
-
-  margin-bottom: 5px;
-  background: #e5f2f1;
-}
-
-::placeholder {
-  color: #ccc;
-  font-size: 14px;
-}
-
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="date"]:focus,
-input[type="number"]:focus,
-input[type="tel"]:focus,
-input[type="url"]:focus,
-textarea:focus,
-select:focus {
-  box-shadow: 0 0 0 0 #555;
-  outline: none;
-  background-color: #e5f2f1;
-}
-
-select:not(:placeholder-shown):valid {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-}
-
-select:not(:placeholder-shown):invalid {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-}
-
-textarea {
-  resize: none;
-}
-.ba-float-label {
-  position: relative;
-}
-
-.ba-float-label__input::placeholder {
-  color: transparent;
-}
-.ba-float-label__placeholder {
-  font-size: 16px;
-  color: rgba(0, 0, 0, 0.87);
-  cursor: pointer;
-  position: absolute;
-  
-
-  left: 0;
-  bottom: 13px;
-  transition: transform 0.2s;
-}
-
-.ba-float-label__checkbox {
-  font-size: 18px;
-  line-height: 28px;
-  letter-spacing: 0.5px;
-  color: rgba(0, 0, 0, 0.87);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  .ba-float-label__checkbox {
-    text-align: right;
-    display: none;
-    margin: 0;
-  }
-}
-
-.ba-column-order-1 {
-  .ba-float-label-2 {
-    margin-top: 55px;
-    color: rgba(0, 0, 0, 0.87);
-  }
-  span {
-    display: block;
-    text-align: right;
-    color: rgba(0, 0, 0, 0.87);
-  }
-}
 
 .label-cbb{
 	span{
@@ -444,24 +345,28 @@ select{
 		mix-blend-mode: normal;
 		padding-bottom: 60px;
 	}
-	button{
+	.ba-button-close-modal{
 		text-align: center;
-		display: block;
+		display: flex;
+		align-items: center;
 		margin: 0 auto;
-		&:hover{
-			color: #000;
-			fill: #000000;
-		}
 		span{
 			font-weight: 500;
 			font-size: 14px;			
 			// text-align: center;
+			
 			letter-spacing: 0.75px;
 			text-transform: uppercase;
 			color: #018786;
 			svg{
-				margin-left: 7px;
+				margin-left: 2px;
+				margin-bottom: -2px;
 			}
+		}
+		&:hover, &:active{
+			outline: none;
+			border: 2px solid transparent;
+		  transform: scale(1.1);
 		}
 	}
 }

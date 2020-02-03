@@ -77,12 +77,15 @@
 .ba-review-read-more-btn {
   color: $primary-color;
   padding-left: 40px;
+}
+.ba-review-read-more-btn,
+.ba-reviews-bnt {
   &:hover,
   &:active {
-    color: lighten($color: $primary-color, $amount: 10);
+	 color: lighten($color: $primary-color, $amount: 10);
+	 border: none;
   }
 }
-
 .ba-reviews-bnt {
   color: #018786;
   font-weight: 500;
@@ -91,11 +94,6 @@
   text-align: center;
   letter-spacing: 0.75px;
   text-transform: uppercase;
-
-  &:hover,
-  &:active {
-    color: lighten($color: $primary-color, $amount: 10);
-  }
 
   display: flex;
   justify-content: center;

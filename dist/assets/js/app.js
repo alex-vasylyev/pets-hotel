@@ -13919,13 +13919,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _lib_foundation_explicit_pieces__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./lib/foundation-explicit-pieces */ "./src/assets/js/lib/foundation-explicit-pieces.js");
 /* harmony import */ var _lib_slick_min_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./lib/slick.min.js */ "./src/assets/js/lib/slick.min.js");
 /* harmony import */ var _lib_slick_min_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_lib_slick_min_js__WEBPACK_IMPORTED_MODULE_3__);
-<<<<<<< HEAD
-/* harmony import */ var _services_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./services.js */ "./src/assets/js/services.js");
-/* harmony import */ var _services_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_services_js__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _lib_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./lib/vue */ "./src/assets/js/lib/vue.js");
-/* harmony import */ var _lib_vue__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_lib_vue__WEBPACK_IMPORTED_MODULE_5__);
-=======
->>>>>>> 1fd3eaf6d3508947ef83e6fefb467f5a460a5ee2
+/* harmony import */ var _lib_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./lib/vue */ "./src/assets/js/lib/vue.js");
+/* harmony import */ var _lib_vue__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_lib_vue__WEBPACK_IMPORTED_MODULE_4__);
 
  // Foundation JS relies on a global varaible. In ES6, all imports are hoisted
 // to the top of the file so if we used`import` to import Foundation,
@@ -13940,6 +13935,7 @@ window.jQuery = jquery__WEBPACK_IMPORTED_MODULE_0___default.a; // require('found
 
 
 jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).foundation(); // import './services.js';
+
 
 
 /***/ }),
@@ -14874,7 +14870,6 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
 /***/ }),
 
-<<<<<<< HEAD
 /***/ "./src/assets/js/lib/vue.js":
 /*!**********************************!*\
   !*** ./src/assets/js/lib/vue.js ***!
@@ -26718,110 +26713,6 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
 /***/ }),
 
-/***/ "./src/assets/js/services.js":
-/*!***********************************!*\
-  !*** ./src/assets/js/services.js ***!
-  \***********************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
- // let url = 'src/json/services.json';
-
-var app = new Vue({
-  el: '#services',
-  data: {
-    services: [],
-    name: 'ALex'
-  },
-  methods: {
-    getServices: function getServices() {
-      var _this = this;
-
-      var url = "https://itunes.apple.com/search?term=".concat(this.query, "&limit=20");
-      fetch(url).then(function (response) {
-        return response.json();
-      }).then(function (iList) {
-        _this.services = iList.results;
-        console.log(iList);
-      });
-    }
-  }
-}); //Example 1
-//Err: Uncaught (in promise) SyntaxError: Unexpected token < in JSON at position 0
-// function sendRequest(event) {
-// 	event.preventDefault();
-// 	fetch(url)
-// 		.then(response => response.json())
-// 		.then(showServices)
-// 	// .then(response => response.text())
-// 	// .then(text => console.log(text));
-// }
-// document.addEventListener('change', sendRequest);
-// let servicesList = document.querySelector('.ba-services-list');
-// let servicesListTmpl = document.querySelector('[data-services-tmpl]').innerHTML;
-// function showServices(data) {
-// 	let arr = data;
-// 	let servicesHTML = '';
-// 	let city = document.querySelector('.ba-select-cities').value;
-// 	arr.forEach(element => {
-// 		element.cityName == city ? servicesHTML += servicesListTmpl
-// 			.replace(/{{overExposureCats}}/gi, element.overExposureCats)
-// 			.replace(/{{overExposureDogs}}/gi, element.overExposureDogs)
-// 			.replace(/{{GroomingW}}/gi, element.GroomingW)
-// 			.replace(/{{GroomingWC}}/gi, element.GroomingWC)
-// 			.replace(/{{Inspection}}/gi, element.Inspection) : '';
-// 	});
-// 	servicesList.innerHTML = servicesHTML;
-// }
-//Example 2
-// let data = [
-// 	{
-// 	 "cityName": "Poltava",
-// 	 "overExposureCats": 300,
-// 	 "overExposureDogs": 350,
-// 	 "GroomingW": 200,
-// 	 "GroomingWC": 400,
-//     "Inspection": 200
-// 	},
-// 	{
-// 		"cityName": "Kyiv",
-// 		"overExposureCats": 400,
-// 		"overExposureDogs": 450,
-// 		"GroomingW": 300,
-// 		"GroomingWC": 500,
-// 		"Inspection": 300
-// 	  },
-// 	  {
-// 		  "cityName": "Kharkiv",
-// 		  "overExposureCats": 350,
-// 		  "overExposureDogs": 400,
-// 		  "GroomingW": 250,
-// 		  "GroomingWC": 450,
-// 		  "Inspection": 200
-// 		 }
-//  ]
-// document.addEventListener('change', showServices);
-// let servicesList = document.querySelector('.ba-services-list');
-// let servicesListTmpl = document.querySelector('[data-services-tmpl]').innerHTML;
-// function showServices() {
-// 	let servicesHTML = '';
-// 	let city = document.querySelector('.ba-select-cities').value;
-// 	data.forEach(element => {
-// 		element.cityName == city ? servicesHTML += servicesListTmpl
-// 			.replace(/{{overExposureCats}}/gi, element.overExposureCats)
-// 			.replace(/{{overExposureDogs}}/gi, element.overExposureDogs)
-// 			.replace(/{{GroomingW}}/gi, element.GroomingW)
-// 			.replace(/{{GroomingWC}}/gi, element.GroomingWC)
-// 			.replace(/{{Inspection}}/gi, element.Inspection) : '';
-// 	});
-// 	servicesList.innerHTML = servicesHTML;
-// }
-
-/***/ }),
-
-=======
->>>>>>> 1fd3eaf6d3508947ef83e6fefb467f5a460a5ee2
 /***/ 0:
 /*!************************************!*\
   !*** multi ./src/assets/js/app.js ***!
