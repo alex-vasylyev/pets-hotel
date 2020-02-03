@@ -33,6 +33,12 @@ button,
   line-height: 36px;
   border-radius: 200px;
   cursor: pointer;
+  border: 2px solid transparent;
+  &:hover, &:active {
+    color: $primary-color;
+	 background: #ffffff;
+	 border: 2px solid $primary-color;
+  }
 }
 
 .ba-section-title {

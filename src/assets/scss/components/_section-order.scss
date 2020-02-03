@@ -243,11 +243,7 @@ select{
   background: $primary-color;
   border-radius: 20px;
   padding: 0 40px;
-  &:hover {
-    color: $primary-color;
-	 background: #ffffff;
-	 border: 2px solid $primary-color;
-  }
+
   @media (max-width: 600px){
 	  bottom: 250px;
   }
