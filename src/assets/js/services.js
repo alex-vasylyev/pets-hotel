@@ -2,6 +2,7 @@
 
 // let url = 'src/json/services.json';
 
+<<<<<<< HEAD
 let app = new Vue({
 	 el: '#services',
 	 data:{
@@ -26,6 +27,8 @@ let app = new Vue({
 
 
 
+=======
+>>>>>>> 1fd3eaf6d3508947ef83e6fefb467f5a460a5ee2
 //Example 1
 //Err: Uncaught (in promise) SyntaxError: Unexpected token < in JSON at position 0
 
