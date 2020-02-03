@@ -2,33 +2,6 @@
 
 // let url = 'src/json/services.json';
 
-<<<<<<< HEAD
-let app = new Vue({
-	 el: '#services',
-	 data:{
-		 services:[],
-		 name: 'ALex'
-	 },
-	 methods:{
-		 getServices(){
-			let url = `https://itunes.apple.com/search?term=${this.query}&limit=20`;
-			fetch(url)
-				.then(response => response.json())
-				.then(iList => {
-					this.services = iList.results;
-					console.log(iList);				
-			})
-		 }
-	 }
-});
-
-
-
-
-
-
-=======
->>>>>>> 1fd3eaf6d3508947ef83e6fefb467f5a460a5ee2
 //Example 1
 //Err: Uncaught (in promise) SyntaxError: Unexpected token < in JSON at position 0
 
