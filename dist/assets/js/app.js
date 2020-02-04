@@ -86,6 +86,267 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./src/assets/js/App.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--0!./node_modules/vue-loader/lib??vue-loader-options!./src/assets/js/App.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+// import json from '../db/data.json';
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      selected: '',
+      servicesList: []
+    };
+  },
+  methods: {
+    sendRequest: function sendRequest() {
+      fetch("assets/db/services.json").then(function (response) {
+        return response.json();
+      }).then(function (services) {
+        servicesList = services;
+      });
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/foundation-sites/js/foundation.core.js":
 /*!*************************************************************!*\
   !*** ./node_modules/foundation-sites/js/foundation.core.js ***!
@@ -13303,6 +13564,670 @@ exports.clearImmediate = typeof self !== "undefined" && self.clearImmediate || t
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./src/assets/js/App.vue?vue&type=template&id=8856d484&":
+/*!********************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./src/assets/js/App.vue?vue&type=template&id=8856d484& ***!
+  \********************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c("section", { staticClass: "ba-section-intro", attrs: { id: "intro" } }, [
+      _vm._m(0),
+      _vm._v(" "),
+      _c("div", { staticClass: "row align-justify" }, [
+        _vm._m(1),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass:
+              "column medium-7 large-4 ba-section-intro__col-right show-for-medium"
+          },
+          [
+            _c("p", { staticClass: "ba-col-2-description" }, [
+              _vm._v(
+                "Оберіть Ваше місто та перегляньте список доступних послуг у Вашому регіоні:"
+              )
+            ]),
+            _vm._v(" "),
+            _c(
+              "select",
+              {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.selected,
+                    expression: "selected"
+                  }
+                ],
+                staticClass: "ba-select-cities",
+                on: {
+                  change: [
+                    function($event) {
+                      var $$selectedVal = Array.prototype.filter
+                        .call($event.target.options, function(o) {
+                          return o.selected
+                        })
+                        .map(function(o) {
+                          var val = "_value" in o ? o._value : o.value
+                          return val
+                        })
+                      _vm.selected = $event.target.multiple
+                        ? $$selectedVal
+                        : $$selectedVal[0]
+                    },
+                    _vm.sendRequest
+                  ]
+                }
+              },
+              [
+                _c("option", { attrs: { selected: "", disabled: "" } }, [
+                  _vm._v("Оберіть Ваше місто")
+                ]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "Poltava" } }, [
+                  _vm._v("Полтава, вул. Кірова, 10")
+                ]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "Kyiv" } }, [
+                  _vm._v("Киев, вул. Бандери, 120")
+                ]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "Kharkiv" } }, [
+                  _vm._v("Харьков, вул. Шухевича, 12")
+                ])
+              ]
+            )
+          ]
+        )
+      ]),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "ba-select-cities-mobile show-for-small-only" },
+        [
+          _c(
+            "select",
+            {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.selected,
+                  expression: "selected"
+                }
+              ],
+              staticClass: "ba-select-mobile___cities",
+              on: {
+                change: [
+                  function($event) {
+                    var $$selectedVal = Array.prototype.filter
+                      .call($event.target.options, function(o) {
+                        return o.selected
+                      })
+                      .map(function(o) {
+                        var val = "_value" in o ? o._value : o.value
+                        return val
+                      })
+                    _vm.selected = $event.target.multiple
+                      ? $$selectedVal
+                      : $$selectedVal[0]
+                  },
+                  _vm.sendRequest
+                ]
+              }
+            },
+            [
+              _c("option", { attrs: { selected: "", disabled: "" } }, [
+                _vm._v("Оберіть Ваше місто")
+              ]),
+              _vm._v(" "),
+              _c("option", { attrs: { value: "Poltava" } }, [
+                _vm._v("Полтава, вул. Кірова, 10")
+              ]),
+              _vm._v(" "),
+              _c("option", { attrs: { value: "Kyiv" } }, [
+                _vm._v("Киев, вул. Бандери, 120")
+              ]),
+              _vm._v(" "),
+              _c("option", { attrs: { value: "Kharkiv" } }, [
+                _vm._v("Харьков, вул. Шухевича, 12")
+              ])
+            ]
+          )
+        ]
+      ),
+      _vm._v(" "),
+      _c("div", { staticClass: "ba-section-intro__socials show-for-medium" }, [
+        _c("ul", { staticClass: "menu ba-socials-row" }, [
+          _c("li", [
+            _c(
+              "a",
+              {
+                attrs: {
+                  href: "https://twitter.com/?lang=ru",
+                  target: "_blank"
+                }
+              },
+              [
+                _c("svg", { attrs: { width: "24", height: "20" } }, [
+                  _c("use", { attrs: { "xlink:href": "#icon-twitter" } })
+                ])
+              ]
+            )
+          ]),
+          _vm._v(" "),
+          _c("li", [
+            _c(
+              "a",
+              { attrs: { href: "https://linkedin.com/", target: "_blank" } },
+              [
+                _c("svg", { attrs: { width: "20", height: "20" } }, [
+                  _c("use", { attrs: { "xlink:href": "#icon-linkedin" } })
+                ])
+              ]
+            )
+          ]),
+          _vm._v(" "),
+          _c("li", [
+            _c(
+              "a",
+              { attrs: { href: "https://google.com", target: "_blank" } },
+              [
+                _c("svg", { attrs: { width: "20", height: "20" } }, [
+                  _c("use", { attrs: { "xlink:href": "#icon-google" } })
+                ])
+              ]
+            )
+          ])
+        ])
+      ])
+    ]),
+    _vm._v(" "),
+    _c(
+      "section",
+      {
+        staticClass: "ba-section-advantages ba-section",
+        attrs: { id: "advantages" }
+      },
+      [
+        _c("div", { staticClass: "row column align-justify" }, [
+          _c("h2", { staticClass: "ba-section-title" }, [
+            _vm._v("Наші переваги")
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row" }, [
+            _c(
+              "div",
+              { staticClass: "column small-12 large-3 ba-column-advantages" },
+              [
+                _c("div", { staticClass: "ba-column-title" }, [
+                  _c("svg", { attrs: { width: "20", height: "18" } }, [
+                    _c("use", { attrs: { "xlink:href": "#icon-heart" } })
+                  ]),
+                  _vm._v(" "),
+                  _c("h3", [_vm._v("індивідуальний підхід")])
+                ]),
+                _vm._v(" "),
+                _vm._m(2)
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "column small-12 large-3 ba-column-advantages" },
+              [
+                _c("div", { staticClass: "ba-column-title" }, [
+                  _c("svg", { attrs: { width: "20", height: "18" } }, [
+                    _c("use", { attrs: { "xlink:href": "#icon-heart" } })
+                  ]),
+                  _vm._v(" "),
+                  _c("h3", [_vm._v("покращене проживання")])
+                ]),
+                _vm._v(" "),
+                _vm._m(3)
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "column small-12 large-3 ba-column-advantages" },
+              [
+                _c("div", { staticClass: "ba-column-title" }, [
+                  _c("svg", { attrs: { width: "20", height: "18" } }, [
+                    _c("use", { attrs: { "xlink:href": "#icon-heart" } })
+                  ]),
+                  _vm._v(" "),
+                  _c("h3", [_vm._v("контроль ветеринарів")])
+                ]),
+                _vm._v(" "),
+                _vm._m(4)
+              ]
+            )
+          ])
+        ])
+      ]
+    ),
+    _vm._v(" "),
+    _vm._m(5),
+    _vm._v(" "),
+    _c(
+      "section",
+      {
+        staticClass: "ba-section--services ba-section",
+        attrs: { id: "services" }
+      },
+      [
+        _c("div", { staticClass: "row" }, [
+          _vm._m(6),
+          _vm._v(" "),
+          _c("div", { staticClass: "column small-12 large-7" }, [
+            _c(
+              "h2",
+              { staticClass: "ba-section-title ba-section-title--services" },
+              [_vm._v("Перелік послуг")]
+            ),
+            _vm._v(" "),
+            _c("ul", { staticClass: "vertical menu ba-services-list" }, [
+              _c("li", { staticClass: "ba-services-list-item" }, [
+                _c("div", { staticClass: "ba-services-list-item__price" }, [
+                  _c("h4", { staticClass: "ba-service-price-title" }, [
+                    _vm._v("Перетримка (котики)")
+                  ]),
+                  _vm._v(" "),
+                  _c("span", [_vm._v(_vm._s(_vm.cats))]),
+                  _vm._v(" грн\n            ")
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "ba-service-item-description" }, [
+                  _vm._v("бокс з відділеннями для сну і гігієни")
+                ])
+              ]),
+              _vm._v(" "),
+              _vm._m(7),
+              _vm._v(" "),
+              _vm._m(8),
+              _vm._v(" "),
+              _vm._m(9),
+              _vm._v(" "),
+              _vm._m(10)
+            ])
+          ]),
+          _vm._v(" "),
+          _vm._m(11),
+          _vm._v(" "),
+          _vm._m(12)
+        ])
+      ]
+    )
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "ba-main-title-container" }, [
+      _c("h1", { staticClass: "ba-section-intro__title" }, [
+        _vm._v("Ми потурбуємося про ваших улюбленців")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass:
+          "column medium-7 large-4 ba-section-intro__col-left show-for-large"
+      },
+      [
+        _c("p", [
+          _vm._v(
+            "\n          Знаючи не з чуток про проблеми, що виникають коли всім членам Вашої родини потрібно відлучитися на деякий\n          час, а домашнього вихованця залишити ніде, коли друзі не виявляють особливої радості від майбутнього\n          спілкування з твариною, нами був відкритий готель для тварин.\n        "
+          )
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "ba-column-description" }, [
+      _c("p", [
+        _vm._v(
+          "\n              Всі наші гості розміщуються з урахуванням їх особливостей і побажань господарів. Ми забезпечуємо догляд,\n              враховуючи надану інформацію від господарів про звички, поведінку та характер тварини. Організуємо звичне\n              домашнє харчування, вигул собак на обгородженій території в компанії і без.\n            "
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "ba-column-description" }, [
+      _c("p", [
+        _vm._v(
+          "\n              Готель передбачає окреме проживання кожного вихованця. Номери оснащені вентиляцією і системою опалення з\n              можливістю регулювання температурного режиму. Регулярно проходить прибирання та кварцування. Собаки і\n              кішки міститися в різних корпусах. Для котів передбачені лежанки, драбинки, когтеточки. У псів просторі\n              вольєри.\n            "
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "ba-column-description" }, [
+      _c("p", [
+        _vm._v(
+          "\n              Під час перетримки, тварини знаходяться під наглядом кваліфікованих ветеринарів, які щодня проводять\n              огляди. При необхідності ветлікар проведе всі необхідні процедури, якщо ваш вихованець знаходиться на\n              лікуванні.\n            "
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "section",
+      {
+        staticClass: "ba-section-settlement-conditions ba-section",
+        attrs: { id: "settlement-conditions" }
+      },
+      [
+        _c(
+          "div",
+          {
+            staticClass: "row column ba-section-settlement-conditions__content"
+          },
+          [
+            _c("h2", { staticClass: "ba-section-title" }, [
+              _vm._v("Умови заселення")
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "column small-12 large-5 ba-column-description"
+                },
+                [
+                  _c("p", [
+                    _vm._v(
+                      "\n            В умовах підвищеного попиту послуги під час відпусток влітку, а також у святкові дати, ми рекомендуємо\n            бронювати місця заздалегідь.\n          "
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("p", [
+                    _vm._v(
+                      "\n            Перед заселенням, кожен гість проходить обов'язковий огляд у ветеринара. Ми приймаємо в зооготелі\n            тварин без інфекційних, паразитних і грибкових захворювань. Вихованці повинні бути щеплені і оброблені\n            від ектопаразитів. Перед заселенням, тваринам необхідно зробити вакцинацію з відміткою в ветпаспорт.\n          "
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("p", [
+                    _vm._v(
+                      "\n            Отримати більш детальну консультацію по правилам заселення можна у наших фахівців за телефоном, що\n            вказаний нижче, або написавши на нашу електронну пошту.\n          "
+                    )
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "column small-12 large-7" }, [
+                _c("a", { attrs: { href: "gallery.html" } }, [
+                  _c("img", {
+                    attrs: {
+                      src: "assets/img/sleeping-dog.jpg",
+                      alt: "Sleeping dog"
+                    }
+                  })
+                ])
+              ])
+            ])
+          ]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "column small-12 large-5 align-justify show-for-medium" },
+      [
+        _c("a", { attrs: { href: "order-service.html" } }, [
+          _c("img", {
+            attrs: { src: "assets/img/grey-cat.jpg", alt: "Grey Cat" }
+          })
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { staticClass: "ba-services-list-item" }, [
+      _c("div", { staticClass: "ba-services-list-item__price" }, [
+        _c("h4", { staticClass: "ba-service-price-title" }, [
+          _vm._v("Перетримка (собаки)")
+        ])
+      ]),
+      _vm._v(" "),
+      _c("p", [_vm._v("бокс/вольєр в окремій кімнаті")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { staticClass: "ba-services-list-item" }, [
+      _c("div", { staticClass: "ba-services-list-item__price" }, [
+        _c("h4", { staticClass: "ba-service-price-title" }, [_vm._v("Грумінг")])
+      ]),
+      _vm._v(" "),
+      _c("p", [_vm._v("Миття")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { staticClass: "ba-services-list-item" }, [
+      _c("div", { staticClass: "ba-services-list-item__price" }, [
+        _c("h4", { staticClass: "ba-service-price-title" }, [_vm._v("Грумінг")])
+      ]),
+      _vm._v(" "),
+      _c("p", [_vm._v("Миття та стрижка")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { staticClass: "ba-services-list-item" }, [
+      _c("div", { staticClass: "ba-services-list-item__price" }, [
+        _c("h4", { staticClass: "ba-service-price-title" }, [
+          _vm._v("Огляд ветеринара")
+        ])
+      ]),
+      _vm._v(" "),
+      _c("p", [_vm._v("Загальний")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row small-12 ba-services-order-row" }, [
+      _c(
+        "a",
+        {
+          staticClass: "button button--service",
+          attrs: { href: "order-service.html" }
+        },
+        [_vm._v("перейти до замовлення")]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row ba-link-to-gallery-container" }, [
+      _c(
+        "div",
+        { staticClass: "column small-12 medium-8 ba-link-description" },
+        [
+          _c("p", [
+            _vm._v(
+              "Ви можете переглянути фото з умовами, в яких будуть на перетримці ваші вихованці за цією ссилкою"
+            )
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c("div", { staticClass: "column small-12 medium-3" }, [
+        _c(
+          "a",
+          {
+            staticClass: "ba-link-to-gallery",
+            attrs: { href: "gallery.html" }
+          },
+          [_vm._v("Наші фото")]
+        )
+      ])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/runtime/componentNormalizer.js ***!
+  \********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return normalizeComponent; });
+/* globals __VUE_SSR_CONTEXT__ */
+
+// IMPORTANT: Do NOT use ES2015 features in this file (except for modules).
+// This module is a runtime utility for cleaner component module output and will
+// be included in the final webpack user bundle.
+
+function normalizeComponent (
+  scriptExports,
+  render,
+  staticRenderFns,
+  functionalTemplate,
+  injectStyles,
+  scopeId,
+  moduleIdentifier, /* server only */
+  shadowMode /* vue-cli only */
+) {
+  // Vue.extend constructor export interop
+  var options = typeof scriptExports === 'function'
+    ? scriptExports.options
+    : scriptExports
+
+  // render functions
+  if (render) {
+    options.render = render
+    options.staticRenderFns = staticRenderFns
+    options._compiled = true
+  }
+
+  // functional template
+  if (functionalTemplate) {
+    options.functional = true
+  }
+
+  // scopedId
+  if (scopeId) {
+    options._scopeId = 'data-v-' + scopeId
+  }
+
+  var hook
+  if (moduleIdentifier) { // server build
+    hook = function (context) {
+      // 2.3 injection
+      context =
+        context || // cached call
+        (this.$vnode && this.$vnode.ssrContext) || // stateful
+        (this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext) // functional
+      // 2.2 with runInNewContext: true
+      if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
+        context = __VUE_SSR_CONTEXT__
+      }
+      // inject component styles
+      if (injectStyles) {
+        injectStyles.call(this, context)
+      }
+      // register component module identifier for async chunk inferrence
+      if (context && context._registeredComponents) {
+        context._registeredComponents.add(moduleIdentifier)
+      }
+    }
+    // used by ssr in case component is cached and beforeCreate
+    // never gets called
+    options._ssrRegister = hook
+  } else if (injectStyles) {
+    hook = shadowMode
+      ? function () { injectStyles.call(this, this.$root.$options.shadowRoot) }
+      : injectStyles
+  }
+
+  if (hook) {
+    if (options.functional) {
+      // for template-only hot-reload because in that case the render fn doesn't
+      // go through the normalizer
+      options._injectStyles = hook
+      // register for functioal component in vue file
+      var originalRender = options.render
+      options.render = function renderWithStyleInjection (h, context) {
+        hook.call(context)
+        return originalRender(h, context)
+      }
+    } else {
+      // inject component registration as beforeCreate hook
+      var existing = options.beforeCreate
+      options.beforeCreate = existing
+        ? [].concat(existing, hook)
+        : [hook]
+    }
+  }
+
+  return {
+    exports: scriptExports,
+    options: options
+  }
+}
+
+
+/***/ }),
+
 /***/ "./node_modules/webpack/buildin/global.js":
 /*!***********************************!*\
   !*** (webpack)/buildin/global.js ***!
@@ -13903,6 +14828,75 @@ module.exports = function (module) {
 
 /***/ }),
 
+/***/ "./src/assets/js/App.vue":
+/*!*******************************!*\
+  !*** ./src/assets/js/App.vue ***!
+  \*******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _App_vue_vue_type_template_id_8856d484___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./App.vue?vue&type=template&id=8856d484& */ "./src/assets/js/App.vue?vue&type=template&id=8856d484&");
+/* harmony import */ var _App_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./App.vue?vue&type=script&lang=js& */ "./src/assets/js/App.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _App_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _App_vue_vue_type_template_id_8856d484___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _App_vue_vue_type_template_id_8856d484___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "src/assets/js/App.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./src/assets/js/App.vue?vue&type=script&lang=js&":
+/*!********************************************************!*\
+  !*** ./src/assets/js/App.vue?vue&type=script&lang=js& ***!
+  \********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_0_node_modules_vue_loader_lib_index_js_vue_loader_options_App_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--0!../../../node_modules/vue-loader/lib??vue-loader-options!./App.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./src/assets/js/App.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_0_node_modules_vue_loader_lib_index_js_vue_loader_options_App_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./src/assets/js/App.vue?vue&type=template&id=8856d484&":
+/*!**************************************************************!*\
+  !*** ./src/assets/js/App.vue?vue&type=template&id=8856d484& ***!
+  \**************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_App_vue_vue_type_template_id_8856d484___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./App.vue?vue&type=template&id=8856d484& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./src/assets/js/App.vue?vue&type=template&id=8856d484&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_App_vue_vue_type_template_id_8856d484___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_App_vue_vue_type_template_id_8856d484___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./src/assets/js/app.js":
 /*!******************************!*\
   !*** ./src/assets/js/app.js ***!
@@ -13919,8 +14913,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _lib_foundation_explicit_pieces__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./lib/foundation-explicit-pieces */ "./src/assets/js/lib/foundation-explicit-pieces.js");
 /* harmony import */ var _lib_slick_min_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./lib/slick.min.js */ "./src/assets/js/lib/slick.min.js");
 /* harmony import */ var _lib_slick_min_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_lib_slick_min_js__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _services_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./services.js */ "./src/assets/js/services.js");
-/* harmony import */ var _services_js__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_services_js__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _services_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./services.js */ "./src/assets/js/services.js");
 /* harmony import */ var _lib_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./lib/vue */ "./src/assets/js/lib/vue.js");
 /* harmony import */ var _lib_vue__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_lib_vue__WEBPACK_IMPORTED_MODULE_5__);
 
@@ -26719,81 +27712,20 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 /*!***********************************!*\
   !*** ./src/assets/js/services.js ***!
   \***********************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
- // let url = 'src/json/services.json';
-//Example 1
-//Err: Uncaught (in promise) SyntaxError: Unexpected token < in JSON at position 0
-// function sendRequest(event) {
-// 	event.preventDefault();
-// 	fetch(url)
-// 		.then(response => response.json())
-// 		.then(showServices)
-// 	// .then(response => response.text())
-// 	// .then(text => console.log(text));
-// }
-// document.addEventListener('change', sendRequest);
-// let servicesList = document.querySelector('.ba-services-list');
-// let servicesListTmpl = document.querySelector('[data-services-tmpl]').innerHTML;
-// function showServices(data) {
-// 	let arr = data;
-// 	let servicesHTML = '';
-// 	let city = document.querySelector('.ba-select-cities').value;
-// 	arr.forEach(element => {
-// 		element.cityName == city ? servicesHTML += servicesListTmpl
-// 			.replace(/{{overExposureCats}}/gi, element.overExposureCats)
-// 			.replace(/{{overExposureDogs}}/gi, element.overExposureDogs)
-// 			.replace(/{{GroomingW}}/gi, element.GroomingW)
-// 			.replace(/{{GroomingWC}}/gi, element.GroomingWC)
-// 			.replace(/{{Inspection}}/gi, element.Inspection) : '';
-// 	});
-// 	servicesList.innerHTML = servicesHTML;
-// }
-//Example 2
-// let data = [
-// 	{
-// 	 "cityName": "Poltava",
-// 	 "overExposureCats": 300,
-// 	 "overExposureDogs": 350,
-// 	 "GroomingW": 200,
-// 	 "GroomingWC": 400,
-//     "Inspection": 200
-// 	},
-// 	{
-// 		"cityName": "Kyiv",
-// 		"overExposureCats": 400,
-// 		"overExposureDogs": 450,
-// 		"GroomingW": 300,
-// 		"GroomingWC": 500,
-// 		"Inspection": 300
-// 	  },
-// 	  {
-// 		  "cityName": "Kharkiv",
-// 		  "overExposureCats": 350,
-// 		  "overExposureDogs": 400,
-// 		  "GroomingW": 250,
-// 		  "GroomingWC": 450,
-// 		  "Inspection": 200
-// 		 }
-//  ]
-// document.addEventListener('change', showServices);
-// let servicesList = document.querySelector('.ba-services-list');
-// let servicesListTmpl = document.querySelector('[data-services-tmpl]').innerHTML;
-// function showServices() {
-// 	let servicesHTML = '';
-// 	let city = document.querySelector('.ba-select-cities').value;
-// 	data.forEach(element => {
-// 		element.cityName == city ? servicesHTML += servicesListTmpl
-// 			.replace(/{{overExposureCats}}/gi, element.overExposureCats)
-// 			.replace(/{{overExposureDogs}}/gi, element.overExposureDogs)
-// 			.replace(/{{GroomingW}}/gi, element.GroomingW)
-// 			.replace(/{{GroomingWC}}/gi, element.GroomingWC)
-// 			.replace(/{{Inspection}}/gi, element.Inspection) : '';
-// 	});
-// 	servicesList.innerHTML = servicesHTML;
-// }
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _App_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./App.vue */ "./src/assets/js/App.vue");
+
+new Vue({
+  el: '#main-section',
+  template: '<App/>',
+  components: {
+    App: _App_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+  }
+});
 
 /***/ }),
 
