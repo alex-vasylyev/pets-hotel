@@ -331,15 +331,30 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       selected: '',
+      cats: '',
+      dogs: '',
+      inspection: '',
+      groomingW: '',
+      groomingWC: '',
       servicesList: []
     };
   },
   methods: {
     sendRequest: function sendRequest() {
+      var _this = this;
+
       fetch("assets/db/services.json").then(function (response) {
         return response.json();
       }).then(function (services) {
-        servicesList = services;
+        services.forEach(function (element) {
+          if (element.cityName == _this.selected) {
+            _this.cats = element.overExposureCats;
+            _this.dogs = element.overExposureDogs;
+            _this.inspection = element.inspection;
+            _this.groomingW = element.groomingW;
+            _this.groomingWC = element.groomingWC;
+          }
+        });
       });
     }
   }
@@ -13854,19 +13869,63 @@ var render = function() {
                 ])
               ]),
               _vm._v(" "),
-              _vm._m(7),
+              _c("li", { staticClass: "ba-services-list-item" }, [
+                _c("div", { staticClass: "ba-services-list-item__price" }, [
+                  _c("h4", { staticClass: "ba-service-price-title" }, [
+                    _vm._v("Перетримка (собаки)")
+                  ]),
+                  _vm._v(" "),
+                  _c("span", [_vm._v(_vm._s(_vm.dogs))]),
+                  _vm._v(" грн\n            ")
+                ]),
+                _vm._v(" "),
+                _c("p", [_vm._v("бокс/вольєр в окремій кімнаті")])
+              ]),
               _vm._v(" "),
-              _vm._m(8),
+              _c("li", { staticClass: "ba-services-list-item" }, [
+                _c("div", { staticClass: "ba-services-list-item__price" }, [
+                  _c("h4", { staticClass: "ba-service-price-title" }, [
+                    _vm._v("Грумінг")
+                  ]),
+                  _vm._v(" "),
+                  _c("span", [_vm._v(_vm._s(_vm.groomingW) + "*")]),
+                  _vm._v(" грн\n            ")
+                ]),
+                _vm._v(" "),
+                _c("p", [_vm._v("Миття")])
+              ]),
               _vm._v(" "),
-              _vm._m(9),
+              _c("li", { staticClass: "ba-services-list-item" }, [
+                _c("div", { staticClass: "ba-services-list-item__price" }, [
+                  _c("h4", { staticClass: "ba-service-price-title" }, [
+                    _vm._v("Грумінг")
+                  ]),
+                  _vm._v(" "),
+                  _c("span", [_vm._v(_vm._s(_vm.groomingWC) + "*")]),
+                  _vm._v(" грн\n            ")
+                ]),
+                _vm._v(" "),
+                _c("p", [_vm._v("Миття та стрижка")])
+              ]),
               _vm._v(" "),
-              _vm._m(10)
+              _c("li", { staticClass: "ba-services-list-item" }, [
+                _c("div", { staticClass: "ba-services-list-item__price" }, [
+                  _c("h4", { staticClass: "ba-service-price-title" }, [
+                    _vm._v("Огляд ветеринара")
+                  ]),
+                  _vm._v(" "),
+                  _c("span", [_vm._v(_vm._s(_vm.inspection))]),
+                  _vm._v("грн\n            ")
+                ]),
+                _vm._v(" "),
+                _c("p", [_vm._v("Загальний")])
+              ])
             ])
           ]),
           _vm._v(" "),
-          _vm._m(11),
+          _vm._m(7),
           _vm._v(" "),
-          _vm._m(12)
+          _vm._m(8)
         ])
       ]
     )
@@ -14017,58 +14076,6 @@ var staticRenderFns = [
         ])
       ]
     )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", { staticClass: "ba-services-list-item" }, [
-      _c("div", { staticClass: "ba-services-list-item__price" }, [
-        _c("h4", { staticClass: "ba-service-price-title" }, [
-          _vm._v("Перетримка (собаки)")
-        ])
-      ]),
-      _vm._v(" "),
-      _c("p", [_vm._v("бокс/вольєр в окремій кімнаті")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", { staticClass: "ba-services-list-item" }, [
-      _c("div", { staticClass: "ba-services-list-item__price" }, [
-        _c("h4", { staticClass: "ba-service-price-title" }, [_vm._v("Грумінг")])
-      ]),
-      _vm._v(" "),
-      _c("p", [_vm._v("Миття")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", { staticClass: "ba-services-list-item" }, [
-      _c("div", { staticClass: "ba-services-list-item__price" }, [
-        _c("h4", { staticClass: "ba-service-price-title" }, [_vm._v("Грумінг")])
-      ]),
-      _vm._v(" "),
-      _c("p", [_vm._v("Миття та стрижка")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", { staticClass: "ba-services-list-item" }, [
-      _c("div", { staticClass: "ba-services-list-item__price" }, [
-        _c("h4", { staticClass: "ba-service-price-title" }, [
-          _vm._v("Огляд ветеринара")
-        ])
-      ]),
-      _vm._v(" "),
-      _c("p", [_vm._v("Загальний")])
-    ])
   },
   function() {
     var _vm = this

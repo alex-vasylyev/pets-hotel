@@ -180,7 +180,7 @@
             <li class="ba-services-list-item">
               <div class="ba-services-list-item__price">
                 <h4 class="ba-service-price-title">Перетримка (собаки)</h4>
-                <!-- <span>{{service.overExposureDogs}}</span> грн -->
+                <span>{{dogs}}</span> грн
               </div>
               <!-- /.ba-price -->
               <p>бокс/вольєр в окремій кімнаті</p>
@@ -188,7 +188,7 @@
             <li class="ba-services-list-item">
               <div class="ba-services-list-item__price">
                 <h4 class="ba-service-price-title">Грумінг</h4>
-                <!-- <span>{{service.groomingW}}*</span> грн -->
+                <span>{{groomingW}}*</span> грн
               </div>
               <!-- /.ba-price -->
               <p>Миття</p>
@@ -196,7 +196,7 @@
             <li class="ba-services-list-item">
               <div class="ba-services-list-item__price">
                 <h4 class="ba-service-price-title">Грумінг</h4>
-                <!-- <span>{{servicegroomingWC}}*</span> грн -->
+                <span>{{groomingWC}}*</span> грн
               </div>
               <!-- /.ba-price -->
               <p>Миття та стрижка</p>
@@ -204,7 +204,7 @@
             <li class="ba-services-list-item">
               <div class="ba-services-list-item__price">
                 <h4 class="ba-service-price-title">Огляд ветеринара</h4>
-                <!-- <span>{{service.inspection}}</span>грн -->
+                <span>{{inspection}}</span>грн
               </div>
               <!-- /.ba-price -->
               <p>Загальний</p>
@@ -234,7 +234,12 @@
 export default {
   data() {
     return {
-      selected: '',
+		selected: '',
+		cats: '',
+		dogs: '',
+		inspection: '',
+		groomingW: '',
+		groomingWC: '',
       servicesList: []
     };
   },
@@ -243,7 +248,16 @@ export default {
       fetch("assets/db/services.json")
         .then(response => response.json())
         .then(services => {
-          servicesList = services;
+			 services.forEach(element => {
+				 if(element.cityName == this.selected){
+					 this.cats = element.overExposureCats;
+					 this.dogs = element.overExposureDogs;
+					 this.inspection = element.inspection;
+					 this.groomingW = element.groomingW;
+					 this.groomingWC = element.groomingWC;
+				 }							 
+			 });
+			 
         });
     }
   }
