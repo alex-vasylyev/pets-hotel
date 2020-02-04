@@ -13919,8 +13919,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _lib_foundation_explicit_pieces__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./lib/foundation-explicit-pieces */ "./src/assets/js/lib/foundation-explicit-pieces.js");
 /* harmony import */ var _lib_slick_min_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./lib/slick.min.js */ "./src/assets/js/lib/slick.min.js");
 /* harmony import */ var _lib_slick_min_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_lib_slick_min_js__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _services_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./services.js */ "./src/assets/js/services.js");
-/* harmony import */ var _services_js__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_services_js__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _services_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./services.js */ "./src/assets/js/services.js");
+/* harmony import */ var _services_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_services_js__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _lib_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./lib/vue */ "./src/assets/js/lib/vue.js");
 /* harmony import */ var _lib_vue__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_lib_vue__WEBPACK_IMPORTED_MODULE_5__);
 
@@ -26723,77 +26723,34 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
- // let url = 'src/json/services.json';
-//Example 1
-//Err: Uncaught (in promise) SyntaxError: Unexpected token < in JSON at position 0
-// function sendRequest(event) {
-// 	event.preventDefault();
-// 	fetch(url)
-// 		.then(response => response.json())
-// 		.then(showServices)
-// 	// .then(response => response.text())
-// 	// .then(text => console.log(text));
-// }
-// document.addEventListener('change', sendRequest);
-// let servicesList = document.querySelector('.ba-services-list');
-// let servicesListTmpl = document.querySelector('[data-services-tmpl]').innerHTML;
-// function showServices(data) {
-// 	let arr = data;
-// 	let servicesHTML = '';
-// 	let city = document.querySelector('.ba-select-cities').value;
-// 	arr.forEach(element => {
-// 		element.cityName == city ? servicesHTML += servicesListTmpl
-// 			.replace(/{{overExposureCats}}/gi, element.overExposureCats)
-// 			.replace(/{{overExposureDogs}}/gi, element.overExposureDogs)
-// 			.replace(/{{GroomingW}}/gi, element.GroomingW)
-// 			.replace(/{{GroomingWC}}/gi, element.GroomingWC)
-// 			.replace(/{{Inspection}}/gi, element.Inspection) : '';
-// 	});
-// 	servicesList.innerHTML = servicesHTML;
-// }
-//Example 2
-// let data = [
-// 	{
-// 	 "cityName": "Poltava",
-// 	 "overExposureCats": 300,
-// 	 "overExposureDogs": 350,
-// 	 "GroomingW": 200,
-// 	 "GroomingWC": 400,
-//     "Inspection": 200
-// 	},
-// 	{
-// 		"cityName": "Kyiv",
-// 		"overExposureCats": 400,
-// 		"overExposureDogs": 450,
-// 		"GroomingW": 300,
-// 		"GroomingWC": 500,
-// 		"Inspection": 300
-// 	  },
-// 	  {
-// 		  "cityName": "Kharkiv",
-// 		  "overExposureCats": 350,
-// 		  "overExposureDogs": 400,
-// 		  "GroomingW": 250,
-// 		  "GroomingWC": 450,
-// 		  "Inspection": 200
-// 		 }
-//  ]
-// document.addEventListener('change', showServices);
-// let servicesList = document.querySelector('.ba-services-list');
-// let servicesListTmpl = document.querySelector('[data-services-tmpl]').innerHTML;
-// function showServices() {
-// 	let servicesHTML = '';
-// 	let city = document.querySelector('.ba-select-cities').value;
-// 	data.forEach(element => {
-// 		element.cityName == city ? servicesHTML += servicesListTmpl
-// 			.replace(/{{overExposureCats}}/gi, element.overExposureCats)
-// 			.replace(/{{overExposureDogs}}/gi, element.overExposureDogs)
-// 			.replace(/{{GroomingW}}/gi, element.GroomingW)
-// 			.replace(/{{GroomingWC}}/gi, element.GroomingWC)
-// 			.replace(/{{Inspection}}/gi, element.Inspection) : '';
-// 	});
-// 	servicesList.innerHTML = servicesHTML;
-// }
+
+
+var url = 'assets/db/services.json';
+
+function sendRequest(event) {
+  event.preventDefault();
+  fetch(url).then(function (response) {
+    return response.json();
+  }).then(showServices); // .then(response => response.text())
+  // .then(text => console.log(text));
+}
+
+document.addEventListener('change', sendRequest);
+var servicesList = document.querySelector('[data-list]');
+var servicesListTmpl = document.querySelector('[data-services-tmpl]').innerHTML;
+
+function showServices(data) {
+  var arr = data;
+  console.log(arr);
+  var servicesHTML = '';
+  var city = document.querySelector('.ba-select-cities').value;
+  arr.forEach(function (element) {
+    console.log(element.cityName);
+    console.log(city);
+    if (element.cityName == city) servicesHTML += servicesListTmpl.replace(/{{overExposureCats}}/gi, element.overExposureCats).replace(/{{overExposureDogs}}/gi, element.overExposureDogs).replace(/{{groomingW}}/gi, element.groomingW).replace(/{{groomingWC}}/gi, element.groomingWC).replace(/{{inspection}}/gi, element.inspection);
+  });
+  servicesList.innerHTML = servicesHTML;
+}
 
 /***/ }),
 
