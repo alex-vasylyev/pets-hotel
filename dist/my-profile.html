@@ -82,7 +82,6 @@
 							<input type="text" value="Ірина Попова" class="ba-info-container-title" readonly>			
 							<input type="text" value="Полтава" readonly>
 							<p class="ba-info-container-desc">Тут ви можете залишити інформацію про себе.</p>
-							<button type="button" class="ba-button-watch-profile" data-action-watch>Дивитись</button>
 							<button type="button" class="ba-button-edit-profile" data-action="edit">Редагувати</button>
 							<!-- <button type="submit" class="ba-button-logout show-for-medium" data-logout>Вихід</button> -->
 							<a href="index.html" class="ba-button-logout show-for-medium">Вихід</a>
@@ -90,52 +89,59 @@
 						<!-- /.ba-my-profile-info-container__info -->
 					</div>
 					<!-- /.ba-my-profile-info-container -->
-					<div class="ba-my-profile-services-info align-justify show-for-medium">
-						<p>Оплачені послуги</p>
-						<div class="ba-link-to-services">
-							<a href="#">Дивитись</a>
-						</div>
-						<!-- /.ba-link-toservices -->
-					</div>
-					<!-- /.ba-my-profile-services-info -->
 				</div>
-				<div class="column small-12 large-7">
+				<div class="column small-12 large-7 ba-pets-cards-column">
 					<div class="card ba-pet-card">
 						<div class="card-section ba-card-section-left">
-							<div class="ba-pet-card__title">
-								<h3 class="ba-pet-name">Рей, 7 років</h3>
-								<p class="ba-pet-breed">Собака породи<br /> кокер-спаінель.</p>
+							<div class="ba-pet-card__inner">
+								<div class="ba-pet-card__item">
+									<label>Кличкa:</label>
+									<input type="text" value="Рей" readonly>
+								</div>
+								<!-- /.ba-pet-card__item -->
+								<div class="ba-pet-card__item">
+									<label>Вiк:</label>
+									<input type="text" value="7" readonly>
+								</div>
+								<!-- /.ba-pet-card__item -->
+								<div class="ba-pet-card__item">
+									<label>Порода:</label>
+									<input type="text" value="кокер-спаніель" readonly>
+								</div>
+								<!-- /.ba-pet-card__item -->
+								<button type="button" class="ba-pet-card-edit-button" data-action="edit">Редагувати</button>
 							</div>
 							<!-- /.ba-pet-card__title -->
-							<div class="ba-pet-card__settings">
-								<button type="button" class="ba-pet-card-watch-button" data-pet-card-watch>Дивитись</button>
-								<button type="button" class="ba-pet-card-edit-button" data-pet-card-edit>Редагувати</button>
-							</div>
-							<!-- /.ba-pet-card__settings -->
 						</div>
 						<div class="card-section ba-card-section-right">
-							<!-- <img src="http://lorempixel.com/306/238/animals/" alt="Pet"> -->
 							<img src="assets/img/order-service/dog.jpg" alt="Pet">
 						</div>
 						<!-- /.card-section -->
 					</div>
-		
 					<div class="card ba-pet-card">
 						<div class="card-section ba-card-section-left">
-							<div class="ba-pet-card__title">
-								<h3 class="ba-pet-name">Циска, 11 місяців</h3>
-								<p class="ba-pet-breed">Кішка-бенгал.</p>
+							<div class="ba-pet-card__inner">
+								<div class="ba-pet-card__item">
+									<label>Кличкa:</label>
+									<input type="text" value="Рей" readonly>
+								</div>
+								<!-- /.ba-pet-card__item -->
+								<div class="ba-pet-card__item">
+									<label>Вiк:</label>
+									<input type="text" value="7" readonly>
+								</div>
+								<!-- /.ba-pet-card__item -->
+								<div class="ba-pet-card__item">
+									<label>Порода:</label>
+									<input type="text" value="кокер-спаніель" readonly>
+								</div>
+								<!-- /.ba-pet-card__item -->
+								<button type="button" class="ba-pet-card-edit-button" data-action="edit">Редагувати</button>
 							</div>
 							<!-- /.ba-pet-card__title -->
-							<div class="ba-pet-card__settings">
-								<button type="button" class="ba-pet-card-watch-button" data-pet-card-watch>Дивитись</button>
-								<button type="button" class="ba-pet-card-edit-button" data-pet-card-edit>Редагувати</button>
-							</div>
-							<!-- /.ba-pet-card__settings -->
 						</div>
 						<div class="card-section ba-card-section-right">
-							<!-- <img src="http://lorempixel.com/306/238/animals/" alt="Pet"> -->
-							<img src="assets/img/order-service/cat.jpg" alt="Pet">
+							<img src="assets/img/order-service/dog.jpg" alt="Pet">
 						</div>
 						<!-- /.card-section -->
 					</div>
@@ -146,17 +152,8 @@
 					<!-- /.add-pet-button -->
 					<!-- /.column -->
 				</div>
-		
-				<div class="column small-12 ba-my-profile-services-info--small align-justify show-for-small-only">
-					<p>Оплачені послуги</p>
-					<div class="ba-link-to-services">
-						<a href="#">Дивитись</a>
-					</div>
-					<!-- /.ba-link-toservices -->
-				</div>
 				<!-- /.ba-my-profile-services-info--small -->
 				<div class="column small-12 ba-buttons-my-profile-small show-for-small-only">
-					<button type="button" class="ba-button-back" data-check>Назад</button>
 					<!-- <button type="submit" class="ba-button-logout" data-logout>Вихід</button> -->
 					<a href="index.html" class="ba-button-logout">Вихід</a>
 				</div>

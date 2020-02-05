@@ -15018,18 +15018,40 @@ window.jQuery = jquery__WEBPACK_IMPORTED_MODULE_0___default.a; // require('found
 
 jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).foundation();
 
+ //User profile info
 
 var fieldsSet = document.querySelector('.ba-my-profile-info-container__inner');
 var editBtn = document.querySelector('.ba-button-edit-profile');
 
 function openFields() {
-  var inputs = fieldsSet.querySelectorAll('[type="text"]');
-  inputs.forEach(function (element) {
-    element.readOnly = !element.readOnly;
+  var inputFields = fieldsSet.querySelectorAll('[type="text"]');
+  inputFields.forEach(function (input) {
+    input.readOnly = !input.readOnly;
   });
 }
 
-editBtn.addEventListener('click', openFields);
+editBtn.addEventListener('click', openFields); //Pets Cards
+
+var petsCardsColumn = document.querySelectorAll('.ba-pet-card');
+
+function editPetData() {
+  petsCardsColumn.forEach(function (petCard) {
+    petCard.addEventListener('click', function (event) {
+      var inputFields = petCard.querySelectorAll('[type="text"]');
+      var eventEl = event.target;
+      var action = eventEl.dataset.action;
+      if (!action) return;
+
+      if (action == 'edit') {
+        inputFields.forEach(function (field) {
+          field.readOnly = !field.readOnly;
+        });
+      }
+    });
+  });
+}
+
+editPetData();
 
 /***/ }),
 
