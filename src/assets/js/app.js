@@ -23,6 +23,21 @@ import './services.js';
 
 import './lib/vue';
 
+let fieldsSet = document.querySelector('.ba-my-profile-info-container__inner');
+
+let editBtn = document.querySelector('.ba-button-edit-profile');
+
+
+function openFields(){
+	let inputs = fieldsSet.querySelectorAll('[type="text"]');
+	
+	inputs.forEach(element => {
+		element.readOnly = !element.readOnly;
+	});
+}
+
+editBtn.addEventListener('click', openFields);
+
 
 
  

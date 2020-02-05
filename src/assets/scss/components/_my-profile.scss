@@ -42,7 +42,7 @@
   }
 
   background-color: $white;
-  &__info {
+  &__inner {
     padding: 0 16px;
     margin-bottom: 25px;
     .ba-info-container-title {
@@ -51,10 +51,20 @@
       margin-bottom: 20px;
     }
     .ba-info-container-desc {
-      margin-top: 9px;
+		margin-top: 9px;
+		margin-bottom: 20px;
       font-size: 14px;
-      font-weight: 300;
-    }
+		font-weight: 300;
+	 }
+	 input[type="text"]{
+		 border: 1px solid grey;
+		 background: transparent;
+	 }
+	 input[type="text"]:read-only{
+		 border: none;
+		 background: transparent;
+	 }
+
   }
 
   &__settings {

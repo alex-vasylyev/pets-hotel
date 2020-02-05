@@ -1,8 +1,8 @@
-import App from './App.vue'
+import Main from './Main.vue'
 
 new Vue({
 	el: '#main-section',
-	template: '<App/>',
-	components: {App}
+	template: '<Main/>',
+	components: {Main}
 })
 
