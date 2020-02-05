@@ -326,21 +326,41 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 // import json from '../db/data.json';
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      selected: '',
-      cats: '',
-      dogs: '',
-      inspection: '',
-      groomingW: '',
-      groomingWC: '',
+      selected: "Оберіть Ваше місто",
+      cats: "",
+      dogs: "",
+      inspection: "",
+      groomingW: "",
+      groomingWC: "",
       servicesList: []
     };
   },
   methods: {
-    sendRequest: function sendRequest() {
+    showServices: function showServices() {
       var _this = this;
 
       fetch("assets/db/services.json").then(function (response) {
@@ -354,6 +374,8 @@ __webpack_require__.r(__webpack_exports__);
             _this.groomingW = element.groomingW;
             _this.groomingWC = element.groomingWC;
           }
+
+          window.scrollTo(0, 1996);
         });
       });
     }
@@ -13614,62 +13636,97 @@ var render = function() {
               )
             ]),
             _vm._v(" "),
-            _c(
-              "select",
-              {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.selected,
-                    expression: "selected"
+            _c("div", { staticClass: "ba-select-cities" }, [
+              _c(
+                "select",
+                {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.selected,
+                      expression: "selected"
+                    }
+                  ],
+                  on: {
+                    change: [
+                      function($event) {
+                        var $$selectedVal = Array.prototype.filter
+                          .call($event.target.options, function(o) {
+                            return o.selected
+                          })
+                          .map(function(o) {
+                            var val = "_value" in o ? o._value : o.value
+                            return val
+                          })
+                        _vm.selected = $event.target.multiple
+                          ? $$selectedVal
+                          : $$selectedVal[0]
+                      },
+                      _vm.showServices
+                    ]
                   }
-                ],
-                staticClass: "ba-select-cities",
-                on: {
-                  change: [
-                    function($event) {
-                      var $$selectedVal = Array.prototype.filter
-                        .call($event.target.options, function(o) {
-                          return o.selected
-                        })
-                        .map(function(o) {
-                          var val = "_value" in o ? o._value : o.value
-                          return val
-                        })
-                      _vm.selected = $event.target.multiple
-                        ? $$selectedVal
-                        : $$selectedVal[0]
+                },
+                [
+                  _c(
+                    "option",
+                    {
+                      attrs: {
+                        selected: "",
+                        disabled: "",
+                        value: "Оберіть Ваше місто"
+                      }
                     },
-                    _vm.sendRequest
-                  ]
-                }
-              },
-              [
-                _c("option", { attrs: { selected: "", disabled: "" } }, [
-                  _vm._v("Оберіть Ваше місто")
-                ]),
-                _vm._v(" "),
-                _c("option", { attrs: { value: "Poltava" } }, [
-                  _vm._v("Полтава, вул. Кірова, 10")
-                ]),
-                _vm._v(" "),
-                _c("option", { attrs: { value: "Kyiv" } }, [
-                  _vm._v("Киев, вул. Бандери, 120")
-                ]),
-                _vm._v(" "),
-                _c("option", { attrs: { value: "Kharkiv" } }, [
-                  _vm._v("Харьков, вул. Шухевича, 12")
-                ])
-              ]
-            )
+                    [_vm._v("Оберіть Ваше місто")]
+                  ),
+                  _vm._v(" "),
+                  _c("option", { attrs: { value: "Poltava" } }, [
+                    _vm._v("Полтава, вул. Кірова, 10")
+                  ]),
+                  _vm._v(" "),
+                  _c("option", { attrs: { value: "Kyiv" } }, [
+                    _vm._v("Киев, вул. Бандери, 120")
+                  ]),
+                  _vm._v(" "),
+                  _c("option", { attrs: { value: "Kharkiv" } }, [
+                    _vm._v("Харьков, вул. Шухевича, 12")
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "svg",
+                {
+                  staticClass: "select-arrow-intro",
+                  attrs: {
+                    width: "5",
+                    height: "10",
+                    viewBox: "0 0 5 10",
+                    fill: "none",
+                    xmlns: "http://www.w3.org/2000/svg"
+                  }
+                },
+                [
+                  _c("path", {
+                    attrs: {
+                      d: "M0 10L5 5L0 0V10Z",
+                      fill: "black",
+                      "fill-opacity": "0.54"
+                    }
+                  })
+                ]
+              )
+            ])
           ]
         )
       ]),
       _vm._v(" "),
       _c(
         "div",
-        { staticClass: "ba-select-cities-mobile show-for-small-only" },
+        {
+          staticClass:
+            "ba-select-cities-mobile ba-select-cities show-for-small-only"
+        },
         [
           _c(
             "select",
@@ -13698,7 +13755,7 @@ var render = function() {
                       ? $$selectedVal
                       : $$selectedVal[0]
                   },
-                  _vm.sendRequest
+                  _vm.showServices
                 ]
               }
             },
@@ -13718,6 +13775,29 @@ var render = function() {
               _c("option", { attrs: { value: "Kharkiv" } }, [
                 _vm._v("Харьков, вул. Шухевича, 12")
               ])
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "svg",
+            {
+              staticClass: "select-arrow-intro",
+              attrs: {
+                width: "5",
+                height: "10",
+                viewBox: "0 0 5 10",
+                fill: "none",
+                xmlns: "http://www.w3.org/2000/svg"
+              }
+            },
+            [
+              _c("path", {
+                attrs: {
+                  d: "M0 10L5 5L0 0V10Z",
+                  fill: "black",
+                  "fill-opacity": "0.54"
+                }
+              })
             ]
           )
         ]
@@ -13861,7 +13941,7 @@ var render = function() {
                   ]),
                   _vm._v(" "),
                   _c("span", [_vm._v(_vm._s(_vm.cats))]),
-                  _vm._v(" грн\n            ")
+                  _vm._v(" грн\n              ")
                 ]),
                 _vm._v(" "),
                 _c("p", { staticClass: "ba-service-item-description" }, [
@@ -13876,7 +13956,7 @@ var render = function() {
                   ]),
                   _vm._v(" "),
                   _c("span", [_vm._v(_vm._s(_vm.dogs))]),
-                  _vm._v(" грн\n            ")
+                  _vm._v(" грн\n              ")
                 ]),
                 _vm._v(" "),
                 _c("p", [_vm._v("бокс/вольєр в окремій кімнаті")])
@@ -13889,7 +13969,7 @@ var render = function() {
                   ]),
                   _vm._v(" "),
                   _c("span", [_vm._v(_vm._s(_vm.groomingW) + "*")]),
-                  _vm._v(" грн\n            ")
+                  _vm._v(" грн\n              ")
                 ]),
                 _vm._v(" "),
                 _c("p", [_vm._v("Миття")])
@@ -13902,7 +13982,7 @@ var render = function() {
                   ]),
                   _vm._v(" "),
                   _c("span", [_vm._v(_vm._s(_vm.groomingWC) + "*")]),
-                  _vm._v(" грн\n            ")
+                  _vm._v(" грн\n              ")
                 ]),
                 _vm._v(" "),
                 _c("p", [_vm._v("Миття та стрижка")])
@@ -13915,7 +13995,7 @@ var render = function() {
                   ]),
                   _vm._v(" "),
                   _c("span", [_vm._v(_vm._s(_vm.inspection))]),
-                  _vm._v("грн\n            ")
+                  _vm._v("грн\n              ")
                 ]),
                 _vm._v(" "),
                 _c("p", [_vm._v("Загальний")])
@@ -13955,7 +14035,7 @@ var staticRenderFns = [
       [
         _c("p", [
           _vm._v(
-            "\n          Знаючи не з чуток про проблеми, що виникають коли всім членам Вашої родини потрібно відлучитися на деякий\n          час, а домашнього вихованця залишити ніде, коли друзі не виявляють особливої радості від майбутнього\n          спілкування з твариною, нами був відкритий готель для тварин.\n        "
+            "\n            Знаючи не з чуток про проблеми, що виникають коли всім членам Вашої родини потрібно відлучитися на деякий\n            час, а домашнього вихованця залишити ніде, коли друзі не виявляють особливої радості від майбутнього\n            спілкування з твариною, нами був відкритий готель для тварин.\n          "
           )
         ])
       ]
@@ -13968,7 +14048,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "ba-column-description" }, [
       _c("p", [
         _vm._v(
-          "\n              Всі наші гості розміщуються з урахуванням їх особливостей і побажань господарів. Ми забезпечуємо догляд,\n              враховуючи надану інформацію від господарів про звички, поведінку та характер тварини. Організуємо звичне\n              домашнє харчування, вигул собак на обгородженій території в компанії і без.\n            "
+          "\n                Всі наші гості розміщуються з урахуванням їх особливостей і побажань господарів. Ми забезпечуємо догляд,\n                враховуючи надану інформацію від господарів про звички, поведінку та характер тварини. Організуємо звичне\n                домашнє харчування, вигул собак на обгородженій території в компанії і без.\n              "
         )
       ])
     ])
@@ -13980,7 +14060,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "ba-column-description" }, [
       _c("p", [
         _vm._v(
-          "\n              Готель передбачає окреме проживання кожного вихованця. Номери оснащені вентиляцією і системою опалення з\n              можливістю регулювання температурного режиму. Регулярно проходить прибирання та кварцування. Собаки і\n              кішки міститися в різних корпусах. Для котів передбачені лежанки, драбинки, когтеточки. У псів просторі\n              вольєри.\n            "
+          "\n                Готель передбачає окреме проживання кожного вихованця. Номери оснащені вентиляцією і системою опалення з\n                можливістю регулювання температурного режиму. Регулярно проходить прибирання та кварцування. Собаки і\n                кішки міститися в різних корпусах. Для котів передбачені лежанки, драбинки, когтеточки. У псів просторі\n                вольєри.\n              "
         )
       ])
     ])
@@ -13992,7 +14072,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "ba-column-description" }, [
       _c("p", [
         _vm._v(
-          "\n              Під час перетримки, тварини знаходяться під наглядом кваліфікованих ветеринарів, які щодня проводять\n              огляди. При необхідності ветлікар проведе всі необхідні процедури, якщо ваш вихованець знаходиться на\n              лікуванні.\n            "
+          "\n                Під час перетримки, тварини знаходяться під наглядом кваліфікованих ветеринарів, які щодня проводять\n                огляди. При необхідності ветлікар проведе всі необхідні процедури, якщо ваш вихованець знаходиться на\n                лікуванні.\n              "
         )
       ])
     ])
@@ -14027,19 +14107,19 @@ var staticRenderFns = [
                 [
                   _c("p", [
                     _vm._v(
-                      "\n            В умовах підвищеного попиту послуги під час відпусток влітку, а також у святкові дати, ми рекомендуємо\n            бронювати місця заздалегідь.\n          "
+                      "\n              В умовах підвищеного попиту послуги під час відпусток влітку, а також у святкові дати, ми рекомендуємо\n              бронювати місця заздалегідь.\n            "
                     )
                   ]),
                   _vm._v(" "),
                   _c("p", [
                     _vm._v(
-                      "\n            Перед заселенням, кожен гість проходить обов'язковий огляд у ветеринара. Ми приймаємо в зооготелі\n            тварин без інфекційних, паразитних і грибкових захворювань. Вихованці повинні бути щеплені і оброблені\n            від ектопаразитів. Перед заселенням, тваринам необхідно зробити вакцинацію з відміткою в ветпаспорт.\n          "
+                      "\n              Перед заселенням, кожен гість проходить обов'язковий огляд у ветеринара. Ми приймаємо в зооготелі\n              тварин без інфекційних, паразитних і грибкових захворювань. Вихованці повинні бути щеплені і оброблені\n              від ектопаразитів. Перед заселенням, тваринам необхідно зробити вакцинацію з відміткою в ветпаспорт.\n            "
                     )
                   ]),
                   _vm._v(" "),
                   _c("p", [
                     _vm._v(
-                      "\n            Отримати більш детальну консультацію по правилам заселення можна у наших фахівців за телефоном, що\n            вказаний нижче, або написавши на нашу електронну пошту.\n          "
+                      "\n              Отримати більш детальну консультацію по правилам заселення можна у наших фахівців за телефоном, що\n              вказаний нижче, або написавши на нашу електронну пошту.\n            "
                     )
                   ])
                 ]

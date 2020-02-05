@@ -18,23 +18,43 @@
           <p
             class="ba-col-2-description"
           >Оберіть Ваше місто та перегляньте список доступних послуг у Вашому регіоні:</p>
-          <select class="ba-select-cities" v-model="selected" v-on:change="sendRequest">
-            <option selected disabled>Оберіть Ваше місто</option>
-            <option value="Poltava">Полтава, вул. Кірова, 10</option>
-            <option value="Kyiv">Киев, вул. Бандери, 120</option>
-            <option value="Kharkiv">Харьков, вул. Шухевича, 12</option>
-          </select>
+          <div class="ba-select-cities">
+            <select v-model="selected" v-on:change="showServices">
+              <option selected disabled value="Оберіть Ваше місто">Оберіть Ваше місто</option>
+              <option value="Poltava">Полтава, вул. Кірова, 10</option>
+              <option value="Kyiv">Киев, вул. Бандери, 120</option>
+              <option value="Kharkiv">Харьков, вул. Шухевича, 12</option>
+            </select>
+            <svg
+              class="select-arrow-intro"
+              width="5"
+              height="10"
+              viewBox="0 0 5 10"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path d="M0 10L5 5L0 0V10Z" fill="black" fill-opacity="0.54" />
+            </svg>
+          </div>
         </div>
         <!-- /.ba-section-intro__col-2 -->
       </div>
 
-      <div class="ba-select-cities-mobile show-for-small-only">
-        <select class="ba-select-mobile___cities" v-model="selected" v-on:change="sendRequest">
+      <div class="ba-select-cities-mobile ba-select-cities show-for-small-only">
+        <select class="ba-select-mobile___cities" v-model="selected" v-on:change="showServices">
           <option selected disabled>Оберіть Ваше місто</option>
           <option value="Poltava">Полтава, вул. Кірова, 10</option>
           <option value="Kyiv">Киев, вул. Бандери, 120</option>
           <option value="Kharkiv">Харьков, вул. Шухевича, 12</option>
         </select>
+		  <svg
+              class="select-arrow-intro"
+              width="5"
+              height="10"
+              viewBox="0 0 5 10"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path d="M0 10L5 5L0 0V10Z" fill="black" fill-opacity="0.54" />
+            </svg>
       </div>
       <!-- /.select-mobile -->
       <div class="ba-section-intro__socials show-for-medium">
@@ -234,30 +254,30 @@
 export default {
   data() {
     return {
-		selected: '',
-		cats: '',
-		dogs: '',
-		inspection: '',
-		groomingW: '',
-		groomingWC: '',
+      selected: "Оберіть Ваше місто",
+      cats: "",
+      dogs: "",
+      inspection: "",
+      groomingW: "",
+      groomingWC: "",
       servicesList: []
     };
   },
   methods: {
-    sendRequest() {
+    showServices() {
       fetch("assets/db/services.json")
         .then(response => response.json())
         .then(services => {
-			 services.forEach(element => {
-				 if(element.cityName == this.selected){
-					 this.cats = element.overExposureCats;
-					 this.dogs = element.overExposureDogs;
-					 this.inspection = element.inspection;
-					 this.groomingW = element.groomingW;
-					 this.groomingWC = element.groomingWC;
-				 }							 
-			 });
-			 
+          services.forEach(element => {
+            if (element.cityName == this.selected) {
+              this.cats = element.overExposureCats;
+              this.dogs = element.overExposureDogs;
+              this.inspection = element.inspection;
+              this.groomingW = element.groomingW;
+              this.groomingWC = element.groomingWC;
+            }
+            window.scrollTo(0, 1996);
+          });
         });
     }
   }
