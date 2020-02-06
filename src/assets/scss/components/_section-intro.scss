@@ -22,8 +22,8 @@
     }
   }
 
-  &__col-1,
-  &__col-2 {
+  &__col-left,
+  &__col-right {
     background: $primary-color;
     margin: 0 auto;
     max-width: 359px;
@@ -34,7 +34,7 @@
     //@include show-for(medium)
   }
 
-  &__col-1 {
+  &__col-left {
     padding: 44px 33px 44px 36px;
     margin-bottom: 20px;
     justify-content: center;
@@ -43,7 +43,7 @@
     }
   }
 
-  &__col-2 {
+  &__col-right {
     padding: 69px 33px 134px 38px;
     .ba-col-2-description {
       margin-bottom: 46px;
@@ -55,12 +55,14 @@
     padding-left: 9px;
 	 border: none;
 	 cursor: pointer;
+	 color: $black;
   }
-  .ba-select-mobile {
+  .ba-select-cities-mobile {
     position: absolute;
 	 bottom: 20px;
 	 left: 22%;
-    max-width: 304px;
+	 max-width: 304px;
+	 color: $black;
   }
 
   p {

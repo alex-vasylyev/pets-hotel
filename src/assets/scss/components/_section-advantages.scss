@@ -8,12 +8,13 @@
 	
 }
 
-.ba-column-title{
+.ba-column-advantages .ba-column-title{
 	display: flex;
 	align-items: center;
 	margin-bottom: 10px;
 	margin-left: 10px;
 	h3{
+		
 		margin-left: 10px;
 	}
 	@include breakpoint(large){

@@ -1,12 +1,13 @@
 .ba-footer {
-  background: #004b4f;
-  padding: 51px 0 45px;
+  background: $secondary-color;
+  padding: 17px 0 10px;
+  @include breakpoint(medium){
+	padding: 51px 0 45px;
+  }
+  
   a {
-    font-family: Roboto;
-    font-size: 14px;
     line-height: 20px;
     letter-spacing: 0.3px;
-    color: #f2e7fe;
   }
 
   &__col-1 {
@@ -33,8 +34,11 @@
     @include show-for(large);
   }
   &__col-3 {
-    text-align: right;
-    padding-right: 32px;
+	 text-align: right;
+	 @include breakpoint(medium){
+		padding-right: 32px;
+	 }
+    
   }
 }
 

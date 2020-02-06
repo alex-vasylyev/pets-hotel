@@ -13,14 +13,19 @@ window.jQuery = $;
 // the line below
 import './lib/foundation-explicit-pieces';
 
+import './reviews';
+// import './gallery';
+
 import './lib/slick.min.js';
 
 $(document).foundation();
 
-import './services.js';
+// import './services.js';
+
+import './lib/vue';
 
 
 
-
+ 
 
 

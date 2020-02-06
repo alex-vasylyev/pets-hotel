@@ -48,10 +48,10 @@
 
 // Layout components
 @include foundation-off-canvas;
-// @include foundation-reveal;
+@include foundation-reveal;
 // @include foundation-sticky;
 // @include foundation-title-bar;
-// @include foundation-top-bar;
+// @include foundation-top-bar; 
 
 // Helpers
 // @include foundation-float-classes;
@@ -73,5 +73,8 @@
 @import "components/section-advantages";
 @import "components/section-settlement-conditions";
 @import "components/section-services";
-@import "components/section-reviews";
 @import "components/offcanvas";
+@import "components/my-profile";
+@import "components/section-reviews";
+@import "components/section-gallery";
+@import "components/section-order";

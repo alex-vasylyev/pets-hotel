@@ -1,59 +1,44 @@
 'use strict';
-let menuBtn = document.querySelector('.ba-menu-toggle');
-let menuWrap = document.querySelector('.ba-toggle-nav');
 
-let closeBtn = document.querySelector('.ba-close-button');
-
-menuBtn.addEventListener('click', () => {
-	menuWrap.classList.toggle('active');
-});
-
-closeBtn.addEventListener('click', () => {
-	menuWrap.classList.remove('active');
-});
-
-
-
-
-
+// let url = 'src/json/services.json';
 
 //Example 1
 //Err: Uncaught (in promise) SyntaxError: Unexpected token < in JSON at position 0
-let url = 'src/data/services.json';
 
-function sendRequest(event) {
-	event.preventDefault();
 
-	fetch(url)
-		.then(response => response.json())
-		.then(showServices)
-	// .then(response => response.text())
-	// .then(text => console.log(text));
-}
+// function sendRequest(event) {
+// 	event.preventDefault();
 
-document.addEventListener('change', sendRequest);
+// 	fetch(url)
+// 		.then(response => response.json())
+// 		.then(showServices)
+// 	// .then(response => response.text())
+// 	// .then(text => console.log(text));
+// }
 
-let servicesList = document.querySelector('.ba-services-list');
+// document.addEventListener('change', sendRequest);
 
-let servicesListTmpl = document.querySelector('[data-services-tmpl]').innerHTML;
+// let servicesList = document.querySelector('.ba-services-list');
 
-function showServices(data) {
-	let arr = data;
-	let servicesHTML = '';
+// let servicesListTmpl = document.querySelector('[data-services-tmpl]').innerHTML;
 
-	let city = document.querySelector('.ba-select-cities').value;
+// function showServices(data) {
+// 	let arr = data;
+// 	let servicesHTML = '';
 
-	arr.forEach(element => {
-		element.cityName == city ? servicesHTML += servicesListTmpl
-			.replace(/{{overExposureCats}}/gi, element.overExposureCats)
-			.replace(/{{overExposureDogs}}/gi, element.overExposureDogs)
-			.replace(/{{GroomingW}}/gi, element.GroomingW)
-			.replace(/{{GroomingWC}}/gi, element.GroomingWC)
-			.replace(/{{Inspection}}/gi, element.Inspection) : '';
-	});
+// 	let city = document.querySelector('.ba-select-cities').value;
 
-	servicesList.innerHTML = servicesHTML;
-}
+// 	arr.forEach(element => {
+// 		element.cityName == city ? servicesHTML += servicesListTmpl
+// 			.replace(/{{overExposureCats}}/gi, element.overExposureCats)
+// 			.replace(/{{overExposureDogs}}/gi, element.overExposureDogs)
+// 			.replace(/{{GroomingW}}/gi, element.GroomingW)
+// 			.replace(/{{GroomingWC}}/gi, element.GroomingWC)
+// 			.replace(/{{Inspection}}/gi, element.Inspection) : '';
+// 	});
+
+// 	servicesList.innerHTML = servicesHTML;
+// }
 
 
 //Example 2

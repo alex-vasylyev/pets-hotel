@@ -1,38 +1,39 @@
 .ba-header {
   background: $primary-color;
   position: relative;
-
+  .ba-header-row {
+    padding: 15px 0;
+  }
   .ba-logo {
     display: flex;
     align-items: center;
+
     @include breakpoint(large) {
       display: block;
     }
-    padding-top: 12px;
-    padding-bottom: 19px;
   }
   .ba-nav {
     font-size: 20px;
     font-weight: 200;
-    padding-left: 40px;
 
     .ba-menu-item {
       padding-bottom: 8px;
-      border-bottom: 2px solid transparent;
+      padding-top: 8px;
+      border-bottom: 3px solid transparent;
       &:hover {
-        border-bottom: 2px solid $white;
+        border-bottom: 3px solid $white;
 		}
     }
 
     li + li {
-      margin-left: 21px;
+      margin-left: 20px;
     }
   }
 
   .ba-my-profile {
+    padding-right: 10px;
     @include breakpoint(medium) {
-      margin-left: 25px;
-      margin-top: -5px;
+      margin-left: 20px;
     }
   }
 }
@@ -74,4 +75,8 @@
       color: lighten($black, $amount: 70);
     }
   }
+}
+
+.ba-nav .ba-menu-item.page-active {
+  border-bottom: 3px solid $white;
 }

@@ -33,10 +33,11 @@ button,
   line-height: 36px;
   border-radius: 200px;
   cursor: pointer;
-
-  &:hover,
-  &:active {
-    background-color: darken($color: $primary-color, $amount: 10);
+  border: 2px solid transparent;
+  &:hover, &:active {
+    color: $primary-color;
+	 background: #ffffff;
+	 border: 2px solid $primary-color;
   }
 }
 
@@ -52,7 +53,8 @@ button,
   &--services {
     font-size: 20px;
     padding-bottom: 30px;
-    padding-top: 30px;
+	 padding-top: 30px;
+	 
     @include breakpoint(medium) {
       font-size: 93px;
       padding-bottom: 80px;
@@ -80,5 +82,113 @@ img {
     @include breakpoint(medium) {
       padding-bottom: 70px;
     }
+  }
+  &--my-profile {
+	  padding: 17px 0;
+    @include breakpoint(large) {
+      padding-top: 83px;
+      padding-bottom: 48px;
+    }
+  }
+}
+
+
+input[type="text"],
+// input[type="checkbox"],
+input[type="date"],
+input[type="number"],
+input[type="tel"],
+input[type="url"],
+textarea,
+select {
+  transition: color 0.3s ease-in, border-color 0.3s ease-in,
+    background-color 0.3s ease-in, opacity 0.3s ease-in, box-shadow 0.2s ease-in;
+  display: block;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 0;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.6);
+  line-height: 1.2;
+  padding: 14px 0;
+
+  margin-bottom: 5px;
+  background: #e5f2f1;
+}
+
+::placeholder {
+  color: #ccc;
+  font-size: 14px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="date"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+input[type="url"]:focus,
+textarea:focus,
+select:focus {
+  box-shadow: 0 0 0 0 #555;
+  outline: none;
+  background-color: #e5f2f1;
+}
+
+select:not(:placeholder-shown):valid {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+select:not(:placeholder-shown):invalid {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+textarea {
+  resize: none;
+}
+.ba-float-label {
+  position: relative;
+}
+
+.ba-float-label__input::placeholder {
+  color: transparent;
+}
+.ba-float-label__placeholder {
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.87);
+  cursor: pointer;
+  position: absolute;
+  
+
+  left: 0;
+  bottom: 13px;
+  transition: transform 0.2s;
+}
+
+.ba-float-label__checkbox {
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: 0.5px;
+  color: rgba(0, 0, 0, 0.87);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .ba-float-label__checkbox {
+    text-align: right;
+    display: none;
+    margin: 0;
+  }
+}
+
+.ba-column-order-1 {
+  .ba-float-label-2 {
+    margin-top: 55px;
+    color: rgba(0, 0, 0, 0.87);
+  }
+  span {
+    display: block;
+    text-align: right;
+    color: rgba(0, 0, 0, 0.87);
   }
 }
