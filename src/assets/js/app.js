@@ -18,7 +18,6 @@ import './lib/slick.min.js';
 $(document).foundation();
 
 import './main.js';
-import './reviews.js';
 
 import './lib/vue';
 

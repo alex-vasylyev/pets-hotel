@@ -1,5 +1,6 @@
 import Main from './Main.vue';
 import Cards from './Cards.vue';
+import Reviews from './Reviews.vue';
 
 new Vue({
 	el: '#main-section',
@@ -11,5 +12,11 @@ new Vue({
 	el: '#my-profile',
 	template: '<Cards/>',
 	components: { Cards }
+})
+
+new Vue({
+	el: '#catalog',
+	template: '<Reviews/>',
+	components: { Reviews }
 })
 

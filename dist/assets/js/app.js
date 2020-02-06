@@ -15594,9 +15594,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _lib_slick_min_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./lib/slick.min.js */ "./src/assets/js/lib/slick.min.js");
 /* harmony import */ var _lib_slick_min_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_lib_slick_min_js__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _main_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./main.js */ "./src/assets/js/main.js");
-/* harmony import */ var _reviews_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./reviews.js */ "./src/assets/js/reviews.js");
-/* harmony import */ var _lib_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./lib/vue */ "./src/assets/js/lib/vue.js");
-/* harmony import */ var _lib_vue__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_lib_vue__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _lib_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./lib/vue */ "./src/assets/js/lib/vue.js");
+/* harmony import */ var _lib_vue__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_lib_vue__WEBPACK_IMPORTED_MODULE_5__);
 
  // Foundation JS relies on a global varaible. In ES6, all imports are hoisted
 // to the top of the file so if we used`import` to import Foundation,
@@ -15611,7 +15610,6 @@ window.jQuery = jquery__WEBPACK_IMPORTED_MODULE_0___default.a; // require('found
 
 
 jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).foundation();
-
 
  //User profile info
 
@@ -28413,6 +28411,8 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Main_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Main.vue */ "./src/assets/js/Main.vue");
 /* harmony import */ var _Cards_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Cards.vue */ "./src/assets/js/Cards.vue");
+/* harmony import */ var _Reviews_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Reviews.vue */ "./src/assets/js/Reviews.vue");
+
 
 
 new Vue({
@@ -28429,25 +28429,11 @@ new Vue({
     Cards: _Cards_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
   }
 });
-
-/***/ }),
-
-/***/ "./src/assets/js/reviews.js":
-/*!**********************************!*\
-  !*** ./src/assets/js/reviews.js ***!
-  \**********************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Reviews_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Reviews.vue */ "./src/assets/js/Reviews.vue");
-
 new Vue({
   el: '#catalog',
   template: '<Reviews/>',
   components: {
-    Reviews: _Reviews_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+    Reviews: _Reviews_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
   }
 });
 
