@@ -28414,6 +28414,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Reviews_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Reviews.vue */ "./src/assets/js/Reviews.vue");
 
 
+ //Main file for vue components!
 
 new Vue({
   el: '#main-section',
