@@ -18,6 +18,7 @@ import './lib/slick.min.js';
 $(document).foundation();
 
 import './main.js';
+import './reviews.js';
 
 import './lib/vue';
 
@@ -37,7 +38,6 @@ function openFields() {
 
 editBtn.addEventListener('click', openFields);
 
-//Pets Cards
 
 
 
