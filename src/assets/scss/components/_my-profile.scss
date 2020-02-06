@@ -1,5 +1,5 @@
 .ba-my-profile-container {
-  padding-top: 50px;
+  padding: 50px 0;
   a,
   .ba-button-edit-profile,
   .ba-button-logout,
@@ -21,13 +21,15 @@
   }
 
   input[type="text"] {
-	  max-width: 120px;
     color: $black;
     border: 1px solid grey;
     background: transparent;
     border-radius: 10px;
-    padding: 10px;
-    box-shadow: inset 0 0 5px $black;
+	 padding: 10px;
+	 box-shadow: inset 0 0 5px $black;
+	 @include breakpoint(medium){
+		font-size: 18px;
+	 }
   }
   input[type="text"]:read-only {
     border: 1px solid transparent;
@@ -50,10 +52,11 @@
 }
 
 .ba-my-profile-info-container {
+  img {
+    background-size: cover;
+    width: 100%;
+  }
   background-color: $white;
-
-
-  margin-bottom: 10px;
   @include breakpoint(medium) {
     margin-bottom: 44px;
   }
@@ -62,10 +65,9 @@
     padding: 20px 16px 40px 16px;
     margin-bottom: 25px;
     .ba-info-container-title {
-		 input{width: 100%;}
-		 
       font-size: 20px;
       margin-bottom: 20px;
+      width: 100%;
     }
 
     .ba-info-container-desc {
@@ -78,57 +80,47 @@
   }
 }
 
-.ba-my-profile-services-info {
-  display: flex;
-  padding: 0 10px;
-  margin-bottom: 0;
-
-  p {
-    font-size: 16px;
-    font-weight: 500;
-  }
-}
-.ba-my-profile-services-info--small {
-  display: flex;
-  margin-top: 22px;
-  padding-bottom: 26px;
-  border-bottom: 1px solid $medium-gray;
-}
-
 .ba-buttons-my-profile-small {
   display: flex;
   justify-content: center;
   align-items: center;
   padding-top: 20px;
 }
-
+//Pet card
 .ba-pet-card {
-  padding: 0;
-  max-height: 150px;
   flex-direction: row;
-  @include breakpoint(medium) {
-    max-height: 250px;
-  }
+
   &__inner {
     display: flex;
     flex-direction: column;
-    padding: 20px 25px 0 20px;
-
+    padding: 8px;
     .ba-pet-card__item {
-      display: flex;
+		display: flex;
+		align-items: center;
+		input{
+			margin-bottom: 0;
+		}
     }
     .ba-pet-card__item + .ba-pet-card__item {
-      margin-top: 20px;
+      margin-top: 5px;
+      @include breakpoint(medium) {
+        margin-top: 20px;
+      }
     }
     label {
-      font-size: 20px;
-      font-weight: 400;
-      margin-right: 6px;
-      margin-top: 3px;
+      font-size: 12px;
+      font-weight: 700;
+      @include breakpoint(medium) {
+        font-size: 18px;
+      }
     }
     .ba-pet-card-edit-button {
+		 margin-top: 40px;
+		 font-size: 12px;
+      @include breakpoint(medium) {
+        font-size: 16px;
+      }
       text-align: left;
-      margin-top: 15px;
       padding: 0;
     }
   }
@@ -156,13 +148,29 @@
       color: $primary-color;
     }
   }
+  .ba-card-section-right {
+    padding: 0;
+  }
+  .ba-card-section-right {
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
 }
 
+//for small
+.ba-pet-card .ba-card-section-left{
+	@media screen and (max-width: 640px) {
+		padding: 0;
+	 }
+}
 .ba-pet-card .ba-card-section-right,
 .ba-pet-card .ba-card-section-left {
   @media screen and (max-width: 640px) {
-    width: 100px;
-    height: 100px;
+    width: 200px;
+	 height: 200px;
   }
 
   @include breakpoint(medium) {

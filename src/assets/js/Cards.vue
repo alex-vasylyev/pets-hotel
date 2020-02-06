@@ -1,13 +1,17 @@
 <template>
   <div class="row align-justify ba-my-profile-container">
-    <div class="column small-12 large-4">
-      <img src="assets/img/order-service/Irina-Popova.jpg" alt="My profile image" />
+    <div class="column small-12 large-5">
       <div class="ba-my-profile-info-container">
+        <img src="assets/img/order-service/Irina-Popova.jpg" alt="My profile image" />
         <div class="ba-my-profile-info-container__inner">
           <input type="text" value="Ірина Попова" class="ba-info-container-title" readonly />
           <input type="text" value="Полтава" readonly />
           <p class="ba-info-container-desc">Тут ви можете залишити інформацію про себе.</p>
-          <button type="button" class="ba-button-edit-profile" data-action="edit" v-on:click="editUSerInfo">Редагувати</button>
+          <button
+            type="button"
+            class="ba-button-edit-profile"
+            data-action="edit"
+          >Редагувати</button>
           <!-- <button type="submit" class="ba-button-logout show-for-medium" data-logout>Вихід</button> -->
           <a href="index.html" class="ba-button-logout show-for-medium">Вихід</a>
         </div>
@@ -15,23 +19,23 @@
       </div>
       <!-- /.ba-my-profile-info-container -->
     </div>
-    <div class="column small-12 large-7 ba-pets-cards-column">
+    <div class="column small-12 large-7">
       <div class="card ba-pet-card" v-for="pet in userPetsCards">
-        <div class="card-section ba-card-section-left">
+        <div class="card-section small-6 ba-card-section-left">
           <div class="ba-pet-card__inner">
             <div class="ba-pet-card__item">
-              <label>Кличкa: {{pet.petNickname}}</label>
-              <input type="text" value readonly />
+              <label>Кличкa:</label>
+              <input type="text" :value="pet.petNickname" readonly />
             </div>
             <!-- /.ba-pet-card__item -->
             <div class="ba-pet-card__item">
-              <label>Вiк:{{pet.petAge}}</label>
-              <input type="text" value readonly />
+              <label>Вiк:</label>
+              <input type="text" :value="pet.petAge" readonly />
             </div>
             <!-- /.ba-pet-card__item -->
             <div class="ba-pet-card__item">
-              <label>Порода:{{pet.breed}}</label>
-              <input type="text" value readonly />
+              <label>Порода:</label>
+              <input type="text" :value="pet.breed" readonly />
             </div>
             <!-- /.ba-pet-card__item -->
             <button
@@ -43,7 +47,7 @@
           </div>
           <!-- /.ba-pet-card__title -->
         </div>
-        <div class="card-section ba-card-section-right">
+        <div class="card-section small-6 ba-card-section-right">
           <!-- <img src="assets/img/order-service/dog.jpg" alt="Pet"> -->
           <img :src="pet.petImg" :alt="pet.petNickname" />
         </div>
@@ -58,7 +62,6 @@
       <!-- /.add-pet-button -->
       <!-- /.column -->
     </div>
-    <!-- /.ba-my-profile-services-info--small -->
     <div class="column small-12 ba-buttons-my-profile-small show-for-small-only">
       <!-- <button type="submit" class="ba-button-logout" data-logout>Вихід</button> -->
       <a href="index.html" class="ba-button-logout">Вихід</a>
@@ -77,9 +80,7 @@ export default {
     };
   },
   methods: {
-    editUSerInfo() {
-
-	 },
+    editUserInfo() {},
     editPetCard() {
       let petsCardsColumn = document.querySelectorAll(".ba-pet-card");
 
@@ -98,9 +99,9 @@ export default {
             }
           });
         });
-		}
-		
-		editPetData();
+      }
+
+      editPetData();
     }
   },
   mounted() {

@@ -164,6 +164,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 // import json from '../db/data.json';
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -173,7 +176,7 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
-    editUSerInfo: function editUSerInfo() {},
+    editUserInfo: function editUserInfo() {},
     editPetCard: function editPetCard() {
       var petsCardsColumn = document.querySelectorAll(".ba-pet-card");
 
@@ -13826,7 +13829,87 @@ var render = function() {
     "div",
     { staticClass: "row align-justify ba-my-profile-container" },
     [
-      _c("div", { staticClass: "column small-12 large-4" }, [
+      _vm._m(0),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "column small-12 large-7" },
+        [
+          _vm._l(_vm.userPetsCards, function(pet) {
+            return _c("div", { staticClass: "card ba-pet-card" }, [
+              _c(
+                "div",
+                { staticClass: "card-section small-6 ba-card-section-left" },
+                [
+                  _c("div", { staticClass: "ba-pet-card__inner" }, [
+                    _c("div", { staticClass: "ba-pet-card__item" }, [
+                      _c("label", [_vm._v("Кличкa:")]),
+                      _vm._v(" "),
+                      _c("input", {
+                        attrs: { type: "text", readonly: "" },
+                        domProps: { value: pet.petNickname }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "ba-pet-card__item" }, [
+                      _c("label", [_vm._v("Вiк:")]),
+                      _vm._v(" "),
+                      _c("input", {
+                        attrs: { type: "text", readonly: "" },
+                        domProps: { value: pet.petAge }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "ba-pet-card__item" }, [
+                      _c("label", [_vm._v("Порода:")]),
+                      _vm._v(" "),
+                      _c("input", {
+                        attrs: { type: "text", readonly: "" },
+                        domProps: { value: pet.breed }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "button",
+                      {
+                        staticClass: "ba-pet-card-edit-button",
+                        attrs: { type: "button", "data-action": "edit" },
+                        on: { click: _vm.editPetCard }
+                      },
+                      [_vm._v("Редагувати")]
+                    )
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "card-section small-6 ba-card-section-right" },
+                [
+                  _c("img", {
+                    attrs: { src: pet.petImg, alt: pet.petNickname }
+                  })
+                ]
+              )
+            ])
+          }),
+          _vm._v(" "),
+          _vm._m(1)
+        ],
+        2
+      ),
+      _vm._v(" "),
+      _vm._m(2)
+    ]
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "column small-12 large-5" }, [
+      _c("div", { staticClass: "ba-my-profile-info-container" }, [
         _c("img", {
           attrs: {
             src: "assets/img/order-service/Irina-Popova.jpg",
@@ -13834,103 +13917,41 @@ var render = function() {
           }
         }),
         _vm._v(" "),
-        _c("div", { staticClass: "ba-my-profile-info-container" }, [
-          _c("div", { staticClass: "ba-my-profile-info-container__inner" }, [
-            _c("input", {
-              staticClass: "ba-info-container-title",
-              attrs: { type: "text", value: "Ірина Попова", readonly: "" }
-            }),
-            _vm._v(" "),
-            _c("input", {
-              attrs: { type: "text", value: "Полтава", readonly: "" }
-            }),
-            _vm._v(" "),
-            _c("p", { staticClass: "ba-info-container-desc" }, [
-              _vm._v("Тут ви можете залишити інформацію про себе.")
-            ]),
-            _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "ba-button-edit-profile",
-                attrs: { type: "button", "data-action": "edit" },
-                on: { click: _vm.editUSerInfo }
-              },
-              [_vm._v("Редагувати")]
-            ),
-            _vm._v(" "),
-            _c(
-              "a",
-              {
-                staticClass: "ba-button-logout show-for-medium",
-                attrs: { href: "index.html" }
-              },
-              [_vm._v("Вихід")]
-            )
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "column small-12 large-7 ba-pets-cards-column" },
-        [
-          _vm._l(_vm.userPetsCards, function(pet) {
-            return _c("div", { staticClass: "card ba-pet-card" }, [
-              _c("div", { staticClass: "card-section ba-card-section-left" }, [
-                _c("div", { staticClass: "ba-pet-card__inner" }, [
-                  _c("div", { staticClass: "ba-pet-card__item" }, [
-                    _c("label", [_vm._v("Кличкa: " + _vm._s(pet.petNickname))]),
-                    _vm._v(" "),
-                    _c("input", {
-                      attrs: { type: "text", value: "", readonly: "" }
-                    })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "ba-pet-card__item" }, [
-                    _c("label", [_vm._v("Вiк:" + _vm._s(pet.petAge))]),
-                    _vm._v(" "),
-                    _c("input", {
-                      attrs: { type: "text", value: "", readonly: "" }
-                    })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "ba-pet-card__item" }, [
-                    _c("label", [_vm._v("Порода:" + _vm._s(pet.breed))]),
-                    _vm._v(" "),
-                    _c("input", {
-                      attrs: { type: "text", value: "", readonly: "" }
-                    })
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass: "ba-pet-card-edit-button",
-                      attrs: { type: "button", "data-action": "edit" },
-                      on: { click: _vm.editPetCard }
-                    },
-                    [_vm._v("Редагувати")]
-                  )
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "card-section ba-card-section-right" }, [
-                _c("img", { attrs: { src: pet.petImg, alt: pet.petNickname } })
-              ])
-            ])
+        _c("div", { staticClass: "ba-my-profile-info-container__inner" }, [
+          _c("input", {
+            staticClass: "ba-info-container-title",
+            attrs: { type: "text", value: "Ірина Попова", readonly: "" }
           }),
           _vm._v(" "),
-          _vm._m(0)
-        ],
-        2
-      ),
-      _vm._v(" "),
-      _vm._m(1)
-    ]
-  )
-}
-var staticRenderFns = [
+          _c("input", {
+            attrs: { type: "text", value: "Полтава", readonly: "" }
+          }),
+          _vm._v(" "),
+          _c("p", { staticClass: "ba-info-container-desc" }, [
+            _vm._v("Тут ви можете залишити інформацію про себе.")
+          ]),
+          _vm._v(" "),
+          _c(
+            "button",
+            {
+              staticClass: "ba-button-edit-profile",
+              attrs: { type: "button", "data-action": "edit" }
+            },
+            [_vm._v("Редагувати")]
+          ),
+          _vm._v(" "),
+          _c(
+            "a",
+            {
+              staticClass: "ba-button-logout show-for-medium",
+              attrs: { href: "index.html" }
+            },
+            [_vm._v("Вихід")]
+          )
+        ])
+      ])
+    ])
+  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
