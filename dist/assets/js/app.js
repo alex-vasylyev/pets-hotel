@@ -15632,20 +15632,29 @@ window.jQuery = jquery__WEBPACK_IMPORTED_MODULE_0___default.a; // require('found
 
 jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).foundation();
 
- //Parallax for intro section
-//User profile info
+ // Code for section-order:
 
-var fieldsSet = document.querySelector('.ba-my-profile-info-container__inner');
-var editBtn = document.querySelector('.ba-button-edit-profile');
-
-function openFields() {
-  var inputFields = fieldsSet.querySelectorAll('[type="text"]');
-  inputFields.forEach(function (input) {
-    input.readOnly = !input.readOnly;
-  });
-}
-
-editBtn.addEventListener('click', openFields);
+document.getElementById("gruming1").addEventListener("change", function () {
+  document.getElementById('price2').innerHTML = this.value + " грн";
+});
+document.getElementById("gruming2").addEventListener("change", function () {
+  document.getElementById('price3').innerHTML = this.value + " грн";
+});
+document.getElementById("order-form").addEventListener("input", function () {
+  var pr1 = document.getElementById('price1').textContent;
+  var pr2 = document.getElementById('price2').textContent;
+  var pr3 = document.getElementById('price3').textContent;
+  document.getElementById('price4').innerHTML = "Всього: " + (Number.parseInt(pr1.slice(0, -4)) + Number.parseInt(pr2.slice(0, -4)) + Number.parseInt(pr3.slice(0, -4))) + " грн";
+}); //User profile info
+// let fieldsSet = document.querySelector('.ba-my-profile-info-container__inner');
+// let editBtn = document.querySelector('.ba-button-edit-profile');
+// function openFields() {
+// 	let inputFields = fieldsSet.querySelectorAll('[type="text"]');
+// 	inputFields.forEach(input => {
+// 		input.readOnly = !input.readOnly;
+// 	});
+// }
+// editBtn.addEventListener('click', openFields);
 
 /***/ }),
 
