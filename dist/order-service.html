@@ -81,15 +81,15 @@
 			<div class="row column">
 				<h3 class="ba-order-title">Форма для замовлення послуг</h3>
 			</div>
-				<form action="#" method="get" class="ba-contact-form">
+				<form action="#" method="get" class="ba-contact-form" id="order-form">
 					<div class="row">
 						<div class="column small-12 medium-4 large-4 ">
 							<div class="ba-column-order ba-column-order-1">
 								<h5 class="ba-column-title">1. Заповніть дані про бажані послуги</h5>	
 								<div class="ba-float-label-non">							
-									<select class="ba-float-label__select" name="list1">
-										<option value="Перетримка">Перетримка (собаки)</option>
-										<option>Перетримка (кота)</option>								
+									<select id="myselect1" class="ba-float-label__select" name="list1">
+										<option value="300">Перетримка (собаки)</option>
+										<option value="300">Перетримка (кота)</option>								
 									</select>
 									<svg class="select-arrow" width="5" height="10" viewBox="0 0 5 10" fill="none" xmlns="http://www.w3.org/2000/svg">
 										<path d="M0 10L5 5L0 0V10Z" fill="black" fill-opacity="0.54"/>
@@ -101,9 +101,9 @@
 								<div class="ba-float-label ba-float-label-2">
 									<svg class="label-calendar" width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 										<path fill-rule="evenodd" clip-rule="evenodd" d="M13 0V2H5V0H3V2H2C0.89 2 0.01 2.9 0.01 4L0 18C0 19.1 0.89 20 2 20H16C17.1 20 18 19.1 18 18V4C18 2.9 17.1 2 16 2H15V0H13ZM14 11H9V16H14V11ZM2 18H16V7H2V18Z" fill="#018786"/>
-										</svg>
+									</svg>
 										
-									<input class="ba-float-label__input datepicker-here" type="text" id="datepicker" name="dates" format="YYYY.MM.DD.HH" placeholder="Date"   data-range="true"
+									<input class="ba-float-label__input datepicker-here" value="300" type="text" id="datepicker" name="dates" format="YYYY.MM.DD.HH" placeholder="Date"   data-range="true"
 									data-multiple-dates-separator=" - " data-language="en">
 									<label class="ba-float-label__placeholder" for="first_name">Дата*</label>
 								</div>
@@ -114,20 +114,30 @@
 									  $( "#datepicker" ).datepicker();
 									} );
 									</script> -->
-									<script>
+									<!-- <script>
 									$('input[name="dates"]').daterangepicker();
+									
 		
+									</script> -->
+									<script>
+										$(function() {
+										  $('input[name="dates"]').daterangepicker({
+											 opens: 'left'
+										  }, function(start, end, label) {
+											document.getElementById('price1').innerHTML = 
+											 Math.ceil((end._d.getTime()-start._d.getTime()) / (1000 * 3600 * 24)) * 300 +" грн";
+										  });
+										});
+										</script>
 		
-									</script>
-		
-									<span>1050 грн</span>
+									<span id="price1">0 грн</span>
 								<div class="ba-float-label ba-float-label-2">
 									
 									<div>						
 									<select class="ba-float-label__select" id="gruming1" name="list1">
-										<option>Миття</option>
-										<option>Чистка вух</option>
-										<option>Чистка зубів</option>
+										<option value="150">Миття</option>
+										<option value="100">Чистка вух</option>
+										<option value="200">Чистка зубів</option>
 									</select>
 									<label class="ba-float-label__placeholder" for="gruming1">Грумінг</label>
 									
@@ -147,12 +157,12 @@
 									
 								</div>	
 								<!-- /.ba-float-label -->
-								<span>200 грн</span>
+								<span id="price2">150 грн</span>
 								<div class="ba-float-label ba-float-label-2">							
 									
 									<select class="ba-float-label__select" id="gruming2" name="list1">								
-										<option>Миття та стрижка</option>
-										<option>Тримінг</option>
+										<option value="200">Миття та стрижка</option>
+										<option value="300">Тримінг</option>
 									</select>
 									<label class="ba-float-label__placeholder" for="gruming2">Грумінг</label>
 		
@@ -170,11 +180,11 @@
 		
 								</div>
 								<!-- /.ba-float-label -->
-								<span>200 грн</span>
+								<span id="price3">200 грн</span>
 								<div class="ba-float-label ba-float-label-2">							
 									<select class="ba-float-label__select" id="review" name="list1">								
-										<option>Загальний</option>
-										<option>Спеціальний</option>
+										<option value="100">Загальний</option>
+										<option value="200">Спеціальний</option>
 									</select>
 									<label class="ba-float-label__placeholder" for="review">Огляд ветеринара</label>
 									
@@ -191,7 +201,7 @@
 									 </div>
 								</div>
 								<!-- /.ba-float-label -->
-								<span>Всього: 1450 грн</span>
+								<span id="price4">Всього: 0 грн</span>
 								<div class="ba-float-label ba-float-label-2">							
 									<div class="cntr">
 										<label for="cbb" class="label-cbb">
@@ -323,7 +333,7 @@
 					<div class="reveal" id="exampleModal" data-reveal>
 						<div class="ba-modal-content">
 							<h3>Ваше бронювання</h3>
-							<p class="lead">Ваше замовлення отримано! Чекаємо на Вас та вашого вихованця 15.12 в будь-який зручний для Вас час.</p>
+							<p class="lead">Ваше замовлення отримано! Чекаємо на Вас та вашого вихованця.</p>
 							<button class="close-button" data-close aria-label="Close modal" type="button">
 							<span aria-hidden="true">Ок <svg width="21" height="19" viewBox="0 0 21 19" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<path d="M6.39092 0.0150431C7.57092 -0.154957 8.82092 1.13504 9.18092 2.91504C9.54092 4.68504 8.89092 6.26504 7.71092 6.44504C6.54092 6.62504 5.28092 5.33504 4.91092 3.55504C4.54092 1.78504 5.21092 0.205043 6.39092 0.0150431ZM13.5409 0.0150431C14.7309 0.205043 15.3909 1.78504 15.0409 3.55504C14.6609 5.33504 13.4109 6.62504 12.2309 6.44504C11.0409 6.26504 10.3909 4.68504 10.7609 2.91504C11.1209 1.13504 12.3709 -0.154957 13.5409 0.0150431ZM1.04092 4.61504C2.18092 4.12504 3.73092 5.01504 4.54092 6.56504C5.30092 8.14504 5.04092 9.80504 3.91092 10.295C2.78092 10.785 1.24092 9.90504 0.450922 8.33504C-0.339078 6.76504 -0.059078 5.09504 1.04092 4.61504ZM19.0409 4.61504C20.1409 5.09504 20.4209 6.76504 19.6309 8.33504C18.8409 9.90504 17.3009 10.785 16.1709 10.295C15.0409 9.80504 14.7809 8.14504 15.5409 6.56504C16.3509 5.01504 17.9009 4.12504 19.0409 4.61504ZM17.3709 15.395C17.4109 16.335 16.6909 17.375 15.8309 17.765C14.0409 18.585 11.9209 16.885 9.93092 16.885C7.94092 16.885 5.80092 18.655 4.04092 17.765C3.04092 17.275 2.35092 15.975 2.48092 14.895C2.66092 13.405 4.45092 12.605 5.51092 11.515C6.92092 10.105 7.92092 7.45504 9.93092 7.45504C11.9309 7.45504 12.9909 10.065 14.3409 11.515C15.4509 12.735 17.3009 13.765 17.3709 15.395Z" fill="#018786"/>

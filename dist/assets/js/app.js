@@ -13405,6 +13405,19 @@ window.jQuery = jquery__WEBPACK_IMPORTED_MODULE_0___default.a; // require('found
 
 jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).foundation(); // import './services.js';
 
+document.getElementById("gruming1").addEventListener("change", function () {
+  document.getElementById('price2').innerHTML = this.value + " грн";
+});
+document.getElementById("gruming2").addEventListener("change", function () {
+  document.getElementById('price3').innerHTML = this.value + " грн";
+});
+document.getElementById("order-form").addEventListener("input", function () {
+  var pr1 = document.getElementById('price1').textContent;
+  var pr2 = document.getElementById('price2').textContent;
+  var pr3 = document.getElementById('price3').textContent;
+  document.getElementById('price4').innerHTML = "Всього: " + (Number.parseInt(pr1.slice(0, -4)) + Number.parseInt(pr2.slice(0, -4)) + Number.parseInt(pr3.slice(0, -4))) + " грн";
+}); //  (selectedDates.length) * this.value
+
 /***/ }),
 
 /***/ "./src/assets/js/lib/foundation-explicit-pieces.js":
