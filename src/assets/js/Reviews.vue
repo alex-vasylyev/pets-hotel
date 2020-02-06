@@ -36,7 +36,7 @@ export default {
   },
   methods: {
     loadMore() {
-      fetch("assets/json/reviews.json")
+      fetch("assets/db/reviews.json")
         .then(res => res.json())
         .then(moreReviews => {
           let newReviews = moreReviews.slice(-8);
@@ -46,7 +46,7 @@ export default {
     }
   },
   mounted() {
-    fetch("assets/db/json/reviews.json")
+    fetch("assets/db/reviews.json")
       .then(res => res.json())
       .then(list => {
 		  this.reviews = list.slice(0, 8);		  

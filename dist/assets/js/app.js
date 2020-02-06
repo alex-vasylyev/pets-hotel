@@ -564,7 +564,7 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
     loadMore: function loadMore() {
       var _this = this;
 
-      fetch("assets/json/reviews.json").then(function (res) {
+      fetch("assets/db/reviews.json").then(function (res) {
         return res.json();
       }).then(function (moreReviews) {
         var _this$reviews;
@@ -580,7 +580,7 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
   mounted: function mounted() {
     var _this2 = this;
 
-    fetch("assets/db/json/reviews.json").then(function (res) {
+    fetch("assets/db/reviews.json").then(function (res) {
       return res.json();
     }).then(function (list) {
       _this2.reviews = list.slice(0, 8);
