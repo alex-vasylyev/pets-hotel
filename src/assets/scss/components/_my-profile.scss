@@ -1,58 +1,79 @@
-.ba-my-profile-section {
-  color: $black;
-  img {
-    display: block;
-    width: 100%;
-  }
+.ba-my-profile-container {
+  padding-top: 50px;
   a,
-  .ba-button-watch-profile,
   .ba-button-edit-profile,
-  .ba-button-logout,.ba-pet-card-watch-button,.ba-pet-card-edit-button {
+  .ba-button-logout,
+  .ba-pet-card-edit-button {
+    display: inline-block;
     color: $primary-color;
     font-size: 14px;
     font-weight: 500;
     letter-spacing: 1.2px;
-	 text-transform: uppercase;
-	 border: 2px transparent;
+    text-transform: uppercase;
+    border: 2px transparent;
+    margin: 0;
     &:hover,
     &:active {
       color: lighten($color: $primary-color, $amount: 10);
+      border: none;
+      background: transparent;
     }
   }
-  a {
-    font-size: 12px;
+
+  input[type="text"] {
+	  max-width: 120px;
+    color: $black;
+    border: 1px solid grey;
+    background: transparent;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: inset 0 0 5px $black;
+  }
+  input[type="text"]:read-only {
+    border: 1px solid transparent;
+    background: transparent;
+    box-shadow: none;
+  }
+}
+.ba-my-profile-info-container__settings {
+  display: flex;
+  align-items: center;
+}
+
+.ba-button-logout {
+  @include breakpoint(medium) {
+    margin-left: 40px;
+  }
+  @include breakpoint(large) {
+    margin-left: 130px;
   }
 }
 
 .ba-my-profile-info-container {
+  background-color: $white;
+
+
   margin-bottom: 10px;
   @include breakpoint(medium) {
     margin-bottom: 44px;
   }
 
-  background-color: $white;
-  &__info {
-    padding: 0 16px;
+  &__inner {
+    padding: 20px 16px 40px 16px;
     margin-bottom: 25px;
     .ba-info-container-title {
+		 input{width: 100%;}
+		 
       font-size: 20px;
-      padding-top: 35px;
       margin-bottom: 20px;
     }
+
     .ba-info-container-desc {
       margin-top: 9px;
+      margin-bottom: 20px;
       font-size: 14px;
+      padding-left: 12px;
       font-weight: 300;
-    }
-  }
-
-  &__settings {
-    padding-left: 10px;
-    padding-bottom: 27px;
-    @include breakpoint(1062px) {
-      button + button {
-        margin-left: 20px;
-      }
     }
   }
 }
@@ -76,76 +97,75 @@
 
 .ba-buttons-my-profile-small {
   display: flex;
-  justify-content: space-between;
-  padding-top: 17px;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
 }
 
 .ba-pet-card {
-  max-height: 148px;
+  padding: 0;
+  max-height: 150px;
   flex-direction: row;
   @include breakpoint(medium) {
-    max-height: 238px;
+    max-height: 250px;
   }
-
-  .ba-card-section-left {
+  &__inner {
     display: flex;
     flex-direction: column;
-  }
+    padding: 20px 25px 0 20px;
 
-  &__title {
-    flex-grow: 1;
-    @include breakpoint(medium) {
-      // margin-bottom: 110px;
+    .ba-pet-card__item {
+      display: flex;
     }
-    .ba-pet-name {
-      font-size: 24px;
-      font-weight: 500;
-      margin-bottom: 10px;
+    .ba-pet-card__item + .ba-pet-card__item {
+      margin-top: 20px;
     }
-  }
-
-  &__settings {
-    button {
+    label {
+      font-size: 20px;
+      font-weight: 400;
+      margin-right: 6px;
+      margin-top: 3px;
+    }
+    .ba-pet-card-edit-button {
+      text-align: left;
+      margin-top: 15px;
       padding: 0;
     }
-
-    button + button {
-      margin-left: 16px;
+  }
+  .ba-pet-card + .ba-pet-card {
+    @include breakpoint(medium) {
+      margin-top: 40px;
     }
   }
-  .ba-card-section-right {
-    @media screen and (max-width: 640px) {
-      width: 100px;
-      height: 100px;
+  .add-pet-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include breakpoint(medium) {
+      justify-content: flex-start;
     }
 
-    @include breakpoint(medium) {
-      padding: 0;
+    span {
+      margin-right: 9px;
+      &:hover {
+        cursor: pointer;
+        color: lighten($color: $primary-color, $amount: 10);
+      }
+      font-weight: 300;
+      font-size: 20px;
+      color: $primary-color;
     }
   }
 }
 
-.ba-pet-card + .ba-pet-card {
-  @include breakpoint(medium) {
-    margin-top: 40px;
-  }
-}
-.add-pet-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  @include breakpoint(medium) {
-    justify-content: flex-start;
+.ba-pet-card .ba-card-section-right,
+.ba-pet-card .ba-card-section-left {
+  @media screen and (max-width: 640px) {
+    width: 100px;
+    height: 100px;
   }
 
-  span {
-    margin-right: 9px;
-    &:hover {
-      cursor: pointer;
-      color: lighten($color: $primary-color, $amount: 10);
-    }
-    font-weight: 300;
-    font-size: 20px;
-    color: $primary-color;
+  @include breakpoint(medium) {
+    padding: 0;
   }
 }
