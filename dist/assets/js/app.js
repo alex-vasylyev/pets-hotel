@@ -15632,7 +15632,8 @@ window.jQuery = jquery__WEBPACK_IMPORTED_MODULE_0___default.a; // require('found
 
 jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).foundation();
 
- //User profile info
+ //Parallax for intro section
+//User profile info
 
 var fieldsSet = document.querySelector('.ba-my-profile-info-container__inner');
 var editBtn = document.querySelector('.ba-button-edit-profile');

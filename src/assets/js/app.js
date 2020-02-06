@@ -21,6 +21,14 @@ import './main.js';
 
 import './lib/vue';
 
+
+//Parallax for intro section
+
+
+
+
+
+
 //User profile info
 let fieldsSet = document.querySelector('.ba-my-profile-info-container__inner');
 

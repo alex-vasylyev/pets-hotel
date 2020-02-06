@@ -4,6 +4,11 @@
   position: relative;
   color: $white;
   padding-bottom: 227px;
+  @include breakpoint(medium){
+	min-height: 100vh;
+	background-attachment: fixed;
+  }
+
 
   .ba-main-title-container {
     @media screen and (max-width: 640px) {
