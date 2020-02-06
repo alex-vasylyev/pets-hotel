@@ -1,13 +1,5 @@
-.ba-my-profile-section {
-  color: $black;
-  img {
-    display: block;
-    width: 100%;
-  }
-  .ba-my-profile-info-container__settings {
-    display: flex;
-    align-items: center;
-  }
+.ba-my-profile-container {
+  padding-top: 50px;
   a,
   .ba-button-edit-profile,
   .ba-button-logout,
@@ -28,18 +20,38 @@
     }
   }
 
-  .ba-button-logout {
-    @include breakpoint(medium) {
-      margin-left: 40px;
-    }
-    @include breakpoint(large) {
-      margin-left: 130px;
-    }
+  input[type="text"] {
+	  max-width: 120px;
+    color: $black;
+    border: 1px solid grey;
+    background: transparent;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: inset 0 0 5px $black;
+  }
+  input[type="text"]:read-only {
+    border: 1px solid transparent;
+    background: transparent;
+    box-shadow: none;
+  }
+}
+.ba-my-profile-info-container__settings {
+  display: flex;
+  align-items: center;
+}
+
+.ba-button-logout {
+  @include breakpoint(medium) {
+    margin-left: 40px;
+  }
+  @include breakpoint(large) {
+    margin-left: 130px;
   }
 }
 
 .ba-my-profile-info-container {
   background-color: $white;
+
 
   margin-bottom: 10px;
   @include breakpoint(medium) {
@@ -50,6 +62,8 @@
     padding: 20px 16px 40px 16px;
     margin-bottom: 25px;
     .ba-info-container-title {
+		 input{width: 100%;}
+		 
       font-size: 20px;
       margin-bottom: 20px;
     }
@@ -97,8 +111,8 @@
   }
   &__inner {
     display: flex;
-	 flex-direction: column;
-	 padding: 20px 25px 0 20px;
+    flex-direction: column;
+    padding: 20px 25px 0 20px;
 
     .ba-pet-card__item {
       display: flex;
@@ -108,20 +122,15 @@
     }
     label {
       font-size: 20px;
-      font-weight: 700;
-		margin-right: 5px;
-		margin-top: 3px;
-	 }
-	 
-	 input{
-		 font-size: 18px;
-	 }
+      font-weight: 400;
+      margin-right: 6px;
+      margin-top: 3px;
+    }
     .ba-pet-card-edit-button {
       text-align: left;
-		margin-top: 15px;
-		padding: 0;
+      margin-top: 15px;
+      padding: 0;
     }
-   
   }
   .ba-pet-card + .ba-pet-card {
     @include breakpoint(medium) {
@@ -149,30 +158,14 @@
   }
 }
 
+.ba-pet-card .ba-card-section-right,
+.ba-pet-card .ba-card-section-left {
+  @media screen and (max-width: 640px) {
+    width: 100px;
+    height: 100px;
+  }
 
-.ba-my-profile-section{
-	.ba-pet-card .ba-card-section-right, .ba-pet-card .ba-card-section-left{
-		@media screen and (max-width: 640px) {
-		  width: 100px;
-		  height: 100px;
-		}
-	
-		@include breakpoint(medium) {
-		  padding: 0;
-		}
-	 }
-	
-	 input[type="text"] {
-		color: $black;
-		border: 1px solid grey;
-		background: transparent;
-		border-radius: 10px;
-		padding: 10px;
-		box-shadow: inset 0 0 5px $black;
-	 }
-	 input[type="text"]:read-only {
-		border: 1px solid transparent;
-		background: transparent;
-		box-shadow: none;
-	 }
+  @include breakpoint(medium) {
+    padding: 0;
+  }
 }

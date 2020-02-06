@@ -86,6 +86,130 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./src/assets/js/Cards.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--0!./node_modules/vue-loader/lib??vue-loader-options!./src/assets/js/Cards.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+// import json from '../db/data.json';
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      userPetsCards: [],
+      profileData: []
+    };
+  },
+  methods: {
+    editUSerInfo: function editUSerInfo() {},
+    editPetCard: function editPetCard() {
+      var petsCardsColumn = document.querySelectorAll(".ba-pet-card");
+
+      function editPetData() {
+        petsCardsColumn.forEach(function (petCard) {
+          petCard.addEventListener("click", function (event) {
+            var inputFields = petCard.querySelectorAll('[type="text"]');
+            var eventEl = event.target;
+            var action = eventEl.dataset.action;
+            if (!action) return;
+
+            if (action == "edit") {
+              inputFields.forEach(function (field) {
+                field.readOnly = !field.readOnly;
+              });
+            }
+          });
+        });
+      }
+
+      editPetData();
+    }
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    fetch("assets/db/pets.json").then(function (res) {
+      return res.json();
+    }).then(function (list) {
+      _this.userPetsCards = list;
+    });
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./src/assets/js/Main.vue?vue&type=script&lang=js&":
 /*!***************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--0!./node_modules/vue-loader/lib??vue-loader-options!./src/assets/js/Main.vue?vue&type=script&lang=js& ***!
@@ -13601,6 +13725,167 @@ exports.clearImmediate = typeof self !== "undefined" && self.clearImmediate || t
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./src/assets/js/Cards.vue?vue&type=template&id=1df57680&":
+/*!**********************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./src/assets/js/Cards.vue?vue&type=template&id=1df57680& ***!
+  \**********************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "row align-justify ba-my-profile-container" },
+    [
+      _c("div", { staticClass: "column small-12 large-4" }, [
+        _c("img", {
+          attrs: {
+            src: "assets/img/order-service/Irina-Popova.jpg",
+            alt: "My profile image"
+          }
+        }),
+        _vm._v(" "),
+        _c("div", { staticClass: "ba-my-profile-info-container" }, [
+          _c("div", { staticClass: "ba-my-profile-info-container__inner" }, [
+            _c("input", {
+              staticClass: "ba-info-container-title",
+              attrs: { type: "text", value: "Ірина Попова", readonly: "" }
+            }),
+            _vm._v(" "),
+            _c("input", {
+              attrs: { type: "text", value: "Полтава", readonly: "" }
+            }),
+            _vm._v(" "),
+            _c("p", { staticClass: "ba-info-container-desc" }, [
+              _vm._v("Тут ви можете залишити інформацію про себе.")
+            ]),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "ba-button-edit-profile",
+                attrs: { type: "button", "data-action": "edit" },
+                on: { click: _vm.editUSerInfo }
+              },
+              [_vm._v("Редагувати")]
+            ),
+            _vm._v(" "),
+            _c(
+              "a",
+              {
+                staticClass: "ba-button-logout show-for-medium",
+                attrs: { href: "index.html" }
+              },
+              [_vm._v("Вихід")]
+            )
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "column small-12 large-7 ba-pets-cards-column" },
+        [
+          _vm._l(_vm.userPetsCards, function(pet) {
+            return _c("div", { staticClass: "card ba-pet-card" }, [
+              _c("div", { staticClass: "card-section ba-card-section-left" }, [
+                _c("div", { staticClass: "ba-pet-card__inner" }, [
+                  _c("div", { staticClass: "ba-pet-card__item" }, [
+                    _c("label", [_vm._v("Кличкa: " + _vm._s(pet.petNickname))]),
+                    _vm._v(" "),
+                    _c("input", {
+                      attrs: { type: "text", value: "", readonly: "" }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "ba-pet-card__item" }, [
+                    _c("label", [_vm._v("Вiк:" + _vm._s(pet.petAge))]),
+                    _vm._v(" "),
+                    _c("input", {
+                      attrs: { type: "text", value: "", readonly: "" }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "ba-pet-card__item" }, [
+                    _c("label", [_vm._v("Порода:" + _vm._s(pet.breed))]),
+                    _vm._v(" "),
+                    _c("input", {
+                      attrs: { type: "text", value: "", readonly: "" }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass: "ba-pet-card-edit-button",
+                      attrs: { type: "button", "data-action": "edit" },
+                      on: { click: _vm.editPetCard }
+                    },
+                    [_vm._v("Редагувати")]
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "card-section ba-card-section-right" }, [
+                _c("img", { attrs: { src: pet.petImg, alt: pet.petNickname } })
+              ])
+            ])
+          }),
+          _vm._v(" "),
+          _vm._m(0)
+        ],
+        2
+      ),
+      _vm._v(" "),
+      _vm._m(1)
+    ]
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "add-pet-button" }, [
+      _c("a", { attrs: { href: "order-service.html" } }, [
+        _c("span", [_vm._v("+")]),
+        _vm._v(" додати ще одну тварину\n      ")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass:
+          "column small-12 ba-buttons-my-profile-small show-for-small-only"
+      },
+      [
+        _c(
+          "a",
+          { staticClass: "ba-button-logout", attrs: { href: "index.html" } },
+          [_vm._v("Вихід")]
+        )
+      ]
+    )
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./src/assets/js/Main.vue?vue&type=template&id=7b4202ec&":
 /*!*********************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./src/assets/js/Main.vue?vue&type=template&id=7b4202ec& ***!
@@ -14915,6 +15200,75 @@ module.exports = function (module) {
 
 /***/ }),
 
+/***/ "./src/assets/js/Cards.vue":
+/*!*********************************!*\
+  !*** ./src/assets/js/Cards.vue ***!
+  \*********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Cards_vue_vue_type_template_id_1df57680___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Cards.vue?vue&type=template&id=1df57680& */ "./src/assets/js/Cards.vue?vue&type=template&id=1df57680&");
+/* harmony import */ var _Cards_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Cards.vue?vue&type=script&lang=js& */ "./src/assets/js/Cards.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _Cards_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Cards_vue_vue_type_template_id_1df57680___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Cards_vue_vue_type_template_id_1df57680___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "src/assets/js/Cards.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./src/assets/js/Cards.vue?vue&type=script&lang=js&":
+/*!**********************************************************!*\
+  !*** ./src/assets/js/Cards.vue?vue&type=script&lang=js& ***!
+  \**********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Cards_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--0!../../../node_modules/vue-loader/lib??vue-loader-options!./Cards.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./src/assets/js/Cards.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Cards_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./src/assets/js/Cards.vue?vue&type=template&id=1df57680&":
+/*!****************************************************************!*\
+  !*** ./src/assets/js/Cards.vue?vue&type=template&id=1df57680& ***!
+  \****************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Cards_vue_vue_type_template_id_1df57680___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./Cards.vue?vue&type=template&id=1df57680& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./src/assets/js/Cards.vue?vue&type=template&id=1df57680&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Cards_vue_vue_type_template_id_1df57680___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Cards_vue_vue_type_template_id_1df57680___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./src/assets/js/Main.vue":
 /*!********************************!*\
   !*** ./src/assets/js/Main.vue ***!
@@ -15000,7 +15354,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _lib_foundation_explicit_pieces__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./lib/foundation-explicit-pieces */ "./src/assets/js/lib/foundation-explicit-pieces.js");
 /* harmony import */ var _lib_slick_min_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./lib/slick.min.js */ "./src/assets/js/lib/slick.min.js");
 /* harmony import */ var _lib_slick_min_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_lib_slick_min_js__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _services_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./services.js */ "./src/assets/js/services.js");
+/* harmony import */ var _main_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./main.js */ "./src/assets/js/main.js");
 /* harmony import */ var _lib_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./lib/vue */ "./src/assets/js/lib/vue.js");
 /* harmony import */ var _lib_vue__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_lib_vue__WEBPACK_IMPORTED_MODULE_5__);
 
@@ -15031,27 +15385,6 @@ function openFields() {
 }
 
 editBtn.addEventListener('click', openFields); //Pets Cards
-
-var petsCardsColumn = document.querySelectorAll('.ba-pet-card');
-
-function editPetData() {
-  petsCardsColumn.forEach(function (petCard) {
-    petCard.addEventListener('click', function (event) {
-      var inputFields = petCard.querySelectorAll('[type="text"]');
-      var eventEl = event.target;
-      var action = eventEl.dataset.action;
-      if (!action) return;
-
-      if (action == 'edit') {
-        inputFields.forEach(function (field) {
-          field.readOnly = !field.readOnly;
-        });
-      }
-    });
-  });
-}
-
-editPetData();
 
 /***/ }),
 
@@ -27828,22 +28161,31 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
 /***/ }),
 
-/***/ "./src/assets/js/services.js":
-/*!***********************************!*\
-  !*** ./src/assets/js/services.js ***!
-  \***********************************/
+/***/ "./src/assets/js/main.js":
+/*!*******************************!*\
+  !*** ./src/assets/js/main.js ***!
+  \*******************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Main_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Main.vue */ "./src/assets/js/Main.vue");
+/* harmony import */ var _Cards_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Cards.vue */ "./src/assets/js/Cards.vue");
+
 
 new Vue({
   el: '#main-section',
   template: '<Main/>',
   components: {
     Main: _Main_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+  }
+});
+new Vue({
+  el: '#my-profile',
+  template: '<Cards/>',
+  components: {
+    Cards: _Cards_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
   }
 });
 

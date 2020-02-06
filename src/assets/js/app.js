@@ -17,9 +17,7 @@ import './lib/slick.min.js';
 
 $(document).foundation();
 
-import './services.js';
-
-
+import './main.js';
 
 import './lib/vue';
 
@@ -41,28 +39,6 @@ editBtn.addEventListener('click', openFields);
 
 //Pets Cards
 
-let petsCardsColumn = document.querySelectorAll('.ba-pet-card');
-
-function editPetData() {
-
-	petsCardsColumn.forEach(petCard => {
-
-		petCard.addEventListener('click', (event) => {
-			let inputFields = petCard.querySelectorAll('[type="text"]');
-			let eventEl = event.target;
-			let action = eventEl.dataset.action;
-			if (!action) return;
-
-			if (action == 'edit') {
-				inputFields.forEach(field => {
-					field.readOnly = !field.readOnly;
-				});
-			}
-		})
-	});
-}
-
-editPetData();
 
 
 
