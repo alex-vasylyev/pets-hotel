@@ -20,6 +20,8 @@ $(document).foundation();
 // import './services.js';
 
 
+// Code for section-order:
+
 	document.getElementById("gruming1").addEventListener("change", function(){
 		document.getElementById('price2').innerHTML = this.value +" грн";   
 	});
@@ -42,7 +44,7 @@ $(document).foundation();
 
 	 
 
-	//  (selectedDates.length) * this.value
+	
 	 
 	 
 
