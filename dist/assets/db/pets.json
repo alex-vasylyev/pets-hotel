@@ -1,0 +1,20 @@
+[
+  {
+    "petNickname": "Рей",
+    "petAge": "7",
+    "breed":"Кокер-спанiель",
+	 "petImg": "assets/img/order-service/dog.jpg"
+  },
+  {
+    "petNickname": "Циска",
+    "petAge": "11",
+    "breed": "Кiшка-бенгал",
+	 "petImg": "assets/img/order-service/cat.jpg"
+  },
+  {
+    "petNickname": "Симба",
+    "petAge": "1",
+    "breed": "Лев",
+	 "petImg": "assets/img/order-service/chihua.jpg"
+  }
+]
