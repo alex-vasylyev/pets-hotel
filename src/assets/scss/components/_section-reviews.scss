@@ -1,115 +1,119 @@
 .ba-section-reviews {
-	padding: 30px 0;
-	@include breakpoint(large) {
-	  padding-top: 122px;
-	  padding-bottom: 70px;
-	}
- 
-	.row {
-	  @include breakpoint(large) {
-		 margin-bottom: 70px;
-	  }
-	}
- 
-	.card {
-	  @include breakpoint(medium) {
-		 max-width: 263px;
-		 height: auto;
-		 margin: 20px auto;
-	  }
-	}
- 
-	img {
-	  width: 100%;
-	  height: 186px;
-	  display: block;
-	  object-fit: cover;
-	}
- }
- 
- .ba-reviews {
-	.ba-review-block-top {
-	  display: flex;
-	  justify-content: space-between;
-	}
- 
-	.ba-review-block-bot {
-	  display: flex;
-	  padding-top: 2px;
-	}
- 
-	&--username {
-	  font-weight: 500;
-	  font-size: 10px;
-	  line-height: 16px;
-	  letter-spacing: 1.5px;
-	  text-transform: uppercase;
-	}
- 
-	&--date {
-	  font-size: 12px;
-	  line-height: 16px;
-	  text-align: right;
-	  letter-spacing: 0.4px;
-	}
- 
-	&--petname {
-	  font-weight: 500;
-	  font-size: 16px;
-	  letter-spacing: 0.15px;
-	  margin-bottom: 13px;
- 
-	  &::after {
-		 content: ",";
-	  }
-	}
- 
-	&--petold {
-	  font-weight: 500;
-	  font-size: 16px;
-	  letter-spacing: 0.15px;
-	  padding-bottom: 13px;
- 
-	  &::before {
-		 content: "";
-		 border-left: 3px solid #fff;
-	  }
-	}
- 
-	&--order {
-	  display: flex;
-	  flex-grow: 1;
-	  font-size: 14px;
-	  line-height: 20px;
-	  letter-spacing: 0.25px;
-	  margin-bottom: 13px;
-	}
- }
- 
- .ba-review-read-more-btn {
-	color: $primary-color;
-	padding-left: 40px;
- }
- .ba-review-read-more-btn,
- .ba-reviews-bnt {
-	&:hover,
-	&:active {
-	  color: lighten($color: $primary-color, $amount: 10);
-	  border: none;
-	}
- }
- .ba-reviews-bnt {
-	color: #018786;
-	font-weight: 500;
-	font-size: 14px;
-	line-height: 16px;
-	text-align: center;
-	letter-spacing: 0.75px;
-	text-transform: uppercase;
-	display: flex;
-	justify-content: center;
-	
-	@include breakpoint(small){
-	 padding-top: 15px;
- }
- }
+  padding: 30px 0;
+  @include breakpoint(large) {
+    padding-top: 122px;
+    padding-bottom: 70px;
+  }
+
+  .row {
+    @include breakpoint(large) {
+      margin-bottom: 70px;
+    }
+  }
+
+  .card {
+    &:hover,
+    &:active {
+      cursor: pointer;
+    }
+    @include breakpoint(medium) {
+      max-width: 263px;
+      height: auto;
+      margin: 20px auto;
+    }
+  }
+
+  img {
+    width: 100%;
+    height: 186px;
+    display: block;
+    object-fit: cover;
+  }
+}
+
+.ba-reviews {
+  .ba-review-block-top {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .ba-review-block-bot {
+    display: flex;
+    padding-top: 2px;
+  }
+
+  &--username {
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 16px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+
+  &--date {
+    font-size: 12px;
+    line-height: 16px;
+    text-align: right;
+    letter-spacing: 0.4px;
+  }
+
+  &--petname {
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 0.15px;
+    margin-bottom: 13px;
+
+    &::after {
+      content: ",";
+    }
+  }
+
+  &--petold {
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 0.15px;
+    padding-bottom: 13px;
+
+    &::before {
+      content: "";
+      border-left: 3px solid #fff;
+    }
+  }
+
+  &--order {
+    display: flex;
+    flex-grow: 1;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.25px;
+    margin-bottom: 13px;
+  }
+}
+
+.ba-review-read-more-btn {
+  color: $primary-color;
+  padding-left: 40px;
+}
+.ba-review-read-more-btn,
+.ba-reviews-bnt {
+  &:hover,
+  &:active {
+    color: lighten($color: $primary-color, $amount: 10);
+    border: none;
+  }
+}
+.ba-reviews-bnt {
+  color: #018786;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  letter-spacing: 0.75px;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+
+  @include breakpoint(small) {
+    padding-top: 15px;
+  }
+}

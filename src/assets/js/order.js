@@ -26,7 +26,7 @@ let order = new Vue({
 			this.orderData.totalPrice = (Number.parseInt(this.orderData.overExposure))
 				+ (Number.parseInt(this.orderData.groomingC))
 				+ (Number.parseInt(this.orderData.groomingW))
-				+ (Number.parseInt(this.orderData.groomingW))
+				+ (Number.parseInt(this.orderData.inspection))
 				+(Number.parseInt(this.orderData.dateRangePrice));
 		},
 		createOrder() {

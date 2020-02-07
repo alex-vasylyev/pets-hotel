@@ -28698,7 +28698,7 @@ var order = new Vue({
     totalPriceCounting: function totalPriceCounting() {
       var rangePrice = document.querySelector('#dateRangePrice').textContent;
       this.orderData.dateRangePrice = Number.parseInt(rangePrice.slice(0, -4));
-      this.orderData.totalPrice = Number.parseInt(this.orderData.overExposure) + Number.parseInt(this.orderData.groomingC) + Number.parseInt(this.orderData.groomingW) + Number.parseInt(this.orderData.groomingW) + Number.parseInt(this.orderData.dateRangePrice);
+      this.orderData.totalPrice = Number.parseInt(this.orderData.overExposure) + Number.parseInt(this.orderData.groomingC) + Number.parseInt(this.orderData.groomingW) + Number.parseInt(this.orderData.inspection) + Number.parseInt(this.orderData.dateRangePrice);
     },
     createOrder: function createOrder() {
       for (var key in this.orderData) {
