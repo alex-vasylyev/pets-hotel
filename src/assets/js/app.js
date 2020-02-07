@@ -28,6 +28,10 @@ let fieldsSet = document.querySelector('.ba-my-profile-info-container__inner');
 
 let editBtn = document.querySelector('.ba-button-edit-profile');
 
+if(editBtn){
+	editBtn.addEventListener('click', openFields);
+}
+
 
 function openFields() {
 	let inputFields = fieldsSet.querySelectorAll('[type="text"]');
@@ -37,7 +41,7 @@ function openFields() {
 	});
 }
 
-editBtn.addEventListener('click', openFields);
+
 
 
 
