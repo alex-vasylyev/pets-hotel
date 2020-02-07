@@ -17,14 +17,31 @@ import './lib/slick.min.js';
 
 $(document).foundation();
 
-// import './services.js';
-
-
+import './main.js';
 
 import './lib/vue';
+import './order.js';
+
+
+//User profile info
+let fieldsSet = document.querySelector('.ba-my-profile-info-container__inner');
+
+let editBtn = document.querySelector('.ba-button-edit-profile');
+
+
+function openFields() {
+	let inputFields = fieldsSet.querySelectorAll('[type="text"]');
+
+	inputFields.forEach(input => {
+		input.readOnly = !input.readOnly;
+	});
+}
+
+editBtn.addEventListener('click', openFields);
 
 
 
- 
+
+
 
 

@@ -309,7 +309,7 @@ select{
     color: rgba(0, 0, 0, 0.87);
   }
   &--1 {
-    padding: 0 0 60px;
+	 padding: 0 0 60px;
   }
   &--3 {
     padding-top: 30px;
@@ -345,31 +345,49 @@ select{
 		mix-blend-mode: normal;
 		padding-bottom: 60px;
 	}
-	.ba-button-close-modal{
-		text-align: center;
-		display: flex;
-		align-items: center;
-		margin: 0 auto;
-		span{
-			font-weight: 500;
-			font-size: 14px;			
-			// text-align: center;
-			
-			letter-spacing: 0.75px;
-			text-transform: uppercase;
-			color: #018786;
-			svg{
-				margin-left: 2px;
-				margin-bottom: -2px;
-			}
+}
+
+.ba-mobal-content-btn{
+	display: flex;
+	justify-content: center;
+}
+.ba-button-close-modal{
+	span{
+		font-weight: 500;
+		font-size: 14px;			
+		// text-align: center;
+		
+		letter-spacing: 0.75px;
+		text-transform: uppercase;
+		color: #018786;
+		svg{
+			margin-left: 2px;
+			margin-bottom: -2px;
 		}
-		&:hover, &:active{
-			outline: none;
-			border: 2px solid transparent;
-		  transform: scale(1.1);
-		}
+	}
+	&:hover, &:active{
+		border: 2px solid transparent;
+		outline: none;
+	  transform: scale(1.1);
 	}
 }
 .cat-reveal{
 	padding-bottom: 10px;
 }
+.ba-column-order{
+	opacity: 50%;
+}
+.ba-column-order:hover{
+	opacity: 100%;
+}
+
+.total-price{
+	margin-top: 20px;
+	display: flex;
+	align-items: center;
+	input{
+		padding-left: 30px;
+		width: 100px;
+	}
+}
+
