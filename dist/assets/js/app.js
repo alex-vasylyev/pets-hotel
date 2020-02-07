@@ -246,6 +246,7 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -254,17 +255,7 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
     };
   },
   methods: {
-    loadMore: function (_loadMore) {
-      function loadMore() {
-        return _loadMore.apply(this, arguments);
-      }
-
-      loadMore.toString = function () {
-        return _loadMore.toString();
-      };
-
-      return loadMore;
-    }(function () {
+    loadMore: function loadMore() {
       var _this = this;
 
       fetch("assets/db/gallery.json").then(function (res) {
@@ -272,35 +263,23 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
       }).then(function (moreGallery) {
         var _this$gallery;
 
-        var newGallery = moreGallery.slice(-7);
+        var newGallery = moreGallery.slice(-9);
 
         (_this$gallery = _this.gallery).push.apply(_this$gallery, _toConsumableArray(newGallery));
 
         _this.displayed = false;
-        console.log(loadMore);
       });
-    })
-  },
-  mounted: function (_mounted) {
-    function mounted() {
-      return _mounted.apply(this, arguments);
     }
-
-    mounted.toString = function () {
-      return _mounted.toString();
-    };
-
-    return mounted;
-  }(function () {
+  },
+  mounted: function mounted() {
     var _this2 = this;
 
     fetch("assets/db/gallery.json").then(function (res) {
       return res.json();
     }).then(function (list) {
-      _this2.gallery = list.slice(0, 7);
-      console.log(mounted);
+      _this2.gallery = list.slice(0, 9);
     });
-  })
+  }
 });
 
 /***/ }),
@@ -14082,18 +14061,18 @@ var render = function() {
     _c("div", { staticClass: "ba-section-gallery" }, [
       _c("div", { staticClass: "row" }, [
         _c("div", { staticClass: "column" }, [
-          _c(
-            "div",
-            { staticClass: "ba-gallery" },
-            _vm._l(_vm.gallery, function(photo, index) {
-              return _c("div", { staticClass: "ba-gallery-list" }, [
-                _c("div", { staticClass: "small-12 medium-6 large-6" }, [
+          _c("div", { staticClass: "ba-gallery" }, [
+            _c(
+              "div",
+              { staticClass: "ba-gallery-list" },
+              _vm._l(_vm.gallery, function(photo, index) {
+                return _c("div", [
                   _c("img", { attrs: { src: photo.img, alt: photo.alt } })
                 ])
-              ])
-            }),
-            0
-          )
+              }),
+              0
+            )
+          ])
         ])
       ]),
       _vm._v(" "),
@@ -15598,15 +15577,14 @@ __webpack_require__.r(__webpack_exports__);
 /*!***********************************!*\
   !*** ./src/assets/js/Gallery.vue ***!
   \***********************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Gallery_vue_vue_type_template_id_6d4547ef___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Gallery.vue?vue&type=template&id=6d4547ef& */ "./src/assets/js/Gallery.vue?vue&type=template&id=6d4547ef&");
 /* harmony import */ var _Gallery_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Gallery.vue?vue&type=script&lang=js& */ "./src/assets/js/Gallery.vue?vue&type=script&lang=js&");
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _Gallery_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _Gallery_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
@@ -15636,7 +15614,7 @@ component.options.__file = "src/assets/js/Gallery.vue"
 /*!************************************************************!*\
   !*** ./src/assets/js/Gallery.vue?vue&type=script&lang=js& ***!
   \************************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

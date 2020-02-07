@@ -1,12 +1,12 @@
 [
   {
     "id": "1",
-    "img": "assets/img/gallery/image1.jpg",
+    "img": "assets/img/gallery/image4.jpg",
     "alt": "Ой, что-то пошло не так..."
   },
   {
     "id": "2",
-    "img": "assets/img/gallery/image2.jpg",
+    "img": "assets/img/gallery/image1.jpg",
     "alt": "Ой, что-то пошло не так..."
   },
   {
@@ -16,7 +16,7 @@
   },
   {
     "id": "4",
-    "img": "assets/img/gallery/image4.jpg",
+    "img": "assets/img/gallery/img20.jpg",
     "alt": "Ой, что-то пошло не так..."
   },
   {
@@ -26,47 +26,67 @@
   },
   {
     "id": "6",
-    "img": "assets/img/gallery/image6.jpg",
-    "alt": "Ой, что-то пошло не так..."
-  },
-  {
-    "id": "7",
     "img": "assets/img/gallery/img27.jpg",
     "alt": "Ой, что-то пошло не так..."
   },
   {
-    "id": "8",
-    "img": "assets/img/gallery/img20.jpg",
-    "alt": "Ой, что-то пошло не так..."
-  },
-  {
-    "id": "9",
+    "id": "7",
     "img": "assets/img/gallery/img22.jpg",
     "alt": "Ой, что-то пошло не так..."
   },
   {
-    "id": "10",
+    "id": "8",
     "img": "assets/img/gallery/img23.jpg",
     "alt": "Ой, что-то пошло не так..."
   },
   {
+    "id": "9",
+    "img": "assets/img/gallery/image2.jpg",
+    "alt": "Ой, что-то пошло не так..."
+  },
+  {
+    "id": "10",
+	 "img": "assets/img/gallery/img26.jpg",
+    "alt": "Ой, что-то пошло не так..."
+  },
+  {
     "id": "11",
-    "img": "assets/img/gallery/img26.jpg",
+    "img": "assets/img/gallery/image6.jpg", 
     "alt": "Ой, что-то пошло не так..."
   },
   {
     "id": "12",
-    "img": "assets/img/gallery/img24.jpg",
-    "alt": "Ой, что-то пошло не так..."
-  },
-  {
-    "id": "13",
     "img": "assets/img/gallery/img25.jpg",
     "alt": "Ой, что-то пошло не так..."
   },
   {
-    "id": "14",
+	 "id": "13",
     "img": "assets/img/gallery/img21.jpg",
     "alt": "Ой, что-то пошло не так..."
-  }
+  },
+  {
+	 "id": "14",
+	 "img": "assets/img/gallery/image8.jpg", 	 
+    "alt": "Ой, что-то пошло не так..."
+  },
+  {
+	"id": "15",
+	"img": "assets/img/gallery/image7.jpg", 
+	"alt": "Ой, что-то пошло не так..."
+ },
+ {
+	"id": "16",
+	"img": "assets/img/gallery/image11.jpg", 
+	"alt": "Ой, что-то пошло не так..."
+ },
+ {
+	"id": "17",
+	"img": "assets/img/gallery/image9.jpg", 
+	"alt": "Ой, что-то пошло не так..."
+ },
+ {
+	"id": "18",
+	"img": "assets/img/gallery/img24.jpg",
+	"alt": "Ой, что-то пошло не так..."
+ }
 ]

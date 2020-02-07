@@ -4,8 +4,9 @@
       <div class="row">
         <div class="column">
           <div class="ba-gallery">
-            <div class="ba-gallery-list" v-for="(photo, index) in gallery">
-              <div class="small-12 medium-6 large-6">
+            <div class="ba-gallery-list" >
+					<!-- :class="index % 2 == 0 ? 'large-3' : 'large-6'" -->
+              <div v-for="(photo, index) in gallery">
                 <img :src="photo.img" :alt="photo.alt" />
               </div>
             </div>
@@ -30,10 +31,9 @@ export default {
       fetch("assets/db/gallery.json")
         .then(res => res.json())
         .then(moreGallery => {
-          let newGallery = moreGallery.slice(-7);
+          let newGallery = moreGallery.slice(-9);
           this.gallery.push(...newGallery);
           this.displayed = false;
-          console.log(loadMore);
         });
     }
   },
@@ -41,8 +41,7 @@ export default {
     fetch("assets/db/gallery.json")
       .then(res => res.json())
       .then(list => {
-        this.gallery = list.slice(0, 7);
-        console.log(mounted);
+        this.gallery = list.slice(0, 9);
       });
   }
 };
