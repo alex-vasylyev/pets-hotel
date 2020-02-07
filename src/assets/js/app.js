@@ -20,31 +20,7 @@ $(document).foundation();
 import './main.js';
 
 import './lib/vue';
-
-
-// Code for section-order:
-
-document.getElementById("gruming1").addEventListener("change", function(){
-	document.getElementById('price2').innerHTML = this.value +" грн";   
-});
-
- document.getElementById("gruming2").addEventListener("change", function(){
-	document.getElementById('price3').innerHTML = this.value +" грн";   
- });	
-	
-		
- document.getElementById("order-form").addEventListener("input", function(){ 				
-		
-		let pr1 = document.getElementById('price1').textContent;
-		let pr2 = document.getElementById('price2').textContent;
-		let pr3 = document.getElementById('price3').textContent;
-		
- document.getElementById('price4').innerHTML = "Всього: " + (Number.parseInt(pr1.slice(0, -4)) + Number.parseInt(pr2.slice(0, -4)) + Number.parseInt(pr3.slice(0, -4))) +" грн";
- });
-
-
-
-
+import './order.js';
 
 
 //User profile info

@@ -381,3 +381,13 @@ select{
 	opacity: 100%;
 }
 
+.total-price{
+	margin-top: 20px;
+	display: flex;
+	align-items: center;
+	input{
+		padding-left: 30px;
+		width: 100px;
+	}
+}
+

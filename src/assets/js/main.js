@@ -1,7 +1,8 @@
+//Main file for vue components!
 import Main from './Main.vue';
 import Cards from './Cards.vue';
 import Reviews from './Reviews.vue';
-//Main file for vue components!
+
 new Vue({
 	el: '#main-section',
 	template: '<Main/>',

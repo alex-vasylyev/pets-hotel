@@ -15617,6 +15617,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _main_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./main.js */ "./src/assets/js/main.js");
 /* harmony import */ var _lib_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./lib/vue */ "./src/assets/js/lib/vue.js");
 /* harmony import */ var _lib_vue__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_lib_vue__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _order_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./order.js */ "./src/assets/js/order.js");
+/* harmony import */ var _order_js__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_order_js__WEBPACK_IMPORTED_MODULE_6__);
 
  // Foundation JS relies on a global varaible. In ES6, all imports are hoisted
 // to the top of the file so if we used`import` to import Foundation,
@@ -15632,29 +15634,20 @@ window.jQuery = jquery__WEBPACK_IMPORTED_MODULE_0___default.a; // require('found
 
 jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).foundation();
 
- // Code for section-order:
 
-document.getElementById("gruming1").addEventListener("change", function () {
-  document.getElementById('price2').innerHTML = this.value + " грн";
-});
-document.getElementById("gruming2").addEventListener("change", function () {
-  document.getElementById('price3').innerHTML = this.value + " грн";
-});
-document.getElementById("order-form").addEventListener("input", function () {
-  var pr1 = document.getElementById('price1').textContent;
-  var pr2 = document.getElementById('price2').textContent;
-  var pr3 = document.getElementById('price3').textContent;
-  document.getElementById('price4').innerHTML = "Всього: " + (Number.parseInt(pr1.slice(0, -4)) + Number.parseInt(pr2.slice(0, -4)) + Number.parseInt(pr3.slice(0, -4))) + " грн";
-}); //User profile info
-// let fieldsSet = document.querySelector('.ba-my-profile-info-container__inner');
-// let editBtn = document.querySelector('.ba-button-edit-profile');
-// function openFields() {
-// 	let inputFields = fieldsSet.querySelectorAll('[type="text"]');
-// 	inputFields.forEach(input => {
-// 		input.readOnly = !input.readOnly;
-// 	});
-// }
-// editBtn.addEventListener('click', openFields);
+ //User profile info
+
+var fieldsSet = document.querySelector('.ba-my-profile-info-container__inner');
+var editBtn = document.querySelector('.ba-button-edit-profile');
+
+function openFields() {
+  var inputFields = fieldsSet.querySelectorAll('[type="text"]');
+  inputFields.forEach(function (input) {
+    input.readOnly = !input.readOnly;
+  });
+}
+
+editBtn.addEventListener('click', openFields);
 
 /***/ }),
 
@@ -28443,9 +28436,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Main_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Main.vue */ "./src/assets/js/Main.vue");
 /* harmony import */ var _Cards_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Cards.vue */ "./src/assets/js/Cards.vue");
 /* harmony import */ var _Reviews_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Reviews.vue */ "./src/assets/js/Reviews.vue");
+//Main file for vue components!
 
 
- //Main file for vue components!
 
 new Vue({
   el: '#main-section',
@@ -28466,6 +28459,47 @@ new Vue({
   template: '<Reviews/>',
   components: {
     Reviews: _Reviews_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
+  }
+});
+
+/***/ }),
+
+/***/ "./src/assets/js/order.js":
+/*!********************************!*\
+  !*** ./src/assets/js/order.js ***!
+  \********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var order = new Vue({
+  el: '#order-form',
+  data: {
+    orderData: {
+      overExposure: 0,
+      dateRangePrice: 0,
+      groomingC: 0,
+      groomingW: 0,
+      inspection: 0,
+      totalPrice: 0,
+      petType: '',
+      petName: '',
+      petAge: '',
+      petWeight: '',
+      ownerName: '',
+      ownerTel: ''
+    }
+  },
+  methods: {
+    totalPriceCounting: function totalPriceCounting() {
+      var rangePrice = document.querySelector('#dateRangePrice').textContent;
+      this.orderData.dateRangePrice = Number.parseInt(rangePrice.slice(0, -4));
+      this.orderData.totalPrice = Number.parseInt(this.orderData.overExposure) + Number.parseInt(this.orderData.groomingC) + Number.parseInt(this.orderData.groomingW) + Number.parseInt(this.orderData.groomingW) + Number.parseInt(this.orderData.dateRangePrice);
+    },
+    createOrder: function createOrder() {
+      for (var key in this.orderData) {
+        localStorage.setItem(key, this.orderData[key]);
+      }
+    }
   }
 });
 
