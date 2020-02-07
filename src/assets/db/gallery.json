@@ -1,7 +1,7 @@
 [
 	{
 		"id": "1",
-		"img": "assets/img/gallery/image1.jpg",
+		"img": "assets/img/gallery/image7.jpg",
 		"alt": "Опа... Что-то пошло не так!"
 	},
 	{
@@ -31,7 +31,7 @@
 	},
 	{
 		"id": "7",
-		"img": "assets/img/gallery/image7.jpg",
+		"img": "assets/img/gallery/image1.jpg",
 		"alt": "Опа... Что-то пошло не так!"
 	},
 	{
@@ -45,28 +45,28 @@
 		"alt": "Опа... Что-то пошло не так!"
 	},
 	{
-		"id": "10",
+		"id": "1",
 		"img": "assets/img/gallery/image10.jpg",
 		"alt": "Опа... Что-то пошло не так!"
 	},
 	{
-		"id": "11",
+		"id": "2",
 		"img": "assets/img/gallery/image11.jpg",
 		"alt": "Опа... Что-то пошло не так!"
 	},
 	{
-		"id": "12",
-		"img": "assets/img/gallery/image12.jpg",
+		"id": "3",
+		"img": "assets/img/gallery/image10.jpg",
 		"alt": "Опа... Что-то пошло не так!"
 	},
 	{
-		"id": "13",
-		"img": "assets/img/gallery/image13.jpg",
+		"id": "4",
+		"img": "assets/img/gallery/image2.jpg",
 		"alt": "Опа... Что-то пошло не так!"
 	},
 	{
-		"id": "14",
-		"img": "assets/img/gallery/image14.jpg",
+		"id": "5",
+		"img": "assets/img/gallery/image1.jpg",
 		"alt": "Опа... Что-то пошло не так!"
 	}
 ]

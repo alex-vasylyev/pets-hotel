@@ -2,6 +2,7 @@
 import Main from './Main.vue';
 import Cards from './Cards.vue';
 import Reviews from './Reviews.vue';
+import Gallery from './Gallery.vue';
 
 new Vue({
 	el: '#main-section',
@@ -19,5 +20,11 @@ new Vue({
 	el: '#catalog',
 	template: '<Reviews/>',
 	components: { Reviews }
+})
+
+new Vue({
+	el: '#gallery-catalog',
+	template: '<Gallery/>',
+	components: { Gallery }
 })
 
