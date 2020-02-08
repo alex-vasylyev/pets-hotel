@@ -1,83 +1,85 @@
 .ba-header {
-  background: $primary-color;
-  position: relative;
-  .ba-header-row {
-    padding: 15px 0;
-  }
-  .ba-logo {
-    display: flex;
-    align-items: center;
-
-    @include breakpoint(large) {
-      display: block;
-    }
-  }
-  .ba-nav {
-    font-size: 20px;
-    font-weight: 200;
-
-    .ba-menu-item {
-      padding-bottom: 8px;
-      padding-top: 8px;
-      border-bottom: 3px solid transparent;
-      &:hover {
-        border-bottom: 3px solid $white;
-      }
-    }
-
-    li + li {
-      margin-left: 20px;
-    }
-  }
-
-  .ba-my-profile {
-    padding-right: 10px;
-    @include breakpoint(medium) {
-      margin-left: 20px;
-    }
-  }
-}
-
-.ba-menu-toggle {
-  top: 12px;
-  margin-right: 12px;
-  margin-left: 8px;
-  &:hover {
-    cursor: pointer;
-  }
-}
-
-.ba-toggle-nav {
-  display: none;
-}
-.ba-toggle-nav.active {
-  display: block;
-  position: absolute;
-  max-width: 147px;
-  max-height: 141px;
-  top: 10%;
-  left: 2%;
-  background: $body-background;
-  z-index: 13;
-  padding: 30px 8px 20px 4px;
-  a:hover {
-    color: lighten($black, $amount: 70);
-  }
-  .ba-close-button {
-    font-size: 16px;
-    position: absolute;
-    right: 10px;
-    top: -5px;
-    padding: 0;
-    margin: 0;
-    &:hover {
-		background-color: transparent;
-		border: none;
-      color: lighten($black, $amount: 70);
-    }
-  }
-}
-
-.ba-nav .ba-menu-item.page-active {
-  border-bottom: 3px solid $white;
-}
+	background: $primary-color;
+	position: relative;
+	.ba-header-row {
+	  padding: 15px 0;
+	}
+	.ba-logo {
+	  display: flex;
+	  align-items: center;
+ 
+	  @include breakpoint(large) {
+		 display: block;
+	  }
+	}
+	.ba-nav {
+	  font-size: 20px;
+	  font-weight: 200;
+ 
+	  .ba-menu-item {
+		 padding-bottom: 8px;
+		 padding-top: 8px;
+		 border-bottom: 3px solid transparent;
+		 &:hover {
+			border-bottom: 3px solid $white;
+		 }
+	  }
+ 
+	  li + li {
+		 margin-left: 20px;
+	  }
+	}
+ 
+	.ba-my-profile {
+		padding-top: 3.5px;
+	  padding-right: 10px;
+	  @include breakpoint(medium) {
+		 margin-left: 20px;
+		 padding-right: 50px;
+	  }
+	}
+ }
+ 
+ .ba-menu-toggle {
+	top: 8px;
+	margin-right: 12px;
+	margin-left: 8px;
+	&:hover {
+	  cursor: pointer;
+	}
+ }
+ 
+ .ba-toggle-nav {
+	display: none;
+ }
+ .ba-toggle-nav.active {
+	display: block;
+	position: absolute;
+	max-width: 147px;
+	max-height: 141px;
+	top: 10%;
+	left: 2%;
+	background: $body-background;
+	z-index: 13;
+	padding: 30px 8px 20px 4px;
+	a:hover {
+	  color: lighten($black, $amount: 70);
+	}
+	.ba-close-button {
+	  font-size: 16px;
+	  position: absolute;
+	  right: 10px;
+	  top: -5px;
+	  padding: 0;
+	  margin: 0;
+	  &:hover, &:active {
+		  border-color: transparent;
+		 background-color: transparent;
+		 color: lighten($black, $amount: 70);
+	  }
+	}
+ }
+ 
+ .ba-nav .ba-menu-item.page-active {
+	border-bottom: 3px solid $white;
+ }
