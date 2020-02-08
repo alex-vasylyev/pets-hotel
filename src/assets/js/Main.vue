@@ -231,6 +231,7 @@
             </li>
           </ul>
         </div>
+		  </div>
         <div class="row small-12 ba-services-order-row">
           <a href="order-service.html" class="button button--service">перейти до замовлення</a>
         </div>
@@ -243,7 +244,7 @@
             <a href="gallery.html" class="ba-link-to-gallery">Наші фото</a>
           </div>
         </div>
-      </div>
+      
     </section>
     <!-- /.ba-section-services -->
   </div>

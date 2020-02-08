@@ -110,6 +110,6 @@ export default {
       .then(list => {
         this.userPetsCards = list;
       });
-  }
+ }   
 };
 </script>

@@ -9,8 +9,9 @@
 }
 
 .ba-services-list {
-  padding-left: 28px;
+  
   @include breakpoint(medium) {
+	padding-left: 28px;
     padding-right: 80px;
   }
   .ba-services-list-item {

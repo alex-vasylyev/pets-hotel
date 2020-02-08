@@ -205,7 +205,9 @@
 								 <polyline points="4 11 8 15 16 6" />
 							  </svg>
 							</span>
-							<span class="result">Сплатити онлайн</span>
+							<div class="result">
+								<span>Сплатити онлайн</span>
+							</div>
 						 </label>
 					  </div>
 					</div>
@@ -365,7 +367,7 @@
 				 type="submit"
 				 class="button-primary ba-button ba-button-form"
 				 data-open="exampleModal"
-				 v-on:click="createOrder"
+				 v-on:submit="createOrder"
 			  >Замовити</button>
 			</p>
 			<div class="reveal" id="exampleModal" data-reveal>
