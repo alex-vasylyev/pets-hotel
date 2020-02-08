@@ -7,11 +7,7 @@
           <input type="text" value="Ірина Попова" class="ba-info-container-title" readonly />
           <input type="text" value="Полтава" readonly />
           <p class="ba-info-container-desc">Тут ви можете залишити інформацію про себе.</p>
-          <button
-            type="button"
-            class="ba-button-edit-profile"
-            data-action="edit"
-          >Редагувати</button>
+          <button type="button" class="ba-button-edit-profile" data-action="edit">Редагувати</button>
           <!-- <button type="submit" class="ba-button-logout show-for-medium" data-logout>Вихід</button> -->
           <a href="index.html" class="ba-button-logout show-for-medium">Вихід</a>
         </div>
@@ -110,6 +106,6 @@ export default {
       .then(list => {
         this.userPetsCards = list;
       });
- }   
+  }
 };
 </script>
