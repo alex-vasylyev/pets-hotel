@@ -20,7 +20,7 @@ let order = new Vue({
 	},
 	methods: {
 		totalPriceCounting() {
-			// console.log(this.isChecked);
+			 console.log(this.isChecked);
 			let rangePrice = document.querySelector('#dateRangePrice').textContent;
 			this.orderData.dateRangePrice = Number.parseInt(rangePrice.slice(0, -4));
 
