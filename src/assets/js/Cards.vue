@@ -49,13 +49,6 @@
         </div>
         <!-- /.card-section -->
       </div>
-
-      <div class="add-pet-button">
-        <a href="order-service.html">
-          <span>+</span> додати ще одну тварину
-        </a>
-      </div>
-      <!-- /.add-pet-button -->
       <!-- /.column -->
     </div>
     <div class="column small-12 ba-buttons-my-profile-small show-for-small-only">

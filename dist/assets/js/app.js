@@ -156,13 +156,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
 // import json from '../db/data.json';
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -13903,72 +13896,64 @@ var render = function() {
       _c(
         "div",
         { staticClass: "column small-12 large-7" },
-        [
-          _vm._l(_vm.userPetsCards, function(pet) {
-            return _c("div", { staticClass: "card ba-pet-card" }, [
-              _c(
-                "div",
-                { staticClass: "card-section small-6 ba-card-section-left" },
-                [
-                  _c("div", { staticClass: "ba-pet-card__inner" }, [
-                    _c("div", { staticClass: "ba-pet-card__item" }, [
-                      _c("label", [_vm._v("Кличкa:")]),
-                      _vm._v(" "),
-                      _c("input", {
-                        attrs: { type: "text", readonly: "" },
-                        domProps: { value: pet.petNickname }
-                      })
-                    ]),
+        _vm._l(_vm.userPetsCards, function(pet) {
+          return _c("div", { staticClass: "card ba-pet-card" }, [
+            _c(
+              "div",
+              { staticClass: "card-section small-6 ba-card-section-left" },
+              [
+                _c("div", { staticClass: "ba-pet-card__inner" }, [
+                  _c("div", { staticClass: "ba-pet-card__item" }, [
+                    _c("label", [_vm._v("Кличкa:")]),
                     _vm._v(" "),
-                    _c("div", { staticClass: "ba-pet-card__item" }, [
-                      _c("label", [_vm._v("Вiк:")]),
-                      _vm._v(" "),
-                      _c("input", {
-                        attrs: { type: "text", readonly: "" },
-                        domProps: { value: pet.petAge }
-                      })
-                    ]),
+                    _c("input", {
+                      attrs: { type: "text", readonly: "" },
+                      domProps: { value: pet.petNickname }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "ba-pet-card__item" }, [
+                    _c("label", [_vm._v("Вiк:")]),
                     _vm._v(" "),
-                    _c("div", { staticClass: "ba-pet-card__item" }, [
-                      _c("label", [_vm._v("Порода:")]),
-                      _vm._v(" "),
-                      _c("input", {
-                        attrs: { type: "text", readonly: "" },
-                        domProps: { value: pet.breed }
-                      })
-                    ]),
+                    _c("input", {
+                      attrs: { type: "text", readonly: "" },
+                      domProps: { value: pet.petAge }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "ba-pet-card__item" }, [
+                    _c("label", [_vm._v("Порода:")]),
                     _vm._v(" "),
-                    _c(
-                      "button",
-                      {
-                        staticClass: "ba-pet-card-edit-button",
-                        attrs: { type: "button", "data-action": "edit" },
-                        on: { click: _vm.editPetCard }
-                      },
-                      [_vm._v("Редагувати")]
-                    )
-                  ])
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "card-section small-6 ba-card-section-right" },
-                [
-                  _c("img", {
-                    attrs: { src: pet.petImg, alt: pet.petNickname }
-                  })
-                ]
-              )
-            ])
-          }),
-          _vm._v(" "),
-          _vm._m(1)
-        ],
-        2
+                    _c("input", {
+                      attrs: { type: "text", readonly: "" },
+                      domProps: { value: pet.breed }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass: "ba-pet-card-edit-button",
+                      attrs: { type: "button", "data-action": "edit" },
+                      on: { click: _vm.editPetCard }
+                    },
+                    [_vm._v("Редагувати")]
+                  )
+                ])
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "card-section small-6 ba-card-section-right" },
+              [_c("img", { attrs: { src: pet.petImg, alt: pet.petNickname } })]
+            )
+          ])
+        }),
+        0
       ),
       _vm._v(" "),
-      _vm._m(2)
+      _vm._m(1)
     ]
   )
 }
@@ -14018,17 +14003,6 @@ var staticRenderFns = [
             [_vm._v("Вихід")]
           )
         ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "add-pet-button" }, [
-      _c("a", { attrs: { href: "order-service.html" } }, [
-        _c("span", [_vm._v("+")]),
-        _vm._v(" додати ще одну тварину\n      ")
       ])
     ])
   },
@@ -28678,6 +28652,7 @@ new Vue({
 var order = new Vue({
   el: '#order-form',
   data: {
+    isChecked: false,
     orderData: {
       overExposure: 0,
       dateRangePrice: 0,
@@ -28695,7 +28670,7 @@ var order = new Vue({
   },
   methods: {
     totalPriceCounting: function totalPriceCounting() {
-      var checkBox = document.quer;
+      console.log(this.isChecked);
       var rangePrice = document.querySelector('#dateRangePrice').textContent;
       this.orderData.dateRangePrice = Number.parseInt(rangePrice.slice(0, -4));
       this.orderData.totalPrice = Number.parseInt(this.orderData.overExposure) + Number.parseInt(this.orderData.groomingC) + Number.parseInt(this.orderData.groomingW) + Number.parseInt(this.orderData.inspection) + Number.parseInt(this.orderData.dateRangePrice);
