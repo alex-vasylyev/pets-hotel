@@ -1,0 +1,26 @@
+[
+  {
+    "cityName": "Poltava",
+    "overExposureCats": "300",
+    "overExposureDogs": "350",
+    "groomingW": "200",
+    "groomingWC": "400",
+    "inspection": "250"
+  },
+  {
+	"cityName": "Kyiv",
+	"overExposureCats": "400",
+	"overExposureDogs": "450",
+	"groomingW": "300",
+	"groomingWC": "500",
+	"inspection": "350"
+ },
+ {
+	"cityName": "Kharkiv",
+	"overExposureCats": "350",
+	"overExposureDogs": "550",
+	"groomingW": "400",
+	"groomingWC": "300",
+	"inspection": "130"
+ }
+]
