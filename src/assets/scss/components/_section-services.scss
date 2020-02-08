@@ -1,11 +1,10 @@
 .ba-section--services {
   img {
     display: block;
-	 width: 100%;
-	 @include breakpoint(large){
-		margin-left: -15px;
-	 }
-	 
+    width: 100%;
+    @include breakpoint(large) {
+      margin-left: -15px;
+    }
   }
 }
 
@@ -24,10 +23,10 @@
         color: $black;
         font-weight: 500;
         flex-grow: 1;
-		}
-		span{
-			padding: 0 2px ;
-		}
+      }
+      span {
+        padding: 0 2px;
+      }
     }
   }
 }
@@ -40,27 +39,33 @@
   padding-bottom: 142px;
   display: flex;
   justify-content: center;
-  background: url('./../img/paws.svg') 50% no-repeat;
+  background: url("./../img/paws.svg") 50% no-repeat;
   background-size: cover;
 }
-  
-.ba-link-to-gallery-container{
-	@include breakpoint(medium){
-		margin-top: 68px;
-	}	
+
+.ba-link-to-gallery-container {
+  @include breakpoint(medium) {
+	 margin-top: 68px;
+	 display: flex;
+	 align-items: center;
+  }
 }
 .ba-link-description {
   margin-bottom: 24px;
+ 
+  p {
+    padding: 10px;
+  }
   @include breakpoint(medium) {
     margin-bottom: 0;
   }
 }
 
 .ba-link-to-gallery {
-	color: $primary-color;
-	&:hover{
-		color: lighten($primary-color, $amount: 15);
-	}
+  color: $primary-color;
+  &:hover {
+    color: lighten($primary-color, $amount: 15);
+  }
   @media screen and (max-width: 640px) {
     display: flex;
     justify-content: center;

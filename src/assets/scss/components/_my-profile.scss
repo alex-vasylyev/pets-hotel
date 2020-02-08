@@ -22,11 +22,11 @@
 
   input[type="text"] {
     color: $black;
-    border: 1px solid grey;
+    border: 2px solid #74D8D2;
     background: transparent;
-    border-radius: 10px;
+   //  border-radius: 10px;
 	 padding: 10px;
-	 box-shadow: inset 0 0 5px $black;
+	//  box-shadow: inset 0 0 5px $primary-color;
 	 @include breakpoint(medium){
 		font-size: 18px;
 	 }
