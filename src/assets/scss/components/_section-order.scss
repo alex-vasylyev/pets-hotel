@@ -53,14 +53,7 @@
     text-align: left;
   }
   .result{
-	  padding-right: 150px;
-	  @include breakpoint(medium){
-		   padding-right: 90px;
-	  }
-
-	  @include breakpoint(large){
-		padding-right: 150px;
-	  }
+	  padding-right: 80px;
 	
   }
 }
