@@ -108,7 +108,7 @@
 						 <select class="ba-float-label__select" 
 						 id="gruming1" name="list1" 
 						 v-model="orderData.groomingC"
-						 v-on:change="totalPriceCounting"
+						 
 						 >
 							<option value="150">Миття</option>
 							<option value="100">Чистка вух</option>
@@ -119,8 +119,10 @@
 						 >Грумінг</label>
 	  
 						 <div class="cntr ba-select-1">
-							<label for="cbx" class="label-cbx">
-							  <input id="cbx" type="checkbox" class="invisible" />
+							<label for="cbx" class="label-cbx" >
+							  <input id="cbx" type="checkbox" class="invisible"
+							  v-on:change="isChecked"
+							  :value="orderData.groomingC"/>
 							  <span class="ba-checkbox">
 								 <svg width="20px" height="20px" viewBox="0 0 20 20">
 									<path
@@ -139,7 +141,7 @@
 					  id="gruming2" 
 					  name="list1"
 					  v-model="orderData.groomingW" 
-					  v-on:change="totalPriceCounting"
+					  
 					  >
 						 <option value="200">Миття та стрижка</option>
 						 <option value="300">Тримінг</option>
@@ -149,6 +151,9 @@
 					  <div class="cntr ba-select-1">
 						 <label for="cba" class="label-cba">
 							<input id="cba" type="checkbox" class="invisible ba-check-prc" 
+							:value="orderData.groomingW"
+						
+							v-on:change="isChecked"
 							/>
 							<span class="ba-checkbox">
 							  <svg width="20px" height="20px" viewBox="0 0 20 20">
@@ -165,7 +170,7 @@
 					<div class="ba-float-label ba-float-label-2">
 					  <select class="ba-float-label__select" id="review" name="list1"
 					  v-model="orderData.inspection"
-					  v-on:change="totalPriceCounting"
+					  
 					  >
 						 <option value="100">Загальний</option>
 						 <option value="200">Спеціальний</option>
@@ -174,7 +179,11 @@
 	  
 					  <div class="cntr ba-select-1">
 						 <label for="cbc" class="label-cbc">
-							<input id="cbc" type="checkbox" class="invisible ba-check-prc" />
+							<input id="cbc" type="checkbox" class="invisible ba-check-prc" 
+							
+	
+							:value="orderData.inspection"
+							v-on:change="isChecked"/>
 							<span class="ba-checkbox">
 							  <svg width="20px" height="20px" viewBox="0 0 20 20">
 								 <path
